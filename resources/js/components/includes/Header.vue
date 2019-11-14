@@ -90,6 +90,14 @@ export default {
         this.$root.$on('hireme_modal_from_about', () => {
             this.showModal = true;
         });
+
+        this.getSettingData();
+    },
+
+    methods: {
+        getSettingData(){
+            axios.post('')
+        }
     }
 }
 </script>

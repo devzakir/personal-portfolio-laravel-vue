@@ -2836,6 +2836,12 @@ __webpack_require__.r(__webpack_exports__);
     this.$root.$on('hireme_modal_from_about', function () {
       _this.showModal = true;
     });
+    this.getSettingData();
+  },
+  methods: {
+    getSettingData: function getSettingData() {
+      axios.post('');
+    }
   }
 });
 
