@@ -37,18 +37,16 @@
               </div>
               <div class="col-12 col-md-8 col-lg-7">
                   <div class="d-flex flex-wrap my-services">
-                      <div class="item item1">
+                      <div class="item item1" v-for="service in services" :key="service.id">
                           <div class="item-info">
                               <div class="icon bg-white">
-                                  <img src="../../images/web-design.svg" alt="" class="img-fluid">
+                                  <img :src="service.icon" alt="" class="img-fluid">
                               </div>
-                              <h3>Web Design</h3>
-                              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione debitis
-                                  deserunt repellat quas quia nesciunt, praesentium beatae consequatur officia
-                                  enim.</p>
+                              <h3>{{ service.title }}</h3>
+                              <p> {{ service.description }} </p>
                           </div>
                       </div>
-                      <div class="item item2">
+                      <!-- <div class="item item2">
                           <div class="item-info">
                               <div class="icon bg-white">
                                   <img src="../../images/web-development.svg" alt="" class="img-fluid">
@@ -80,7 +78,7 @@
                                   deserunt repellat quas quia nesciunt, praesentium beatae consequatur officia
                                   enim.</p>
                           </div>
-                      </div>
+                      </div> -->
                   </div>
               </div>
           </div>
@@ -91,7 +89,33 @@
 
 <script>
 export default {
-
+    data: function(){
+        return {
+            services: [],
+            app_url: '',
+        }
+    },
+    mounted (){
+        this.getServices();
+        this.app_url = window.location.href;
+        console.log(window.location.pathName);        
+        console.log(window.location);        
+        console.log(window.location.href);
+        console.log(document.location);
+        console.log(document.location.href);
+    },
+    methods: {
+        getServices() {
+            axios.post('get-data/services')
+            .then(response => {
+                // console.log(response);
+                this.services = response.data;
+            })
+            .then(error => {
+                // console.log(error);
+            });
+        }
+    }
 }
 </script>
 

@@ -25,3 +25,28 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+
+$factory->define(App\Portfolio::class, function (Faker $faker) {
+    return [
+        'title' => $faker->sentence(),
+        'slug' => str_slug($faker->sentence()),
+        'link' => $faker->url,
+        'image' => $faker->imageUrl($width = 640, $height = 480),
+        'category_name' => 'Laravel', 
+        'category_id' => 1,
+    ];
+});
+
+
+$factory->define(App\Product::class, function (Faker $faker) {
+    return [
+        'title' => $faker->sentence(),
+        'slug' => str_slug($faker->sentence()),
+        'link' => $faker->url,
+        'image' => $faker->imageUrl($width = 640, $height = 480),
+        'category_name' => 'HTML', 
+        'category_id' => 1,
+    ];
+});
+

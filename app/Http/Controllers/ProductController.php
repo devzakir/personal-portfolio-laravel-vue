@@ -69,6 +69,7 @@ class ProductController extends Controller
             'layout' => $request->layout,
             'link' => $request->link,
             'description' => $request->description,
+            'category_name' => ProductCategory::find($request->category_id)->name,
         ]);
 
         Session::flash('success', 'Product Created Successfully');
@@ -148,6 +149,7 @@ class ProductController extends Controller
         $product->layout = $request->layout;
         $product->description = $request->description;
         $product->license = $request->license;
+        $product->category_name = ProductCategory::find($request->category_id)->name;
         $product->save();
 
         Session::flash('success', 'Product Updated Successfully');
@@ -171,5 +173,11 @@ class ProductController extends Controller
 
         Session::flash('success', 'Product Deleted Successfully');
         return redirect()->back();
+    }
+
+    public function get_data(){
+        $products = Product::latest()->paginate(9);
+
+        return response()->json($products, 200);
     }
 }

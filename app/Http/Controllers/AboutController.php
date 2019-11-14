@@ -85,6 +85,7 @@ class AboutController extends Controller
             'banner_title' => 'required',
             'greeting_note' => 'required',
             'description' => 'required',
+            'image' => 'sometimes|max:2048|image'
         ]);
 
         $about = About::find(1);
@@ -94,6 +95,20 @@ class AboutController extends Controller
         $about->greeting_note = $request->greeting_note;
         $about->description = $request->description;
         $about->save();
+        
+        if($request->hasFile('image')){
+            if(file_exists(public_path($about->avatar))){
+                unlink(public_path($about->avatar));
+            }
+            $image = $request->image;
+            $image_new_name = time() . $image->getClientOriginalName();
+            $image->move(public_path('uploads'), $image_new_name);
+            $about->avatar = "uploads/" . $image_new_name;
+            $about->save();
+        }
+
+
+
 
         Session::flash('success', 'About information updated successfully');
         return redirect()->back();

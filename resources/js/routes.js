@@ -52,10 +52,13 @@ const router = new VueRouter({
       component: SingleProduct,
       props: true,
     },
-    // { 
-    //   path: '/*',
-    //   component: NotFound
-    // }
+    {
+      path: '/admin/access/*',
+    },
+    { 
+      path: '/*',
+      component: NotFound
+    }
   ]
 });   
 

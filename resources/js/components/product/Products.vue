@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-12">
           <div class="buttons text-center">
-            <a href="#">Load More</a>
+            <button href="#" @click="getProductData(next_page_url)" :disabled="!loadMore">Load More</button>
           </div>
         </div>
       </div>
@@ -28,42 +28,46 @@
   export default {
     data() {
       return {
-        products: [
-          {
-            id: 1,
-            slug: 'product-01',
-            title: 'Product Title Goes Here 1'
-          },
-          {
-            id: 2,
-            slug: 'product-02',
-            title: 'Product Title Goes Here 2'
-          },
-          {
-            id: 3,
-            slug: 'product-03',
-            title: 'Product Title Goes Here 3'
-          },
-          {
-            id: 4,
-            slug: 'product-04',
-            title: 'Product Title Goes Here 4'
-          },
-          {
-            id: 5,
-            slug: 'product-05',
-            title: 'Product Title Goes Here 5'
-          },
-          {
-            id: 6,
-            slug: 'product-06',
-            title: 'Product Title Goes Here 6'
-          },
-        ],
+        products: [],
+        prev_page_url: null,
+        next_page_url: null,
+        productMainPage: true,
+        loadMore: false,
       }
     },
     components: {
       Product,
+    },
+    mounted(){
+        this.getProductData();
+    },
+    methods: {
+        getProductData(nextPageUrl){
+            let  mainURl = 'get-data/products';
+            let  dataUrl = nextPageUrl || mainURl;
+            axios.post(dataUrl)
+            .then(response => {
+                // console.log(response.data);
+                if(this.productMainPage){
+                    this.products = response.data.data;
+                }else {
+                    for (let i = 0; i < response.data.data.length; i++){
+                        this.products.push(response.data.data[i]); 
+                    }
+                }
+                this.productMainPage = false;
+                this.prev_page_url = response.data.prev_page_url;
+                this.next_page_url = response.data.next_page_url;
+                if(response.data.next_page_url){
+                    this.loadMore = true;
+                }else {
+                    this.loadMore = false;
+                }
+            })
+            .then(error => {
+                // console.log(error);
+            });
+        }
     }
   }
 </script>

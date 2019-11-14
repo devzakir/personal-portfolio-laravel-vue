@@ -115,7 +115,7 @@ h6 {
 
 .buttons{
     margin-top: 45px;
-    a{
+    button, a{
         padding: 10px 25px;
         border-radius: 5px;
         color: darken($colorWhite, 5%);
@@ -125,9 +125,22 @@ h6 {
             background-color: $colorMain;
             background-image: linear-gradient(to right, #4c80f1 , #245cd1);
         }
-        &:hover{                    
+        &:hover{
             box-shadow: 0px 5px 10px 1px #ccc;
             color: $colorWhite;
+        }
+    }
+    button {
+        border: 0;
+        cursor: pointer;
+        &[disabled="disabled"]{
+            cursor: default;
+            background-color: #ccc;
+            background-image: linear-gradient(to right, #d3d3d3 , #acacac);
+            color: gray;
+            &:hover{
+                box-shadow: 0px 0px #ccc;
+            }
         }
     }
 }
@@ -484,27 +497,27 @@ header{
                         margin: 10px auto 45px;
                     }
                 }
-                &1{
+                &:nth-child(1){
                     .item-info{
                         background-color: #E8F0FF;
                         color: #448AFF;
                     }
                 }
-                &2{
+                &:nth-child(2){
                     margin-top: 80px;
                     .item-info{
                         background-color: #FFF5EE;
                         color: #FF9B53;
                     }
                 }
-                &3{
+                &:nth-child(3){
                     margin-top: -80px;
                     .item-info{
                         background-color: #E6FAF1;
                         color: #06D79C;
                     }
                 }
-                &4{
+                &:nth-child(4){
                     .item-info{
                         background-color: #EEEBFF;
                         color: #543BCC;
@@ -863,10 +876,7 @@ header{
             }
         }
         .info {
-            display: flex;
-            justify-content: space-between;
             padding: 20px 30px;
-            align-items: center;
             .title {
                 a {
                     font-size: 16px;
@@ -887,6 +897,14 @@ header{
                     color: $colorWhite;
                     border-radius: 3px;
                     font-size: 12px;
+                }
+            }
+            &-footer {    
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+                .category {
                 }
             }
         }

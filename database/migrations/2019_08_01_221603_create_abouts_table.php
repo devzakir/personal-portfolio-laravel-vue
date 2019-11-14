@@ -20,6 +20,7 @@ class CreateAboutsTable extends Migration
             $table->string('banner_title');
             $table->string('greeting_note');
             $table->mediumText('description');
+            $table->string('avatar');
             $table->timestamps();
         });
     }

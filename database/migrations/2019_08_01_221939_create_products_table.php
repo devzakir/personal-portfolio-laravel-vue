@@ -18,13 +18,14 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->bigInteger('category_id');
+            $table->string('category_name');
             $table->string('link');
             $table->string('image');
             $table->decimal('price', 8,2)->default(0);
-            $table->string('version');
-            $table->string('layout');
-            $table->string('license');
-            $table->longText('description');
+            $table->string('version')->nullable();
+            $table->string('layout')->nullable();
+            $table->string('license')->nullable();
+            $table->longText('description')->nullable();
             $table->bigInteger('download_count')->default(0);
             // $table->foreign('category_id')->references('id')->on('product_categories');
             $table->timestamps();

@@ -22,6 +22,7 @@
     <!-- FAVICON -->
     <link href="{{ asset('admin') }}/assets/img/favicon.png" rel="shortcut icon" />
     <link  href="{{ asset('admin') }}/assets/css/sleek.css" rel="stylesheet"/>
+    @yield('style')
     <script src="{{ asset('admin') }}/assets/plugins/nprogress/nprogress.js"></script>
 </head>
 <body class="sidebar-fixed sidebar-dark header-light header-fixed" id="body">
@@ -371,6 +372,7 @@
     <script src="{{ asset('admin') }}/assets/js/date-range.js"></script>
     <script src="{{ asset('admin') }}/assets/js/map.js"></script>
     <script src="{{ asset('admin') }}/assets/js/custom.js"></script>
+    @yield('script')
 </body>
 
 </html>

@@ -7,7 +7,7 @@
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At earum cum id autem velit
                       quidem, vel, amet adipisci nesciunt!</p>
                   <div class="buttons">
-                      <a href="#contact" >Get Quote</a>
+                      <router-link :to="{ name: 'contact' }">Get Quote</router-link>
                       <a href="#" @click="showHireMeModal()">Hire Me</a>
                   </div>
               </div>

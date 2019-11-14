@@ -126,4 +126,7 @@ Route::post('/admin/access/register', 'Auth\RegisterController@register')->name(
 
 
 // Data Fetching Routes
-Route::post('api-data/about', 'AboutController@get_data');
+Route::post('get-data/about', 'AboutController@get_data');
+Route::post('get-data/services', 'ServiceController@get_data');
+Route::post('get-data/portfolios', 'PortfolioController@get_data');
+Route::post('get-data/products', 'ProductController@get_data');

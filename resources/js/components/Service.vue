@@ -3,7 +3,6 @@
       <Header/>
       <Services/>
       <Promote/>
-      <Contact/>
     </div>
 </template>
 

@@ -134,4 +134,11 @@ class ServiceController extends Controller
         Session::flash('succes', 'Service Deleted Successfully');
         return redirect()->route('service.index');
     }
+
+    public function get_data(){
+        
+        $services = Service::all();
+
+        return response()->json($services, 200);
+    }
 }

@@ -10644,3 +10644,7 @@ a.text-dark:focus {
   }
 }
 
+.about-data p {
+  margin-bottom: 10px;
+}
+

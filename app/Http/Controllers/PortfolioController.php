@@ -60,6 +60,7 @@ class PortfolioController extends Controller
             'link' => $request->link,
             'description' => $request->description,
             'image' => '/uploads/portfolio/' . $image_new_name,
+            'category_name' => PortfolioCategory::find($request->category_id)->name,
         ]);
 
         Session::flash('success', 'Portfolio Created Successfully');
@@ -103,7 +104,7 @@ class PortfolioController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'link' => 'required',
-            'image' => 'required|image|max:2048',
+            'image' => 'sometimes|image|max:2048',
             'category_id' => 'required',
         ]);
 
@@ -114,6 +115,8 @@ class PortfolioController extends Controller
         $portfolio->link = $request->link;
         $portfolio->description = $request->description;
         $portfolio->slug = str_slug($request->name);
+        $portfolio->category_name = PortfolioCategory::find($request->category_id)->name;
+
 
         if($request->hasFile('image')){
             if(file_exists(public_path($portfolio->image))){
@@ -148,5 +151,11 @@ class PortfolioController extends Controller
 
         Session::flash('success', 'Portfolio Deleted Successfully');
         return redirect()->back();
+    }
+
+    public function get_data(){
+        $portfolios = Portfolio::latest()->paginate(9);
+
+        return response()->json($portfolios, 200);
     }
 }
