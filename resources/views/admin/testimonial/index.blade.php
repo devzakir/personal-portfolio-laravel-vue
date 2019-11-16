@@ -14,7 +14,7 @@
                 <th>Id</th>
                 <th>Avatar</th>
                 <th>Name</th>
-                <th>Title</th>
+                <th>Designation</th>
                 <th>Description</th>
                 <th>Action</th>
               </tr>
@@ -29,7 +29,7 @@
                   </div>  
                 </td>
                 <td>{{$t->name}}</td>
-                <td>{{$t->title}}</td>
+                <td>{{$t->designation}}</td>
                 <td>{{$t->description}}</td>
                 <td>
                   <a href="{{ route('testimonial.edit', ['id' => $t->id]) }}" class="btn btn-success btn-sm"> <span class="mdi mdi-square-edit-outline"></span> </a>

@@ -40,14 +40,14 @@ class TestimonialController extends Controller
         // dd($request->all());
         $this->validate($request, [
             'name' => 'required',
-            'title' => 'required',
+            'designation' => 'required',
             'description' => 'required',
             'avatar' => 'required|image|max:2048',
         ]);
 
         $testimonial = Testimonial::create([
             'name' => $request->name,
-            'title' => $request->title,
+            'designation' => $request->designation,
             'description' => $request->description,
             'avatar' => '/uploads/testimonial',
         ]);
@@ -100,14 +100,14 @@ class TestimonialController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'title' => 'required',
+            'designation' => 'required',
             'description' => 'required',
             'avatar' => 'required|image|max:2048',
         ]);
 
         $testimonial = Testimonial::find($id);
         $testimonial->name = $request->name;
-        $testimonial->title = $request->title;
+        $testimonial->designation = $request->designation;
         $testimonial->description = $request->description;
 
         if($request->hasFile('avatar')){

@@ -26,8 +26,8 @@
                   <input type="text" name="name" value="{{ old('name', $testimonial->name) }}" class="form-control" placeholder="Client Name">
                 </div>
                 <div class="form-group">
-                  <label for="">Testimonial Title</label>
-                  <input type="text" name="title" value="{{ old('title', $testimonial->title) }}" class="form-control" placeholder="Testimonial Title">
+                  <label for="">Client Designation</label>
+                  <input type="text" name="designation" value="{{ old('designation', $testimonial->designation) }}" class="form-control" placeholder="Client Designation">
                 </div>
                 <div class="form-group">
                   <label for="description">Testimonial Description</label>
