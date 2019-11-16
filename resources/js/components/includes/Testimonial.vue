@@ -18,7 +18,7 @@
 											<img :src="slide.avatar" alt="" class="img-fluid">
 										</div>
 										<div class="testimonial-description">
-											<p> {{slide.quote}} </p>
+											<p> {{slide.description}} </p>
 											<div class="client-intro">
 												<h6> {{slide.name}} </h6>
 												<i> {{slide.designation}} </i>
@@ -41,29 +41,7 @@ import CarouselSlide from '../carousel/CarouselSlide.vue';
 export default {
 	data() {
 		return {
-			slides: [
-				{ 
-					id: 1,
-					avatar: 'http://t.commonsupport.com/amatic/images/resource/team-3.jpg',
-					quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate earum doloribus architecto nulla molestias natus quidem, ducimus quis praesentium, aliquid possimus magni?',
-					name: 'Zakir Hossen',
-					designation: 'Chairman of 1',
-				},
-				{ 
-					id: 2,
-					avatar: 'http://t.commonsupport.com/amatic/images/resource/team-1.jpg',
-					quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate earum doloribus architecto nulla molestias natus quidem, ducimus quis praesentium, aliquid possimus magni?',
-					name: 'Zamir Hossen',
-					designation: 'Chairman of 2',
-				},
-				{ 
-					id: 3,
-					avatar: 'http://t.commonsupport.com/amatic/images/resource/team-2.jpg',
-					quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate earum doloribus architecto nulla molestias natus quidem, ducimus quis praesentium, aliquid possimus magni?',
-					name: 'Rifat Hossen',
-					designation: 'Chairman of 3',
-				},
-			]
+			slides: []
 		}
 	},
 
@@ -73,9 +51,19 @@ export default {
 	},
 
 	methods: {
-		
+		getTestimonialData(){
+			axios.post('get-data/testimonials')
+			.then(response => {
+				this.slides = response.data;
+				console.log(response.data);
+			})
+			.then(error => {
+				// console.log(error)
+			});
+		}
 	},
 	created() {
+		this.getTestimonialData();
 		// console.log(this.$route.path);
 	},
 }

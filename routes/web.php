@@ -131,3 +131,4 @@ Route::post('get-data/services', 'ServiceController@get_data');
 Route::post('get-data/portfolios', 'PortfolioController@get_data');
 Route::post('get-data/products', 'ProductController@get_data');
 Route::post('get-data/settings', 'SettingController@get_data');
+Route::post('get-data/testimonials', 'TestimonialController@get_data');

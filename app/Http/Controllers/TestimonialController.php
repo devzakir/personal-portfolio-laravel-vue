@@ -141,4 +141,8 @@ class TestimonialController extends Controller
         Session::flash('success', 'Testimonial Deleted Successfully');
         return redirect()->route('testimonial.index');
     }
+
+    public function get_data(){
+        return response()->json(Testimonial::latest()->take(5)->get(), 200);
+    }
 }

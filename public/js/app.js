@@ -3184,33 +3184,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      slides: [{
-        id: 1,
-        avatar: 'http://t.commonsupport.com/amatic/images/resource/team-3.jpg',
-        quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate earum doloribus architecto nulla molestias natus quidem, ducimus quis praesentium, aliquid possimus magni?',
-        name: 'Zakir Hossen',
-        designation: 'Chairman of 1'
-      }, {
-        id: 2,
-        avatar: 'http://t.commonsupport.com/amatic/images/resource/team-1.jpg',
-        quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate earum doloribus architecto nulla molestias natus quidem, ducimus quis praesentium, aliquid possimus magni?',
-        name: 'Zamir Hossen',
-        designation: 'Chairman of 2'
-      }, {
-        id: 3,
-        avatar: 'http://t.commonsupport.com/amatic/images/resource/team-2.jpg',
-        quote: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eligendi corrupti, deserunt voluptas nisi perspiciatis non voluptate earum doloribus architecto nulla molestias natus quidem, ducimus quis praesentium, aliquid possimus magni?',
-        name: 'Rifat Hossen',
-        designation: 'Chairman of 3'
-      }]
+      slides: []
     };
   },
   components: {
     Carousel: _carousel_Carousel_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     CarouselSlide: _carousel_CarouselSlide_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  methods: {},
-  created: function created() {// console.log(this.$route.path);
+  methods: {
+    getTestimonialData: function getTestimonialData() {
+      var _this = this;
+
+      axios.post('get-data/testimonials').then(function (response) {
+        _this.slides = response.data;
+        console.log(response.data);
+      }).then(function (error) {// console.log(error)
+      });
+    }
+  },
+  created: function created() {
+    this.getTestimonialData(); // console.log(this.$route.path);
   }
 });
 
@@ -6729,7 +6722,7 @@ var render = function() {
                             { staticClass: "testimonial-description" },
                             [
                               _c("p", [
-                                _vm._v(" " + _vm._s(slide.quote) + " ")
+                                _vm._v(" " + _vm._s(slide.description) + " ")
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "client-intro" }, [
