@@ -22,6 +22,7 @@
               </tr>
             </thead>
             <tbody>
+              @if($products->count() > 0)
               @foreach($products as $p)
               <tr>
                 <td>{{$p->id}}</td>
@@ -39,6 +40,11 @@
                 </td>
               </tr>
               @endforeach
+              @else 
+              <tr>
+                <td colspan="5"><h5 class="text-center">No Products Found.</h5></td>
+              </tr>
+              @endif 
             </tbody>
           </table>
         </div>
