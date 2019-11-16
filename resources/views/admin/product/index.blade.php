@@ -5,7 +5,10 @@
       <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between align-items-center">
           <h2>All Product List</h2>
-          <a href="{{ route('product.create') }}" class="btn btn-primary">Create Product</a>
+          <div>
+            <a href="{{ route('product.create') }}" class="btn btn-primary">Create Product</a>
+            <a class="btn btn-success" href="{{ route('product.category.index') }}"> Product Category</a>
+          </div>
         </div>
         <div class="card-body">
           <table class="table table-bordered table-striped">

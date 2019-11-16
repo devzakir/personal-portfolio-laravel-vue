@@ -81,47 +81,17 @@
                                 <span class="nav-text">Dashboard</span>
                             </a>
                         </li>
-                        <li class="has-sub">
-                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                                data-target="#portfolio" aria-expanded="false" aria-controls="dashboard">
+                        <li>
+                            <a class="sidenav-item-link" href="{{ route('portfolio.index') }}">
                                 <i class="mdi mdi-view-dashboard-outline"></i>
-                                <span class="nav-text">Portfolio</span> <b class="caret"></b>
+                                <span class="nav-text"> Portfolio</span>
                             </a>
-                            <ul class="collapse" id="portfolio" data-parent="#sidebar-menu">
-                                <div class="sub-menu">
-                                    <li>
-                                        <a class="sidenav-item-link" href="{{ route('portfolio.index') }}">
-                                            <span class="nav-text">All Portfolio</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="sidenav-item-link" href="{{ route('portfolio.category.index') }}">
-                                            <span class="nav-text">Portfolio Category</span>
-                                        </a>
-                                    </li>
-                                </div>
-                            </ul>
                         </li>
-                        <li class="has-sub">
-                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                                data-target="#product" aria-expanded="false" aria-controls="dashboard">
+                        <li>
+                            <a class="sidenav-item-link" href="{{ route('product.index') }}">
                                 <i class="mdi mdi-view-dashboard-outline"></i>
-                                <span class="nav-text">Product</span> <b class="caret"></b>
+                                <span class="nav-text"> Product</span>
                             </a>
-                            <ul class="collapse" id="product" data-parent="#sidebar-menu">
-                                <div class="sub-menu">
-                                    <li>
-                                        <a class="sidenav-item-link" href="{{ route('product.index') }}">
-                                            <span class="nav-text">All Product</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="sidenav-item-link" href="{{ route('product.category.index') }}">
-                                            <span class="nav-text">Product Category</span>
-                                        </a>
-                                    </li>
-                                </div>
-                            </ul>
                         </li>
                         <li class="has-sub">
                             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"

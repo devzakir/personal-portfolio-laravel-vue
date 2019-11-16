@@ -5,7 +5,10 @@
       <div class="card card-default">
         <div class="card-header card-header-border-bottom d-flex justify-content-between align-items-center">
           <h2>All Portfolio List</h2>
-          <a href="{{ route('portfolio.create') }}" class="btn btn-primary">Create Portfolio</a>
+          <div>
+            <a href="{{ route('portfolio.create') }}" class="btn btn-primary">Create Portfolio</a>
+              <a class="btn btn-success" href="{{ route('portfolio.category.index') }}"> Portfolio Category </a>
+          </div>
         </div>
         <div class="card-body">
           <table class="table table-bordered table-striped">
