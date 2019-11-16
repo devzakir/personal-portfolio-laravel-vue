@@ -168,38 +168,6 @@
                                 <span class="nav-text">Contact</span>
                             </a>
                         </li>
-                        <li class="has-sub">
-                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                                data-target="#documentation" aria-expanded="false" aria-controls="documentation">
-                                <i class="mdi mdi-book-open-page-variant"></i>
-                                <span class="nav-text">Dropdown</span> <b class="caret"></b>
-                            </a>
-                            <ul class="collapse" id="documentation" data-parent="#sidebar-menu">
-                                <div class="sub-menu">
-                                    <li>
-                                        <a class="sidenav-item-link" href="analytics.html">
-                                            <span class="nav-text">Analytics</span>
-                                        </a>
-                                    </li>
-                                    <li class="section-title">
-                                        Getting Started
-                                    </li>
-                                    <li class="has-sub">
-                                        <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                                            data-target="#headers" aria-expanded="false" aria-controls="headers">
-                                            <span class="nav-text">Layout Headers</span> <b class="caret"></b>
-                                        </a>
-                                        <ul class="collapse" id="headers">
-                                            <div class="sub-menu">
-                                                <li>
-                                                    <a href="header-fixed.html">Header Fixed</a>
-                                                </li>
-                                            </div>
-                                        </ul>
-                                    </li>
-                                </div>
-                            </ul>
-                        </li>
                     </ul>
                 </div>
                 <hr class="separator" />
@@ -295,35 +263,24 @@
                             <li class="dropdown user-menu">
                                 <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <img src="{{ asset('admin') }}/assets/img/user/user.png" class="user-image" alt="User Image" />
-                                    <span class="d-none d-lg-inline-block">Abdus Salam</span>
+                                    <span class="d-none d-lg-inline-block">{{ Auth::user()->name }} </span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <!-- User image -->
                                     <li class="dropdown-header">
                                         <img src="{{ asset('admin') }}/assets/img/user/user.png" class="img-circle" alt="User Image" />
                                         <div class="d-inline-block">
-                                            Abdus Salam <small class="pt-1">abdus@gmail.com</small>
+                                            {{ Auth::user()->name }} <small class="pt-1">{{ Auth::user()->email }}</small>
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="profile.html">
+                                        <a href="#">
                                             <i class="mdi mdi-account"></i> My Profile
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="email-inbox.html">
-                                            <i class="mdi mdi-email"></i> Message
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="mdi mdi-settings"></i> Account Setting </a>
-                                    </li>
 
                                     <li class="dropdown-footer">
-                                        <a href="signin.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout"></i>  Log Out</a>
                                     </li>
                                 </ul>
                             </li>
@@ -350,7 +307,11 @@
                 </script>
             </footer>
         </div>
+        
     </div>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>
     <script src="{{ asset('admin') }}/assets/plugins/jquery/jquery.min.js"></script>
