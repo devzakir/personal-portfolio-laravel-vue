@@ -74,23 +74,23 @@
                                 <div class="connect-info">
                                     <div class="info-item">
                                         <strong>Phone</strong>
-                                        <p class="mb-0">+880 1794 1724 79</p>
+                                        <p class="mb-0">{{ setting.phone }}</p>
                                     </div>
                                     <div class="info-item">
                                         <strong>Email</strong>
-                                        <p class="mb-0">web.zakirbd@gmail.com</p>
+                                        <p class="mb-0">{{ setting.email }}</p>
                                     </div>
                                     <div class="info-item">
                                         <strong>Address</strong>
-                                        <p class="mb-0">Adabor, Dhaka-1207, Bangladesh</p>
+                                        <p class="mb-0">{{ setting.address }}</p>
                                     </div>
                                     <div class="info-item">
                                         <ul class="find-me">
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i> </a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i> </a></li>
-                                            <li><a href="#"><i class="fab fa-github"></i> </a></li>
-                                            <li><a href="#"><i class="fab fa-stack-overflow"></i> </a></li>
-                                            <li><a href="#"><i class="fab fa-quora"></i> </a></li>
+                                            <li v-if="setting.facebook" ><a :href="setting.facebook" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
+                                            <li v-if="setting.linkedin" ><a :href="setting.linkedin" target="_blank"> <i class="fab fa-linkedin-in"></i> </a></li>
+                                            <li v-if="setting.github" ><a :href="setting.github" target="_blank"> <i class="fab fa-github"></i> </a></li>
+                                            <li v-if="setting.stack" ><a :href="setting.stack" target="_blank"> <i class="fab fa-stack-overflow"></i> </a></li>
+                                            <li v-if="setting.quora" ><a :href="setting.quora" target="_blank"> <i class="fab fa-quora"></i> </a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -110,6 +110,7 @@ export default {
         return {
             currentTab: 1,
             data: [],
+            setting: [],
         }
     },
     computed: {
@@ -132,7 +133,15 @@ export default {
         showTab(selectedTab){
             this.currentTab = selectedTab
         },
-
+        getSettingData(){
+            axios.post('get-data/settings')
+            .then(response => {
+                this.setting = response.data;
+            })
+            .then(error => {
+                // console.log(error);
+            })
+        }
     },
     mounted() {
         axios.post('./get-data/about')
@@ -143,6 +152,8 @@ export default {
         .catch(error => {
             // console.log(error);
         });
+        
+        this.getSettingData();
     },
 }
 </script>

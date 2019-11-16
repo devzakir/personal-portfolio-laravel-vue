@@ -80,6 +80,10 @@ class SettingController extends Controller
      */
     public function destroy(Setting $setting)
     {
+        //
+    }
+
+    public function get_data(){
         $setting = Setting::find(1);
 
         return response()->json($setting, 200);

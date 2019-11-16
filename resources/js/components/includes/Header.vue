@@ -17,12 +17,12 @@
                         <li><router-link :to="{ name: 'products' }"> Products </router-link></li>
                     </ul>
                     <ul class="right ml-auto">
-                        <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
-                        <li><a href="#"> <i class="fab fa-linkedin-in"></i> </a></li>
-                        <li><a href="#"> <i class="fab fa-github"></i> </a></li>
-                        <li><a href="#"> <i class="fab fa-stack-overflow"></i> </a></li>
-                        <li><a href="#"> <i class="fab fa-quora"></i> </a></li>
-                        <li><a href="" @click.prevent class="hire-me" @click="showModal = true"> Hire Me </a></li>
+                        <li v-if="setting.facebook" ><a :href="setting.facebook" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
+                        <li v-if="setting.linkedin" ><a :href="setting.linkedin" target="_blank"> <i class="fab fa-linkedin-in"></i> </a></li>
+                        <li v-if="setting.github" ><a :href="setting.github" target="_blank"> <i class="fab fa-github"></i> </a></li>
+                        <li v-if="setting.stack" ><a :href="setting.stack" target="_blank"> <i class="fab fa-stack-overflow"></i> </a></li>
+                        <li v-if="setting.quora" ><a :href="setting.quora" target="_blank"> <i class="fab fa-quora"></i> </a></li>
+                        <li ><a href="" @click.prevent class="hire-me" @click="showModal = true"> Hire Me </a></li>
                     </ul>
                   </nav>
               </div>
@@ -80,7 +80,8 @@
 export default {
     data: function() {
          return  {
-           showModal: false
+           showModal: false,
+           setting: [],
          }
     },
     mounted(){
@@ -96,7 +97,13 @@ export default {
 
     methods: {
         getSettingData(){
-            axios.post('')
+            axios.post('get-data/settings')
+            .then(response => {
+                this.setting = response.data;
+            })
+            .then(error => {
+                // console.log(error);
+            })
         }
     }
 }
