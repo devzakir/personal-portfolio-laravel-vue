@@ -6453,7 +6453,7 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" "),
               _c("div", { staticClass: "buttons text-center" }, [
-                (_vm.portfolios.length >= 0
+                (_vm.portfolios.length > 0
                 ? true
                 : false)
                   ? _c(
@@ -6849,7 +6849,7 @@ var render = function() {
             : _vm._e(),
           _vm._v(" "),
           _c("div", { staticClass: "buttons text-center" }, [
-            (_vm.products.length >= 0
+            (_vm.products.length > 0
             ? true
             : false)
               ? _c(

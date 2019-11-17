@@ -36,7 +36,7 @@
               <div class="col-12">
                   <h5 class="text-center" v-if="portfolios.lenght || portfolios.length == 0 ? true : false">No Portfolio Found</h5>
                   <div class="buttons text-center">
-                      <button v-if="portfolios.length >= 0 ? true : false" @click="getPotfolioData(next_page_url)" :disabled="!loadMore">Load More</button>
+                      <button v-if="portfolios.length > 0 ? true : false" @click="getPotfolioData(next_page_url)" :disabled="!loadMore">Load More</button>
                   </div>
               </div>
           </div>
