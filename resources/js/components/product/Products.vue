@@ -16,7 +16,7 @@
         <div class="col-12">
           <h5 v-if="products.lenght || products.length == 0 ? true : false" class="text-center">No Products Found</h5>
           <div class="buttons text-center">
-            <button v-if="products.lenght > 0" href="#" @click="getProductData(next_page_url)" :disabled="!loadMore">Load More</button>
+            <button v-if="products.length >= 0 ? true : false" href="#" @click="getProductData(next_page_url)" :disabled="!loadMore">Load More</button>
           </div>
         </div>
       </div>
@@ -51,6 +51,8 @@
                 // console.log(response.data);
                 if(this.productMainPage){
                     this.products = response.data.data;
+                    console.log(this.products);
+                    console.log(this.products.length);
                 }else {
                     for (let i = 0; i < response.data.data.length; i++){
                         this.products.push(response.data.data[i]); 
