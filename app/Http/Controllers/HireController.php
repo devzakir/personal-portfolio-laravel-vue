@@ -114,7 +114,6 @@ class HireController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'budget' => 'required',
-            'social' => 'required',
             'message' => 'required|min:200',
         ]);
 
