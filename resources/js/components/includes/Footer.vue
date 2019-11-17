@@ -6,31 +6,20 @@
                 <div class="col-12 col-sm-6 col-md-3 item">
                     <h5>Links</h5>
                     <ul>
-                        <li><a href="#">About Me</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Contact Me</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3 item">
-                    <h5>Hire Me</h5>
-                    <ul>
-                        <li><a href="#">Get a Quote</a></li>
-                        <li><a href="#">Upwork Profile</a></li>
-                        <li><a href="#">Fiverr Profile</a></li>
-                        <li><a href="#">Freelancer Profile</a></li>
-                        <li><a href="#">Contact Me</a></li>
+                        <li><router-link :to="{name: 'about' }">About Me</router-link></li>
+                        <li><router-link :to="{name: 'services' }">Services</router-link></li>
+                        <li><router-link :to="{name: 'portfolio' }">Portfolio</router-link></li>
+                        <li><router-link :to="{name: 'contact' }">Contact Me</router-link></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3 item">
                     <h5>Find Me</h5>
                     <ul>
-                        <li><a href="#">Github</a></li>
-                        <li><a href="#">StackOverflow</a></li>
-                        <li><a href="#">Quora</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Facebook</a></li>
+                        <li v-if="setting.facebook" ><a :href="setting.facebook" target="_blank"> Facebook  </a></li>
+                        <li v-if="setting.linkedin" ><a :href="setting.linkedin" target="_blank"> Linkedin </a> </li>
+                        <li v-if="setting.github" ><a :href="setting.github" target="_blank"> Github </a> </li>
+                        <li v-if="setting.stack" ><a :href="setting.stack" target="_blank"> Stack Overflow  </a></li>
+                        <li v-if="setting.quora" ><a :href="setting.quora" target="_blank"> Quora  </a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3 item">
@@ -40,6 +29,14 @@
                         <li><a href="#">My Resource</a></li>
                         <li><a href="#">Useful Links</a></li>
                         <li><a href="#">Free Tools</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 item">
+                    <h5>Hire Me</h5>
+                    <ul>
+                        <li><a href="#">Upwork Profile</a></li>
+                        <li><a href="#">Fiverr Profile</a></li>
+                        <li><a href="#">Freelancer Profile</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,6 +59,26 @@
 <script>
   export default {
 
+    data: function() {
+         return  {
+           setting: [],
+         }
+    },
+    mounted(){
+        this.getSettingData();
+    },
+
+    methods: {
+        getSettingData(){
+            axios.post('get-data/settings')
+            .then(response => {
+                this.setting = response.data;
+            })
+            .then(error => {
+                // console.log(error);
+            })
+        },
+    }
   }
 </script>
 
