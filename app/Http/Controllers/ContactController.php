@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\Contact;
+use App\Mail\ContactEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -121,12 +123,19 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        Contact::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'subject' => $request->subject,
-            'message' => $request->message,
+        $name = $request->name;
+        $email = $request->email;
+        $subject = $request->subject;
+        $message = $request->message;
+
+        $contact = Contact::create([
+            'name' => $name,
+            'email' => $email,
+            'subject' => $subject,
+            'message' => $message,
         ]);
+
+        Mail::to('web.zakirbd@gmail.com')->send(new ContactEmail($name, $email, $subject, $message));
 
         return response()->json('Contact Form Send Successfully', 200);
     }
