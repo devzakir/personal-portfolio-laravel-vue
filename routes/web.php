@@ -133,3 +133,5 @@ Route::post('get-data/products', 'ProductController@get_data');
 Route::post('get-data/settings', 'SettingController@get_data');
 Route::post('get-data/testimonials', 'TestimonialController@get_data');
 Route::post('send-message', 'ContactController@send');
+
+Route::post('hireme', 'HireController@send');

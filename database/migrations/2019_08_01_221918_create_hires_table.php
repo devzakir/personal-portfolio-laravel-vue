@@ -17,8 +17,8 @@ class CreateHiresTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
-            $table->bigInteger('budget');
-            $table->string('social');
+            $table->bigInteger('budget')->nullable();
+            $table->string('social')->nullable();
             $table->longText('message');
             $table->timestamps();
         });

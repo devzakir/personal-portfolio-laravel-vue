@@ -38,38 +38,50 @@
                         <span>×</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="name">Your name</label>
-                        <input type="text" class="form-control" name="name" placeholder="Enter your name">
+                <form @submit.prevent="hire" @keydown="form.onKeydown($event)">
+                    <div class="modal-body">
+                        <alert-success :form="form">Your message send successfully.</alert-success>
+                        <alert-error :form="form"> 
+                            <ul>
+                                <li v-if="form.errors.has('name')"> {{ form.errors.get('name') }} </li>
+                                <li v-if="form.errors.has('email')"> {{ form.errors.get('email') }} </li>
+                                <li v-if="form.errors.has('budget')"> {{ form.errors.get('budget') }} </li>
+                                <li v-if="form.errors.has('social')"> {{ form.errors.get('social') }} </li>
+                                <li v-if="form.errors.has('message')"> {{ form.errors.get('message') }} </li>
+                            </ul>
+                        </alert-error>
+                        <div class="form-group">
+                            <label for="name">Your name</label>
+                            <input type="text" class="form-control" name="name" placeholder="Enter your name" v-model="form.name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your email</label>
+                            <input type="text" class="form-control" name="email" placeholder="Enter your email" v-model="form.email">
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">What is your budget?</label>
+                            <select name="budget" class="form-control" v-model="form.budget">
+                                <option value="">Select your budget</option>
+                                <option value="500">$100 to $500 </option>
+                                <option value="1000">$500 to $1000 </option>
+                                <option value="5000">$1000 to $5000 </option>
+                                <option value="5000">$5000+ </option>
+                            </select>
+                        </div>                    
+                        <div class="form-group">
+                            <label for="email">Your social</label>
+                            <input type="text" class="form-control" name="social" placeholder="Skype/Telegram/Whatsapp/Viber" v-model="form.social">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your message</label>
+                            <textarea name="message" rows="4" class="form-control" placeholder="Enter your message" v-model="form.message"></textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Your email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter your email">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" @click="showModal = false">Close</button>
+                        <button type="submit" class="btn btn-primary" :disabled="form.busy"> Send Offer </button>
                     </div>
-                    <div class="form-group">
-                        <label for="budget">What is your budget?</label>
-                        <select name="budget" class="form-control">
-                            <option value="">Select your budget</option>
-                            <option value="">$100 to $500 </option>
-                            <option value="">$500 to $1000 </option>
-                            <option value="">$1000 to $5000 </option>
-                            <option value="">$5000+ </option>
-                        </select>
-                    </div>                    
-                    <div class="form-group">
-                        <label for="email">Your social</label>
-                        <input type="text" class="form-control" name="email" placeholder="Skype/Telegram/Whatsapp/Viber">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your message</label>
-                        <textarea name="message" rows="4" class="form-control" placeholder="Enter your message"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" @click="showModal = false">Close</button>
-                    <button type="button" class="btn btn-primary"> Send Offer </button>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -77,11 +89,22 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import { Form, AlertError, AlertSuccess } from 'vform'
+Vue.component(AlertError.name, AlertError)
+Vue.component(AlertSuccess.name, AlertSuccess)
 export default {
     data: function() {
          return  {
            showModal: false,
            setting: [],
+            form: new Form({
+                name: '',
+                email: '',
+                budget: '',
+                social: '',
+                message: '',
+            })
          }
     },
     mounted(){
@@ -104,6 +127,18 @@ export default {
             .then(error => {
                 // console.log(error);
             })
+        },
+
+        hire(){
+            this.form.post('hireme')
+            .then( ({data})  => { 
+                // console.log(data);
+                this.form.name = '',
+                this.form.email = '',
+                this.form.budget = '',
+                this.form.social = '',
+                this.form.message = ''
+            });
         }
     }
 }

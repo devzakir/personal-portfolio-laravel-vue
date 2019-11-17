@@ -41,7 +41,6 @@ class HireController extends Controller
             'name' => 'required',
             'email' => 'required',
             'budget' => 'required',
-            'social' => 'required',
             'message' => 'required',
         ]);
 
@@ -107,5 +106,26 @@ class HireController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function send(Request $request){
+
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'budget' => 'required',
+            'social' => 'required',
+            'message' => 'required|min:200',
+        ]);
+
+        $hire = Hire::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'budget' => $request->budget,
+            'social' => $request->social,
+            'message' => $request->message,
+        ]);
+
+        return response()->json('Contact Form Send Successfully', 200);
     }
 }
