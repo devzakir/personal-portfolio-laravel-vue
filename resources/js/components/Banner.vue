@@ -1,6 +1,5 @@
 <template>
   <section class="banner-section">
-    <Header/>
     <div id="particle-container">
       <div class="particle"></div>
       <div class="particle"></div>
@@ -55,7 +54,7 @@
 </template>
 
 <script>
-import Header from './includes/Header';
+// import Header from './includes/Header';
 export default {
   name: 'banner',
   data: function(){
@@ -64,7 +63,7 @@ export default {
     }
   },
   components: {
-    Header,
+    // Header,
   },
   mounted(){
       this.getVisitors()

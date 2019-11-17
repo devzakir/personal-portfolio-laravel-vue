@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+    <Header v-if="this.$route.name !== 'home'"/>
     <router-view/>
-    <Footer/>
+    <Footer v-if="this.$route.name !== 'home'"/>
   </div>
 </template>
 
 <script>
+import Header from './components/includes/Header';
 import Footer from './components/includes/Footer'
 
 // import scripts 
@@ -20,6 +22,10 @@ export default {
   name: 'app',
   components: {
     Footer,
+    Header,
+  },
+  created(){
+    console.log(this.$route);
   }
 }
 </script>

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header/>
     <section class="not-found">
       <div class="container">
         <div class="row">
@@ -17,11 +16,7 @@
 </template>
 
 <script>
-  import Header from './includes/Header';
   export default {
-    components:{
-      Header,
-    }
   }
 </script>
 

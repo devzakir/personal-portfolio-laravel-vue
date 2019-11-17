@@ -1,6 +1,5 @@
 <template>
     <div>
-      <Header/>
       <section class="breadcrum">
         <div class="container">
           <div class="row">
@@ -73,7 +72,6 @@
     </div>
 </template>
 <script>
-  import Header from './includes/Header';
   export default {
     // props: ['product'],
     data() {
@@ -85,15 +83,8 @@
           title: 'Product Title Goes Here 1'
         }
       }
-    },
-    components: {
-      Header,
-    },
-    created(){
-      // console.log('hello');
     }
   }
-
 </script>
 
 <style>

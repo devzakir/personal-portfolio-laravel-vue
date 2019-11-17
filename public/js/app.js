@@ -1838,11 +1838,12 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_includes_Footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/includes/Footer */ "./resources/js/components/includes/Footer.vue");
-/* harmony import */ var _styles_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/bootstrap.min.css */ "./resources/js/styles/bootstrap.min.css");
-/* harmony import */ var _styles_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _styles_scss_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/scss/style.scss */ "./resources/js/styles/scss/style.scss");
-/* harmony import */ var _styles_scss_style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_scss_style_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/includes/Header */ "./resources/js/components/includes/Header.vue");
+/* harmony import */ var _components_includes_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/includes/Footer */ "./resources/js/components/includes/Footer.vue");
+/* harmony import */ var _styles_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/bootstrap.min.css */ "./resources/js/styles/bootstrap.min.css");
+/* harmony import */ var _styles_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styles_scss_style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/scss/style.scss */ "./resources/js/styles/scss/style.scss");
+/* harmony import */ var _styles_scss_style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_scss_style_scss__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -1850,6 +1851,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
  // import scripts 
 // import './scripts/main';
 // Styles
@@ -1859,7 +1862,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
-    Footer: _components_includes_Footer__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Footer: _components_includes_Footer__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Header: _components_includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  created: function created() {
+    console.log(this.$route);
   }
 });
 
@@ -1874,7 +1881,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Header */ "./resources/js/components/includes/Header.vue");
 //
 //
 //
@@ -1892,13 +1898,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Header: _includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -1911,22 +1911,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Header */ "./resources/js/components/includes/Header.vue");
-/* harmony import */ var _includes_About__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./includes/About */ "./resources/js/components/includes/About.vue");
+/* harmony import */ var _includes_About__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/About */ "./resources/js/components/includes/About.vue");
 //
 //
 //
 //
 //
 //
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
-    Header: _includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-    About: _includes_About__WEBPACK_IMPORTED_MODULE_1__["default"]
+    About: _includes_About__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -1941,7 +1937,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Header */ "./resources/js/components/includes/Header.vue");
 //
 //
 //
@@ -1997,8 +1992,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
+// import Header from './includes/Header';
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'banner',
   data: function data() {
@@ -2006,8 +2000,7 @@ __webpack_require__.r(__webpack_exports__);
       data: {}
     };
   },
-  components: {
-    Header: _includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"]
+  components: {// Header,
   },
   mounted: function mounted() {
     this.getVisitors();
@@ -2035,22 +2028,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Header */ "./resources/js/components/includes/Header.vue");
-/* harmony import */ var _includes_Contact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./includes/Contact */ "./resources/js/components/includes/Contact.vue");
+/* harmony import */ var _includes_Contact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Contact */ "./resources/js/components/includes/Contact.vue");
 //
 //
 //
 //
 //
 //
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
-    Header: _includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Contact: _includes_Contact__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Contact: _includes_Contact__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -2109,9 +2098,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Header */ "./resources/js/components/includes/Header.vue");
-/* harmony import */ var _includes_Portfolio__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./includes/Portfolio */ "./resources/js/components/includes/Portfolio.vue");
-/* harmony import */ var _includes_Testimonial__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./includes/Testimonial */ "./resources/js/components/includes/Testimonial.vue");
+/* harmony import */ var _includes_Portfolio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Portfolio */ "./resources/js/components/includes/Portfolio.vue");
+/* harmony import */ var _includes_Testimonial__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./includes/Testimonial */ "./resources/js/components/includes/Testimonial.vue");
 //
 //
 //
@@ -2119,16 +2107,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
-    Header: _includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Portfolio: _includes_Portfolio__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Testimonial: _includes_Testimonial__WEBPACK_IMPORTED_MODULE_2__["default"]
+    Portfolio: _includes_Portfolio__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Testimonial: _includes_Testimonial__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2143,22 +2128,18 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Header */ "./resources/js/components/includes/Header.vue");
-/* harmony import */ var _components_product_Products__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/product/Products */ "./resources/js/components/product/Products.vue");
+/* harmony import */ var _components_product_Products__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/product/Products */ "./resources/js/components/product/Products.vue");
 //
 //
 //
 //
 //
 //
-//
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
-    Header: _includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Products: _components_product_Products__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Products: _components_product_Products__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -2173,9 +2154,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Header */ "./resources/js/components/includes/Header.vue");
-/* harmony import */ var _includes_Services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./includes/Services */ "./resources/js/components/includes/Services.vue");
-/* harmony import */ var _includes_Promote__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./includes/Promote */ "./resources/js/components/includes/Promote.vue");
+/* harmony import */ var _includes_Services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Services */ "./resources/js/components/includes/Services.vue");
+/* harmony import */ var _includes_Promote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./includes/Promote */ "./resources/js/components/includes/Promote.vue");
 //
 //
 //
@@ -2183,16 +2163,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
-    Header: _includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Services: _includes_Services__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Promote: _includes_Promote__WEBPACK_IMPORTED_MODULE_2__["default"]
+    Services: _includes_Services__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Promote: _includes_Promote__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2207,7 +2184,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _includes_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./includes/Header */ "./resources/js/components/includes/Header.vue");
 //
 //
 //
@@ -2281,8 +2257,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   // props: ['product'],
   data: function data() {
@@ -2294,11 +2268,6 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Product Title Goes Here 1'
       }
     };
-  },
-  components: {
-    Header: _includes_Header__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  created: function created() {// console.log('hello');
   }
 });
 
@@ -3374,7 +3343,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* Normalize start */\n* {\n  padding: 0;\n  margin: 0;\n  outline: 0;\n}\n\nhtml,\nbody {\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n  overflow-x: hidden;\n}\n\nimg {\n  border: 0px;\n}\n\nol,\nul,\nli {\n  list-style-type: none;\n  margin: 0;\n}\n\na {\n  color: #245cd1;\n  display: inline-block;\n  transition: all 0.4s ease;\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n}\n\na:hover,\na:focus {\n  color: #fdc800;\n  text-decoration: none;\n}\n\np {\n  font-size: 14px;\n  line-height: 24px;\n  margin: 0;\n  font-family: \"Open Sans\", sans-serif;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n}\n\n@media (min-width: 1200px) {\n  .container {\n    max-width: 1170px;\n  }\n}\n/* Normalize end */\n/* Reusable style start */\n.animate {\n  transition: all 0.4s ease;\n}\n\n.buttons {\n  margin-top: 45px;\n}\n.buttons button, .buttons a {\n  padding: 10px 25px;\n  border-radius: 5px;\n  color: #f2f2f2;\n  background-image: linear-gradient(to right, #6a64e7, #443dc9);\n}\n.buttons button:first-child, .buttons a:first-child {\n  margin-right: 10px;\n  background-color: #245cd1;\n  background-image: linear-gradient(to right, #4c80f1, #245cd1);\n}\n.buttons button:hover, .buttons a:hover {\n  box-shadow: 0px 5px 10px 1px #ccc;\n  color: #fff;\n}\n.buttons button {\n  border: 0;\n  cursor: pointer;\n}\n.buttons button[disabled=disabled] {\n  cursor: default;\n  background-color: #ccc;\n  background-image: linear-gradient(to right, #d3d3d3, #acacac);\n  color: gray;\n}\n.buttons button[disabled=disabled]:hover {\n  box-shadow: 0px 0px #ccc;\n}\n\n/* header section */\nheader.active {\n  background-color: #245cd1;\n}\nheader.active .menu-part li a {\n  color: #fff;\n}\nheader.active .menu-part .right li a {\n  font-weight: 400;\n}\nheader.active .menu-part .right li a.hire-me {\n  border: 1px solid #fff;\n}\nheader.active .menu-part .right li a.hire-me:hover {\n  background-color: #fff;\n  color: #245cd1;\n}\n\nheader + .about-section:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  width: 100%;\n  height: 130%;\n  top: 0;\n  transform: skewY(-12deg);\n  background: #f6f9fc;\n}\nheader .menu-part {\n  padding: 15px 0;\n}\nheader .menu-part .logo {\n  max-width: 40px;\n  margin-right: 10px;\n}\nheader .menu-part li {\n  display: inline-block;\n}\nheader .menu-part li a {\n  padding: 20px 10px;\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 700;\n  color: #245cd1;\n}\nheader .menu-part li a.hire-me {\n  border: 1px solid #245cd1;\n  padding: 5px 10px;\n  border-radius: 3px;\n  margin-left: 10px;\n}\nheader .menu-part li a.hire-me:hover {\n  background-color: #245cd1;\n  color: #fff;\n}\nheader .menu-part .right li a {\n  font-weight: 500;\n}\nheader .menu-part .right li a.hire-me {\n  font-weight: 700;\n}\n\n.breadcrumb {\n  padding: 30px 0;\n}\n\n.banner-section {\n  position: relative;\n}\n.banner-section header {\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: 99;\n}\n.banner-section .particle {\n  position: absolute;\n  border-radius: 50%;\n}\n@-webkit-keyframes particle-animation-1 {\n  100% {\n    transform: translate3d(12vw, 63vh, 36px);\n  }\n}\n@keyframes particle-animation-1 {\n  100% {\n    transform: translate3d(12vw, 63vh, 36px);\n  }\n}\n.banner-section .particle:nth-child(1) {\n  -webkit-animation: particle-animation-1 60s infinite;\n          animation: particle-animation-1 60s infinite;\n  opacity: 0.31;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -0.1s;\n          animation-delay: -0.1s;\n  transform: translate3d(55vw, 7vh, 18px);\n  background: #26b2d9;\n}\n@-webkit-keyframes particle-animation-2 {\n  100% {\n    transform: translate3d(7vw, 10vh, 36px);\n  }\n}\n@keyframes particle-animation-2 {\n  100% {\n    transform: translate3d(7vw, 10vh, 36px);\n  }\n}\n.banner-section .particle:nth-child(2) {\n  -webkit-animation: particle-animation-2 60s infinite;\n          animation: particle-animation-2 60s infinite;\n  opacity: 0.81;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -0.2s;\n          animation-delay: -0.2s;\n  transform: translate3d(16vw, 27vh, 14px);\n  background: #acd926;\n}\n@-webkit-keyframes particle-animation-3 {\n  100% {\n    transform: translate3d(61vw, 30vh, 1px);\n  }\n}\n@keyframes particle-animation-3 {\n  100% {\n    transform: translate3d(61vw, 30vh, 1px);\n  }\n}\n.banner-section .particle:nth-child(3) {\n  -webkit-animation: particle-animation-3 60s infinite;\n          animation: particle-animation-3 60s infinite;\n  opacity: 0.91;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n  transform: translate3d(73vw, 9vh, 94px);\n  background: #26d0d9;\n}\n@-webkit-keyframes particle-animation-4 {\n  100% {\n    transform: translate3d(89vw, 45vh, 24px);\n  }\n}\n@keyframes particle-animation-4 {\n  100% {\n    transform: translate3d(89vw, 45vh, 24px);\n  }\n}\n.banner-section .particle:nth-child(4) {\n  -webkit-animation: particle-animation-4 60s infinite;\n          animation: particle-animation-4 60s infinite;\n  opacity: 0.76;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -0.4s;\n          animation-delay: -0.4s;\n  transform: translate3d(26vw, 11vh, 86px);\n  background: #5026d9;\n}\n@-webkit-keyframes particle-animation-5 {\n  100% {\n    transform: translate3d(44vw, 39vh, 31px);\n  }\n}\n@keyframes particle-animation-5 {\n  100% {\n    transform: translate3d(44vw, 39vh, 31px);\n  }\n}\n.banner-section .particle:nth-child(5) {\n  -webkit-animation: particle-animation-5 60s infinite;\n          animation: particle-animation-5 60s infinite;\n  opacity: 0.65;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n  transform: translate3d(36vw, 51vh, 3px);\n  background: #d97d26;\n}\n@-webkit-keyframes particle-animation-6 {\n  100% {\n    transform: translate3d(29vw, 64vh, 39px);\n  }\n}\n@keyframes particle-animation-6 {\n  100% {\n    transform: translate3d(29vw, 64vh, 39px);\n  }\n}\n.banner-section .particle:nth-child(6) {\n  -webkit-animation: particle-animation-6 60s infinite;\n          animation: particle-animation-6 60s infinite;\n  opacity: 0.02;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -0.6s;\n          animation-delay: -0.6s;\n  transform: translate3d(35vw, 86vh, 41px);\n  background: #262cd9;\n}\n@-webkit-keyframes particle-animation-7 {\n  100% {\n    transform: translate3d(78vw, 59vh, 60px);\n  }\n}\n@keyframes particle-animation-7 {\n  100% {\n    transform: translate3d(78vw, 59vh, 60px);\n  }\n}\n.banner-section .particle:nth-child(7) {\n  -webkit-animation: particle-animation-7 60s infinite;\n          animation: particle-animation-7 60s infinite;\n  opacity: 0.88;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -0.7s;\n          animation-delay: -0.7s;\n  transform: translate3d(10vw, 75vh, 40px);\n  background: #d9a626;\n}\n@-webkit-keyframes particle-animation-8 {\n  100% {\n    transform: translate3d(86vw, 64vh, 69px);\n  }\n}\n@keyframes particle-animation-8 {\n  100% {\n    transform: translate3d(86vw, 64vh, 69px);\n  }\n}\n.banner-section .particle:nth-child(8) {\n  -webkit-animation: particle-animation-8 60s infinite;\n          animation: particle-animation-8 60s infinite;\n  opacity: 0.53;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -0.8s;\n          animation-delay: -0.8s;\n  transform: translate3d(40vw, 88vh, 84px);\n  background: #d926be;\n}\n@-webkit-keyframes particle-animation-9 {\n  100% {\n    transform: translate3d(62vw, 70vh, 66px);\n  }\n}\n@keyframes particle-animation-9 {\n  100% {\n    transform: translate3d(62vw, 70vh, 66px);\n  }\n}\n.banner-section .particle:nth-child(9) {\n  -webkit-animation: particle-animation-9 60s infinite;\n          animation: particle-animation-9 60s infinite;\n  opacity: 0.74;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -0.9s;\n          animation-delay: -0.9s;\n  transform: translate3d(57vw, 47vh, 31px);\n  background: #d9bb26;\n}\n@-webkit-keyframes particle-animation-10 {\n  100% {\n    transform: translate3d(41vw, 7vh, 82px);\n  }\n}\n@keyframes particle-animation-10 {\n  100% {\n    transform: translate3d(41vw, 7vh, 82px);\n  }\n}\n.banner-section .particle:nth-child(10) {\n  -webkit-animation: particle-animation-10 60s infinite;\n          animation: particle-animation-10 60s infinite;\n  opacity: 0.66;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -1s;\n          animation-delay: -1s;\n  transform: translate3d(37vw, 14vh, 26px);\n  background: #d9269d;\n}\n@-webkit-keyframes particle-animation-11 {\n  100% {\n    transform: translate3d(61vw, 87vh, 42px);\n  }\n}\n@keyframes particle-animation-11 {\n  100% {\n    transform: translate3d(61vw, 87vh, 42px);\n  }\n}\n.banner-section .particle:nth-child(11) {\n  -webkit-animation: particle-animation-11 60s infinite;\n          animation: particle-animation-11 60s infinite;\n  opacity: 0.26;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -1.1s;\n          animation-delay: -1.1s;\n  transform: translate3d(31vw, 53vh, 98px);\n  background: #d926b8;\n}\n@-webkit-keyframes particle-animation-12 {\n  100% {\n    transform: translate3d(2vw, 65vh, 92px);\n  }\n}\n@keyframes particle-animation-12 {\n  100% {\n    transform: translate3d(2vw, 65vh, 92px);\n  }\n}\n.banner-section .particle:nth-child(12) {\n  -webkit-animation: particle-animation-12 60s infinite;\n          animation: particle-animation-12 60s infinite;\n  opacity: 0.6;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -1.2s;\n          animation-delay: -1.2s;\n  transform: translate3d(59vw, 3vh, 36px);\n  background: #d92632;\n}\n@-webkit-keyframes particle-animation-13 {\n  100% {\n    transform: translate3d(16vw, 36vh, 46px);\n  }\n}\n@keyframes particle-animation-13 {\n  100% {\n    transform: translate3d(16vw, 36vh, 46px);\n  }\n}\n.banner-section .particle:nth-child(13) {\n  -webkit-animation: particle-animation-13 60s infinite;\n          animation: particle-animation-13 60s infinite;\n  opacity: 0.09;\n  height: 10px;\n  width: 10px;\n  -webkit-animation-delay: -1.3s;\n          animation-delay: -1.3s;\n  transform: translate3d(18vw, 8vh, 2px);\n  background: #26d9c4;\n}\n@-webkit-keyframes particle-animation-14 {\n  100% {\n    transform: translate3d(85vw, 90vh, 56px);\n  }\n}\n@keyframes particle-animation-14 {\n  100% {\n    transform: translate3d(85vw, 90vh, 56px);\n  }\n}\n.banner-section .particle:nth-child(14) {\n  -webkit-animation: particle-animation-14 60s infinite;\n          animation: particle-animation-14 60s infinite;\n  opacity: 0.07;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -1.4s;\n          animation-delay: -1.4s;\n  transform: translate3d(22vw, 60vh, 10px);\n  background: #6b26d9;\n}\n@-webkit-keyframes particle-animation-15 {\n  100% {\n    transform: translate3d(47vw, 48vh, 28px);\n  }\n}\n@keyframes particle-animation-15 {\n  100% {\n    transform: translate3d(47vw, 48vh, 28px);\n  }\n}\n.banner-section .particle:nth-child(15) {\n  -webkit-animation: particle-animation-15 60s infinite;\n          animation: particle-animation-15 60s infinite;\n  opacity: 0.54;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -1.5s;\n          animation-delay: -1.5s;\n  transform: translate3d(8vw, 65vh, 87px);\n  background: #26d9d9;\n}\n@-webkit-keyframes particle-animation-16 {\n  100% {\n    transform: translate3d(10vw, 16vh, 94px);\n  }\n}\n@keyframes particle-animation-16 {\n  100% {\n    transform: translate3d(10vw, 16vh, 94px);\n  }\n}\n.banner-section .particle:nth-child(16) {\n  -webkit-animation: particle-animation-16 60s infinite;\n          animation: particle-animation-16 60s infinite;\n  opacity: 0.06;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -1.6s;\n          animation-delay: -1.6s;\n  transform: translate3d(39vw, 35vh, 61px);\n  background: #c426d9;\n}\n@-webkit-keyframes particle-animation-17 {\n  100% {\n    transform: translate3d(26vw, 22vh, 89px);\n  }\n}\n@keyframes particle-animation-17 {\n  100% {\n    transform: translate3d(26vw, 22vh, 89px);\n  }\n}\n.banner-section .particle:nth-child(17) {\n  -webkit-animation: particle-animation-17 60s infinite;\n          animation: particle-animation-17 60s infinite;\n  opacity: 0.41;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -1.7s;\n          animation-delay: -1.7s;\n  transform: translate3d(57vw, 20vh, 45px);\n  background: #d926b5;\n}\n@-webkit-keyframes particle-animation-18 {\n  100% {\n    transform: translate3d(26vw, 67vh, 32px);\n  }\n}\n@keyframes particle-animation-18 {\n  100% {\n    transform: translate3d(26vw, 67vh, 32px);\n  }\n}\n.banner-section .particle:nth-child(18) {\n  -webkit-animation: particle-animation-18 60s infinite;\n          animation: particle-animation-18 60s infinite;\n  opacity: 0.04;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -1.8s;\n          animation-delay: -1.8s;\n  transform: translate3d(28vw, 74vh, 70px);\n  background: #d926af;\n}\n@-webkit-keyframes particle-animation-19 {\n  100% {\n    transform: translate3d(72vw, 61vh, 62px);\n  }\n}\n@keyframes particle-animation-19 {\n  100% {\n    transform: translate3d(72vw, 61vh, 62px);\n  }\n}\n.banner-section .particle:nth-child(19) {\n  -webkit-animation: particle-animation-19 60s infinite;\n          animation: particle-animation-19 60s infinite;\n  opacity: 0.98;\n  height: 10px;\n  width: 10px;\n  -webkit-animation-delay: -1.9s;\n          animation-delay: -1.9s;\n  transform: translate3d(71vw, 42vh, 95px);\n  background: #d92697;\n}\n@-webkit-keyframes particle-animation-20 {\n  100% {\n    transform: translate3d(56vw, 3vh, 78px);\n  }\n}\n@keyframes particle-animation-20 {\n  100% {\n    transform: translate3d(56vw, 3vh, 78px);\n  }\n}\n.banner-section .particle:nth-child(20) {\n  -webkit-animation: particle-animation-20 60s infinite;\n          animation: particle-animation-20 60s infinite;\n  opacity: 0.79;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -2s;\n          animation-delay: -2s;\n  transform: translate3d(62vw, 44vh, 67px);\n  background: #cdd926;\n}\n@-webkit-keyframes particle-animation-21 {\n  100% {\n    transform: translate3d(79vw, 35vh, 95px);\n  }\n}\n@keyframes particle-animation-21 {\n  100% {\n    transform: translate3d(79vw, 35vh, 95px);\n  }\n}\n.banner-section .particle:nth-child(21) {\n  -webkit-animation: particle-animation-21 60s infinite;\n          animation: particle-animation-21 60s infinite;\n  opacity: 0.1;\n  height: 10px;\n  width: 10px;\n  -webkit-animation-delay: -2.1s;\n          animation-delay: -2.1s;\n  transform: translate3d(8vw, 55vh, 64px);\n  background: #5926d9;\n}\n@-webkit-keyframes particle-animation-22 {\n  100% {\n    transform: translate3d(86vw, 86vh, 30px);\n  }\n}\n@keyframes particle-animation-22 {\n  100% {\n    transform: translate3d(86vw, 86vh, 30px);\n  }\n}\n.banner-section .particle:nth-child(22) {\n  -webkit-animation: particle-animation-22 60s infinite;\n          animation: particle-animation-22 60s infinite;\n  opacity: 0.43;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2.2s;\n          animation-delay: -2.2s;\n  transform: translate3d(19vw, 42vh, 86px);\n  background: #4a26d9;\n}\n@-webkit-keyframes particle-animation-23 {\n  100% {\n    transform: translate3d(14vw, 58vh, 50px);\n  }\n}\n@keyframes particle-animation-23 {\n  100% {\n    transform: translate3d(14vw, 58vh, 50px);\n  }\n}\n.banner-section .particle:nth-child(23) {\n  -webkit-animation: particle-animation-23 60s infinite;\n          animation: particle-animation-23 60s infinite;\n  opacity: 0.32;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -2.3s;\n          animation-delay: -2.3s;\n  transform: translate3d(51vw, 76vh, 14px);\n  background: #26d959;\n}\n@-webkit-keyframes particle-animation-24 {\n  100% {\n    transform: translate3d(73vw, 44vh, 49px);\n  }\n}\n@keyframes particle-animation-24 {\n  100% {\n    transform: translate3d(73vw, 44vh, 49px);\n  }\n}\n.banner-section .particle:nth-child(24) {\n  -webkit-animation: particle-animation-24 60s infinite;\n          animation: particle-animation-24 60s infinite;\n  opacity: 1;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -2.4s;\n          animation-delay: -2.4s;\n  transform: translate3d(67vw, 17vh, 99px);\n  background: #d92f26;\n}\n@-webkit-keyframes particle-animation-25 {\n  100% {\n    transform: translate3d(48vw, 48vh, 9px);\n  }\n}\n@keyframes particle-animation-25 {\n  100% {\n    transform: translate3d(48vw, 48vh, 9px);\n  }\n}\n.banner-section .particle:nth-child(25) {\n  -webkit-animation: particle-animation-25 60s infinite;\n          animation: particle-animation-25 60s infinite;\n  opacity: 0.74;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -2.5s;\n          animation-delay: -2.5s;\n  transform: translate3d(49vw, 35vh, 5px);\n  background: #2629d9;\n}\n@-webkit-keyframes particle-animation-26 {\n  100% {\n    transform: translate3d(8vw, 83vh, 16px);\n  }\n}\n@keyframes particle-animation-26 {\n  100% {\n    transform: translate3d(8vw, 83vh, 16px);\n  }\n}\n.banner-section .particle:nth-child(26) {\n  -webkit-animation: particle-animation-26 60s infinite;\n          animation: particle-animation-26 60s infinite;\n  opacity: 1;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -2.6s;\n          animation-delay: -2.6s;\n  transform: translate3d(15vw, 12vh, 56px);\n  background: #26d99d;\n}\n@-webkit-keyframes particle-animation-27 {\n  100% {\n    transform: translate3d(2vw, 28vh, 21px);\n  }\n}\n@keyframes particle-animation-27 {\n  100% {\n    transform: translate3d(2vw, 28vh, 21px);\n  }\n}\n.banner-section .particle:nth-child(27) {\n  -webkit-animation: particle-animation-27 60s infinite;\n          animation: particle-animation-27 60s infinite;\n  opacity: 0.21;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -2.7s;\n          animation-delay: -2.7s;\n  transform: translate3d(13vw, 23vh, 90px);\n  background: #26d929;\n}\n@-webkit-keyframes particle-animation-28 {\n  100% {\n    transform: translate3d(56vw, 72vh, 84px);\n  }\n}\n@keyframes particle-animation-28 {\n  100% {\n    transform: translate3d(56vw, 72vh, 84px);\n  }\n}\n.banner-section .particle:nth-child(28) {\n  -webkit-animation: particle-animation-28 60s infinite;\n          animation: particle-animation-28 60s infinite;\n  opacity: 0.44;\n  height: 10px;\n  width: 10px;\n  -webkit-animation-delay: -2.8s;\n          animation-delay: -2.8s;\n  transform: translate3d(84vw, 86vh, 4px);\n  background: #38d926;\n}\n@-webkit-keyframes particle-animation-29 {\n  100% {\n    transform: translate3d(41vw, 40vh, 34px);\n  }\n}\n@keyframes particle-animation-29 {\n  100% {\n    transform: translate3d(41vw, 40vh, 34px);\n  }\n}\n.banner-section .particle:nth-child(29) {\n  -webkit-animation: particle-animation-29 60s infinite;\n          animation: particle-animation-29 60s infinite;\n  opacity: 0.11;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -2.9s;\n          animation-delay: -2.9s;\n  transform: translate3d(44vw, 63vh, 24px);\n  background: #26d94a;\n}\n@-webkit-keyframes particle-animation-30 {\n  100% {\n    transform: translate3d(25vw, 50vh, 58px);\n  }\n}\n@keyframes particle-animation-30 {\n  100% {\n    transform: translate3d(25vw, 50vh, 58px);\n  }\n}\n.banner-section .particle:nth-child(30) {\n  -webkit-animation: particle-animation-30 60s infinite;\n          animation: particle-animation-30 60s infinite;\n  opacity: 0.89;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -3s;\n          animation-delay: -3s;\n  transform: translate3d(59vw, 1vh, 49px);\n  background: #d9c126;\n}\n\n.banner {\n  min-height: 100vh;\n}\n.banner .intro h1 {\n  font-size: 45px;\n}\n.banner .intro h5 {\n  font-size: 20px;\n}\n.banner .intro p {\n  max-width: 350px;\n  margin-top: 15px;\n}\n.banner .banner-img {\n  margin-right: -200px;\n  margin-left: -150px;\n  position: relative;\n  z-index: -1;\n}\n\n.about-section {\n  padding: 100px 0;\n  position: relative;\n}\n.about-section:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  width: 100%;\n  height: 160%;\n  top: 0;\n  transform: skewY(-12deg);\n  background: #f6f9fc;\n}\n.about-section .about-heading {\n  text-align: right;\n  padding-right: 15px;\n  margin-bottom: 25px;\n  color: #245cd1;\n  border-right: 5px solid #dddddd;\n}\n.about-section .about-heading h2 {\n  margin: 0;\n}\n.about-section .my-photo {\n  border-radius: 20px;\n  max-width: 400px;\n  overflow: hidden;\n  box-shadow: 10px 15px 30px 1px #ddd;\n}\n.about-section .about-me .tabs {\n  border-bottom: 1px solid #eee;\n}\n.about-section .about-me .tabs li a {\n  padding: 8px 25px;\n  border-bottom: 2px solid transparent;\n  color: #444;\n}\n.about-section .about-me .tabs li a:hover {\n  border-color: #245cd1;\n  color: #245cd1;\n}\n.about-section .about-me .tabs li a.active {\n  color: #245cd1;\n  border-color: #245cd1;\n}\n.about-section .about-me nav .nav-tabs .nav-link {\n  border: none;\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n  padding: 15px 20px;\n  color: #444;\n  border-color: transparent;\n  position: relative;\n}\n.about-section .about-me nav .nav-tabs .nav-link::after {\n  content: \"\";\n  position: absolute;\n  width: 0%;\n  height: 2px;\n  background-color: #245cd1;\n  bottom: 0;\n  left: 0;\n  z-index: 5;\n  transition: all 0.4s ease;\n}\n.about-section .about-me nav .nav-tabs .nav-link:hover {\n  color: #245cd1;\n}\n.about-section .about-me nav .nav-tabs .nav-link:hover::after {\n  width: 100%;\n}\n.about-section .about-me nav .nav-tabs .nav-link.active {\n  color: #245cd1;\n  background-color: transparent;\n}\n.about-section .about-me nav .nav-tabs .nav-link.active::after {\n  width: 100%;\n}\n.about-section .about-me div.tab-pane {\n  padding-top: 25px;\n}\n.about-section .about-me .skill-box {\n  margin-bottom: 25px;\n}\n.about-section .about-me .skill-box h6 {\n  color: #444;\n  font-weight: 700;\n}\n.about-section .about-me .skill-box div {\n  margin-left: -5px;\n}\n.about-section .about-me .skill-box div span {\n  display: inline-block;\n  background-color: #e1e9fa;\n  color: #7499e7;\n  padding: 3px 10px;\n  border-radius: 2px;\n  margin: 5px;\n  white-space: pre;\n  cursor: default;\n}\n.about-section .about-me .skill-box div span:hover {\n  color: #245cd1;\n}\n.about-section .tabs-content {\n  margin-top: 20px;\n}\n\n.about-section.active {\n  overflow: hidden;\n}\n\n.services-section {\n  min-height: 600px;\n  background-color: #fff;\n  padding: 100px 0px;\n}\n.services-section .section-heading {\n  margin-top: 100px;\n}\n.services-section .section-heading p {\n  max-width: 300px;\n}\n.services-section .icon {\n  height: 50px;\n  width: 50px;\n  line-height: 50px;\n  text-align: center;\n  background-color: #245cd1;\n  border-radius: 50%;\n  outline-offset: 10px;\n  margin: 25px 10px 55px 10px;\n  outline: 2px dashed #245cd1;\n  color: #fff;\n}\n.services-section .icon.bg-white {\n  background-color: #fff;\n}\n.services-section .counter {\n  margin-top: 45px;\n}\n.services-section .counter .item {\n  margin-bottom: 30px;\n}\n.services-section .counter .item h4 {\n  color: #222;\n  margin-bottom: 0;\n}\n.services-section .counter .item p {\n  color: #444;\n  margin-bottom: 0;\n  max-width: 100px;\n}\n.services-section .services .counter .item {\n  padding: 15px 0;\n}\n.services-section .services .my-services .item {\n  width: 50%;\n  padding: 15px;\n}\n.services-section .services .my-services .item .item-info {\n  border-radius: 5px;\n  min-height: 300px;\n  padding: 30px;\n  transition: all 0.4s ease;\n  text-align: center;\n}\n.services-section .services .my-services .item .item-info h3 {\n  font-size: 20px;\n  margin-bottom: 10px;\n  text-align: center;\n  text-transform: uppercase;\n}\n.services-section .services .my-services .item .item-info p {\n  color: #666;\n}\n.services-section .services .my-services .item .item-info:hover {\n  transform: scale(1.07);\n}\n.services-section .services .my-services .item .item-info .icon {\n  margin: 10px auto 45px;\n}\n.services-section .services .my-services .item:nth-child(1) .item-info {\n  background-color: #E8F0FF;\n  color: #448AFF;\n}\n.services-section .services .my-services .item:nth-child(2) {\n  margin-top: 80px;\n}\n.services-section .services .my-services .item:nth-child(2) .item-info {\n  background-color: #FFF5EE;\n  color: #FF9B53;\n}\n.services-section .services .my-services .item:nth-child(3) {\n  margin-top: -80px;\n}\n.services-section .services .my-services .item:nth-child(3) .item-info {\n  background-color: #E6FAF1;\n  color: #06D79C;\n}\n.services-section .services .my-services .item:nth-child(4) .item-info {\n  background-color: #EEEBFF;\n  color: #543BCC;\n}\n\n.portfolio-section {\n  padding: 100px 0;\n}\n.portfolio-section .portfolio-heading {\n  margin-bottom: 50px;\n}\n.portfolio-section .section-heading {\n  text-align: left;\n  padding-left: 15px;\n  color: #245cd1;\n  border-left: 5px solid #dddddd;\n}\n.portfolio-section .section-heading h2 {\n  margin: 0;\n}\n.portfolio-section .portfolio-menu li {\n  display: inline-block;\n}\n.portfolio-section .portfolio-menu li a {\n  padding: 10px 15px;\n  border-bottom: 1px solid transparent;\n  color: #222;\n}\n.portfolio-section .portfolio-menu li a.active {\n  border-bottom: 1px solid #245cd1;\n  color: #245cd1;\n}\n.portfolio-section .portfolio-list .item {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);\n  border-radius: 5px;\n  transition: all 0.4s ease;\n  margin-bottom: 30px;\n}\n.portfolio-section .portfolio-list .item .preview {\n  height: 220px;\n  overflow: hidden;\n}\n.portfolio-section .portfolio-list .item .preview img {\n  transform: scale(1.1);\n  transition: all 0.4s ease;\n}\n.portfolio-section .portfolio-list .item .details {\n  padding: 30px;\n  transition: all 0.4s ease;\n}\n.portfolio-section .portfolio-list .item .details small {\n  color: #959595;\n}\n.portfolio-section .portfolio-list .item .details h6 {\n  color: #484848;\n}\n.portfolio-section .portfolio-list .item .details a {\n  padding: 5px 20px;\n  border: 1px solid #245cd1;\n  border-radius: 20px;\n  margin: 0 auto;\n  margin-top: 20px;\n}\n.portfolio-section .portfolio-list .item .details a:hover {\n  background-color: #245cd1;\n  color: #fff;\n}\n.portfolio-section .portfolio-list .item:hover {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.3);\n}\n.portfolio-section .portfolio-list .item:hover .details h6 {\n  color: #222;\n}\n\n.promote-section {\n  padding: 100px 0px;\n  background-color: #245cd1;\n}\n.promote-section .promote-content h2 {\n  color: #fff;\n  margin-bottom: 15px;\n}\n.promote-section .promote-content p {\n  color: #e6e6e6;\n  max-width: 300px;\n}\n.promote-section .promote-content .buttons a:hover {\n  box-shadow: none;\n  background-color: #fff;\n}\n.promote-section .content-preview > div {\n  max-width: 400px;\n  border-radius: 10px;\n  overflow: hidden;\n  transform: rotate(7deg);\n}\n\n.testiomonial-section {\n  padding: 100px 0;\n  background-image: url(" + escape(__webpack_require__(/*! ../../images/testimonial.jpg */ "./resources/js/images/testimonial.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 1;\n}\n.testiomonial-section::after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(36, 92, 209, 0.92);\n  z-index: -1;\n}\n.testiomonial-section .section-heading {\n  margin-bottom: 45px;\n  color: #fff;\n  text-align: center;\n}\n.testiomonial-section .carousel-indicators li {\n  height: 20px;\n  border-radius: 50%;\n  width: 20px;\n  margin-bottom: -10px;\n}\n.testiomonial-section .item {\n  max-width: 800px;\n  background-color: #fff;\n  padding: 30px 30px 30px;\n  border-radius: 5px;\n  position: relative;\n  text-align: center;\n  margin: 50px auto 70px;\n}\n.testiomonial-section .item .client-avatar {\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  overflow: hidden;\n  position: absolute;\n  top: 0%;\n  left: 50%;\n  transform: translateX(-50%) translateY(-50%);\n  background-color: white;\n  box-shadow: 0px 2px 1px #ddd;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.testiomonial-section .item .testimonial-description {\n  padding-top: 45px;\n}\n.testiomonial-section .item .testimonial-description p {\n  margin-bottom: 25px;\n  font-size: 16px;\n  color: #444;\n}\n.testiomonial-section .item .testimonial-description .client-intro h6 {\n  margin-bottom: 0;\n  color: #245cd1;\n}\n.testiomonial-section .item .testimonial-description .client-intro i {\n  color: #444;\n  font-size: 14px;\n}\n\n.contact-section {\n  padding: 100px 0 150px;\n}\n.contact-section .contact-heading {\n  color: #245cd1;\n  margin-bottom: 95px;\n}\n.contact-section .contact-heading h2 {\n  color: #245cd1;\n  margin: 0;\n}\n.contact-section .contact-heading p {\n  max-width: 300px;\n  margin: auto;\n  color: #444;\n}\n.contact-section .contact-details {\n  margin-right: 200px;\n  position: relative;\n  z-index: 1;\n}\n.contact-section .contact-details::after {\n  position: absolute;\n  content: \"\";\n  width: calc(100% + 20px);\n  height: calc(100% + 100px);\n  background-image: linear-gradient(to right, #6493fa, #245cd1);\n  z-index: -1;\n  top: -50px;\n  left: 180px;\n}\n.contact-section .contact-details .details-left {\n  background-color: #245cd1;\n  width: 40%;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.contact-section .contact-details .details-right {\n  width: 60%;\n}\n.contact-section .contact-details .details-right .contact-form {\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n.contact-section form.contact-form {\n  padding: 30px;\n  background-color: #fff;\n}\n.contact-section form.contact-form input, .contact-section form.contact-form textarea {\n  width: 100%;\n  margin-bottom: 10px;\n  border: 1px solid #ddd;\n  border-radius: 2px;\n  padding: 7px 15px;\n}\n.contact-section form.contact-form input:focus, .contact-section form.contact-form textarea:focus {\n  border-color: #245cd1;\n}\n.contact-section form.contact-form button.send-message {\n  padding: 10px 25px;\n  border-radius: 5px;\n  color: #f2f2f2;\n  background-image: linear-gradient(to right, #6a64e7, #443dc9);\n  border: none;\n  cursor: pointer;\n}\n.contact-section form.contact-form button.send-message:hover {\n  background-color: #245cd1;\n  background-image: linear-gradient(to right, #4c80f1, #245cd1);\n}\n.contact-section .contact-info {\n  padding: 30px;\n  background-color: #fff;\n  border-radius: 5px;\n}\n\n.connect-info {\n  padding: 30px;\n  background-color: #245cd1;\n}\n.connect-info .info-item {\n  margin-bottom: 20px;\n}\n.connect-info .info-item strong {\n  color: #fff;\n}\n.connect-info .info-item p {\n  color: #e6e6e6;\n}\n.connect-info .info-item ul.find-me li {\n  display: inline-block;\n}\n.connect-info .info-item ul.find-me li a {\n  height: 40px;\n  width: 40px;\n  line-height: 40px;\n  text-align: center;\n  border-radius: 2px;\n  color: #fff;\n  background-color: #5e89e3;\n  margin-right: 5px;\n}\n\n.sub-footer {\n  padding: 100px 0;\n  background-color: #293044;\n  color: #fff;\n}\n.sub-footer ul > li {\n  list-style: square;\n  margin-left: 20px;\n  transition: all 0.4s ease;\n}\n.sub-footer ul > li:hover {\n  margin-left: 25px;\n}\n.sub-footer ul > li a {\n  color: #bfbfbf;\n}\n.sub-footer ul > li a:hover {\n  color: #fff;\n}\n\n.footer-section {\n  background-color: #0E1833;\n  padding: 20px 0;\n  color: #fff;\n}\n.footer-section .footer-text a {\n  color: #fdc800;\n}\n\n.products {\n  padding: 100px 0 120px;\n  background-color: #fff;\n}\n.products .heading {\n  color: #245cd1;\n  margin-bottom: 50px;\n}\n.products .heading h2 {\n  color: #245cd1;\n  margin: 0;\n}\n.products .heading p {\n  max-width: 300px;\n  margin: auto;\n  color: #444;\n}\n.products .product-box {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);\n  border-radius: 6px;\n  overflow: hidden;\n  margin-bottom: 30px;\n  transition: all 0.4s ease;\n}\n.products .product-box .image {\n  height: 300px;\n}\n.products .product-box .image img {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 100%;\n}\n.products .product-box .info {\n  padding: 20px 30px;\n}\n.products .product-box .info .title a {\n  font-size: 16px;\n  font-weight: 600;\n}\n.products .product-box .info .title p {\n  margin: 0;\n  font-size: 13px;\n  color: #666;\n}\n.products .product-box .info .price p {\n  margin: 0;\n  padding: 1px 15px;\n  background-color: #245cd1;\n  color: #fff;\n  border-radius: 3px;\n  font-size: 12px;\n}\n.products .product-box .info-footer {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 10px;\n}\n.products .product-box:hover {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.3);\n}\n\nsection.breadcrum {\n  text-align: center;\n  padding: 100px;\n  background-image: url(" + escape(__webpack_require__(/*! ../../images/banner3.jpg */ "./resources/js/images/banner3.jpg")) + ");\n  background-size: cover;\n  background-position: top center;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 1;\n}\nsection.breadcrum::after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\nsection.breadcrum .heading h2 {\n  font-weight: 700;\n}\nsection.breadcrum .heading a {\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 600;\n  color: #444;\n}\nsection.breadcrum .heading i {\n  margin-left: 8px;\n  margin-right: 8px;\n  font-size: 14px;\n  color: #444;\n}\n\nsection.single-product {\n  padding: 100px 0;\n}\nsection.single-product .product-image {\n  padding: 10px;\n  border: 1px solid #ddd;\n}\nsection.single-product .description {\n  margin-top: 30px;\n  padding: 10px;\n  border: 1px solid #ddd;\n}\nsection.single-product .template-box {\n  border: 1px solid #ddd;\n  border-radius: 3px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 200px;\n  margin-bottom: 20px;\n}\nsection.single-product .template-box a {\n  margin-bottom: 10px;\n  text-align: center;\n  color: white;\n  background-color: #245cd1;\n  text-transform: uppercase;\n  min-width: 180px;\n  padding: 10px 0;\n  border-radius: 3px;\n  font-weight: 600;\n}\nsection.single-product .template-box a i {\n  margin-right: 5px;\n}\nsection.single-product .template-box a.demo {\n  background-color: #fdc800;\n  color: #222;\n}\nsection.single-product .template-box a:hover {\n  box-shadow: 0px 2px 4px 0px rgba(14, 27, 56, 0.4);\n}\nsection.single-product .sidebar-box {\n  padding: 20px;\n  border: 1px solid #ddd;\n  border-radius: 3px;\n}\nsection.single-product .sidebar-box h3 {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 15px;\n}\nsection.single-product .sidebar-box .content table {\n  width: 100%;\n  border: 1px solid #ddd;\n}\nsection.single-product .sidebar-box .content table tr {\n  border-bottom: 1px solid #ddd;\n}\nsection.single-product .sidebar-box .content table tr td {\n  width: 60%;\n  padding: 7px 10px;\n  font-size: 14px;\n}\nsection.single-product .sidebar-box .content table tr td:first-child {\n  width: 40%;\n}\n\nsection.not-found {\n  padding: 160px 0;\n}\n\n@media (min-width: 768px) and (max-width: 991px) {\n  .banner-section header .menu-part .logo {\n    max-width: 40px;\n    margin-right: 10px;\n  }\n\n  .banner-section header .menu-part li a {\n    padding: 20px 5px;\n  }\n  .banner-section header .menu-part li a.hire-me {\n    padding: 5px 10px;\n  }\n\n  header .menu-part li a {\n    padding: 20px 8px;\n  }\n\n  header .menu-part li a.hire-me {\n    margin-left: 0;\n  }\n\n  .banner .banner-img {\n    margin-right: -113px;\n    margin-left: -191px;\n    margin-bottom: -61px;\n    transform: rotate(-4deg);\n  }\n\n  .services-section .services .item2 {\n    margin-top: 60px;\n  }\n\n  .services-section .services .item {\n    width: 50%;\n    padding: 5px;\n  }\n\n  .contact-section .contact-details {\n    margin-right: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  .services-section .counter .item {\n    margin-bottom: 25px;\n  }\n\n  .services-section .section-heading {\n    margin-top: 30px;\n  }\n}\n@media (max-width: 767px) {\n  .menu-part {\n    flex-wrap: wrap;\n  }\n  .menu-part .logo {\n    order: 1;\n  }\n  .menu-part .mobile-nav {\n    order: 3;\n    display: block;\n    background-color: #245cd1;\n    width: 100%;\n    padding: 20px 0;\n    position: relative;\n  }\n  .menu-part .mobile-nav::after {\n    position: absolute;\n    content: \"\";\n    top: -53px;\n    right: 0px;\n    font-family: \"Font Awesome 5 Free\";\n    font-weight: 900;\n    content: \"\\F0C9\";\n    height: 45px;\n    width: 50px;\n    border: 1px solid #fff;\n    color: #fff;\n    line-height: 45px;\n    text-align: center;\n    border-radius: 1px;\n    background-color: #245cd1;\n    border-radius: 3px;\n  }\n  .menu-part .mobile-nav li {\n    display: block;\n  }\n  .menu-part .mobile-nav li a {\n    color: #fff;\n    padding: 10px 30px;\n  }\n  .menu-part .right {\n    order: 2;\n    padding-right: 50px;\n  }\n\n  header .menu-part li a.hire-me {\n    display: none;\n  }\n\n  .contact-details.d-flex {\n    flex-wrap: wrap;\n    margin-right: 0;\n  }\n\n  .contact-section .contact-details .details-left {\n    width: 100%;\n  }\n\n  .contact-section .contact-details .details-right {\n    width: 100%;\n  }\n\n  .contact-section .contact-details::after {\n    width: calc(100% + 100px);\n    height: calc(100% - 100px);\n    top: 150px;\n    left: -50px;\n  }\n\n  .sub-footer .item:nth-child(1) {\n    margin-bottom: 30px;\n  }\n\n  .promote-section .promote-content {\n    margin-top: 30px;\n    order: 2;\n  }\n\n  .promote-section .content-preview {\n    justify-content: flex-start !important;\n  }\n  .promote-section .content-preview > div {\n    transform: rotate(0deg);\n  }\n\n  .sub-footer .item:nth-child(4) {\n    margin-bottom: 0;\n  }\n\n  .sub-footer .item:nth-child(3) {\n    margin-bottom: 0;\n  }\n\n  .sub-footer .item {\n    margin-bottom: 30px;\n  }\n\n  .services-section .services .item {\n    width: 100%;\n    padding: 0px;\n  }\n\n  .services-section .counter .item p {\n    max-width: 100%;\n  }\n\n  .services-section .services .item2 {\n    margin-top: 0px;\n  }\n\n  .services-section .services .item3 {\n    margin-top: 0px;\n  }\n\n  .my-services .item {\n    margin-bottom: 30px;\n  }\n\n  .my-services .item:last-child {\n    margin-bottom: 0;\n  }\n\n  .services-section .counter {\n    margin-top: 25px;\n  }\n\n  .services-section .section-heading {\n    margin-top: 0px;\n  }\n\n  .my-photo {\n    margin: 0 auto 50px;\n  }\n\n  .about-section .about-heading {\n    text-align: center;\n    padding-right: 0;\n    margin-bottom: 25px;\n    color: #245cd1;\n    border-right: none;\n  }\n\n  .banner .intro h1 {\n    font-size: 35px;\n  }\n\n  .banner-preview {\n    display: none;\n  }\n}\n@media (max-width: 575px) {\n  .services-section .services .my-services .item {\n    width: 100%;\n  }\n\n  .services-section .services .my-services .item2 {\n    margin-top: 0px;\n  }\n\n  .services-section .services .my-services .item3 {\n    margin-top: 0px;\n  }\n\n  .my-services .item {\n    margin-bottom: 0px;\n  }\n\n  .sub-footer .item:nth-child(3) {\n    margin-bottom: 30px;\n  }\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* Normalize start */\n* {\n  padding: 0;\n  margin: 0;\n  outline: 0;\n}\n\nhtml,\nbody {\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n  overflow-x: hidden;\n}\n\nimg {\n  border: 0px;\n}\n\nol,\nul,\nli {\n  list-style-type: none;\n  margin: 0;\n}\n\na {\n  color: #245cd1;\n  display: inline-block;\n  transition: all 0.4s ease;\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n}\n\na:hover,\na:focus {\n  color: #fdc800;\n  text-decoration: none;\n}\n\np {\n  font-size: 14px;\n  line-height: 24px;\n  margin: 0;\n  font-family: \"Open Sans\", sans-serif;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n}\n\n@media (min-width: 1200px) {\n  .container {\n    max-width: 1170px;\n  }\n}\n/* Normalize end */\n/* Reusable style start */\n.animate {\n  transition: all 0.4s ease;\n}\n\n.buttons {\n  margin-top: 45px;\n}\n.buttons button, .buttons a {\n  padding: 10px 25px;\n  border-radius: 5px;\n  color: #f2f2f2;\n  background-image: linear-gradient(to right, #6a64e7, #443dc9);\n}\n.buttons button:first-child, .buttons a:first-child {\n  margin-right: 10px;\n  background-color: #245cd1;\n  background-image: linear-gradient(to right, #4c80f1, #245cd1);\n}\n.buttons button:hover, .buttons a:hover {\n  box-shadow: 0px 5px 10px 1px #ccc;\n  color: #fff;\n}\n.buttons button {\n  border: 0;\n  cursor: pointer;\n}\n.buttons button[disabled=disabled] {\n  cursor: default;\n  background-color: #ccc;\n  background-image: linear-gradient(to right, #d3d3d3, #acacac);\n  color: gray;\n}\n.buttons button[disabled=disabled]:hover {\n  box-shadow: 0px 0px #ccc;\n}\n\n/* header section */\nheader.active {\n  background-color: #245cd1;\n}\nheader.active .menu-part li a {\n  color: #fff;\n}\nheader.active .menu-part .right li a {\n  font-weight: 400;\n}\nheader.active .menu-part .right li a.hire-me {\n  border: 1px solid #fff;\n}\nheader.active .menu-part .right li a.hire-me:hover {\n  background-color: #fff;\n  color: #245cd1;\n}\n\nheader + .about-section:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  width: 100%;\n  height: 130%;\n  top: 0;\n  transform: skewY(-12deg);\n  background: #f6f9fc;\n}\nheader .menu-part {\n  padding: 15px 0;\n}\nheader .menu-part .logo {\n  max-width: 40px;\n  margin-right: 10px;\n}\nheader .menu-part li {\n  display: inline-block;\n}\nheader .menu-part li a {\n  padding: 20px 10px;\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 700;\n  color: #245cd1;\n}\nheader .menu-part li a.hire-me {\n  border: 1px solid #245cd1;\n  padding: 5px 10px;\n  border-radius: 3px;\n  margin-left: 10px;\n}\nheader .menu-part li a.hire-me:hover {\n  background-color: #245cd1;\n  color: #fff;\n}\nheader .menu-part .right li a {\n  font-weight: 500;\n}\nheader .menu-part .right li a.hire-me {\n  font-weight: 700;\n}\n\n.breadcrumb {\n  padding: 30px 0;\n}\n\n.banner-section {\n  position: relative;\n}\n.banner-section header {\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: 99;\n}\n.banner-section .particle {\n  position: absolute;\n  border-radius: 50%;\n}\n@-webkit-keyframes particle-animation-1 {\n  100% {\n    transform: translate3d(38vw, 68vh, 55px);\n  }\n}\n@keyframes particle-animation-1 {\n  100% {\n    transform: translate3d(38vw, 68vh, 55px);\n  }\n}\n.banner-section .particle:nth-child(1) {\n  -webkit-animation: particle-animation-1 60s infinite;\n          animation: particle-animation-1 60s infinite;\n  opacity: 0.89;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -0.1s;\n          animation-delay: -0.1s;\n  transform: translate3d(4vw, 39vh, 68px);\n  background: #68d926;\n}\n@-webkit-keyframes particle-animation-2 {\n  100% {\n    transform: translate3d(89vw, 79vh, 42px);\n  }\n}\n@keyframes particle-animation-2 {\n  100% {\n    transform: translate3d(89vw, 79vh, 42px);\n  }\n}\n.banner-section .particle:nth-child(2) {\n  -webkit-animation: particle-animation-2 60s infinite;\n          animation: particle-animation-2 60s infinite;\n  opacity: 0.33;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -0.2s;\n          animation-delay: -0.2s;\n  transform: translate3d(3vw, 33vh, 34px);\n  background: #26d965;\n}\n@-webkit-keyframes particle-animation-3 {\n  100% {\n    transform: translate3d(48vw, 38vh, 71px);\n  }\n}\n@keyframes particle-animation-3 {\n  100% {\n    transform: translate3d(48vw, 38vh, 71px);\n  }\n}\n.banner-section .particle:nth-child(3) {\n  -webkit-animation: particle-animation-3 60s infinite;\n          animation: particle-animation-3 60s infinite;\n  opacity: 0.43;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n  transform: translate3d(39vw, 90vh, 73px);\n  background: #6526d9;\n}\n@-webkit-keyframes particle-animation-4 {\n  100% {\n    transform: translate3d(28vw, 52vh, 59px);\n  }\n}\n@keyframes particle-animation-4 {\n  100% {\n    transform: translate3d(28vw, 52vh, 59px);\n  }\n}\n.banner-section .particle:nth-child(4) {\n  -webkit-animation: particle-animation-4 60s infinite;\n          animation: particle-animation-4 60s infinite;\n  opacity: 0.6;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -0.4s;\n          animation-delay: -0.4s;\n  transform: translate3d(24vw, 75vh, 63px);\n  background: #d95026;\n}\n@-webkit-keyframes particle-animation-5 {\n  100% {\n    transform: translate3d(25vw, 46vh, 66px);\n  }\n}\n@keyframes particle-animation-5 {\n  100% {\n    transform: translate3d(25vw, 46vh, 66px);\n  }\n}\n.banner-section .particle:nth-child(5) {\n  -webkit-animation: particle-animation-5 60s infinite;\n          animation: particle-animation-5 60s infinite;\n  opacity: 0.71;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n  transform: translate3d(27vw, 76vh, 28px);\n  background: #26d959;\n}\n@-webkit-keyframes particle-animation-6 {\n  100% {\n    transform: translate3d(6vw, 11vh, 48px);\n  }\n}\n@keyframes particle-animation-6 {\n  100% {\n    transform: translate3d(6vw, 11vh, 48px);\n  }\n}\n.banner-section .particle:nth-child(6) {\n  -webkit-animation: particle-animation-6 60s infinite;\n          animation: particle-animation-6 60s infinite;\n  opacity: 0.97;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -0.6s;\n          animation-delay: -0.6s;\n  transform: translate3d(11vw, 21vh, 56px);\n  background: #26d997;\n}\n@-webkit-keyframes particle-animation-7 {\n  100% {\n    transform: translate3d(22vw, 65vh, 100px);\n  }\n}\n@keyframes particle-animation-7 {\n  100% {\n    transform: translate3d(22vw, 65vh, 100px);\n  }\n}\n.banner-section .particle:nth-child(7) {\n  -webkit-animation: particle-animation-7 60s infinite;\n          animation: particle-animation-7 60s infinite;\n  opacity: 0.82;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -0.7s;\n          animation-delay: -0.7s;\n  transform: translate3d(81vw, 20vh, 50px);\n  background: #6526d9;\n}\n@-webkit-keyframes particle-animation-8 {\n  100% {\n    transform: translate3d(18vw, 89vh, 41px);\n  }\n}\n@keyframes particle-animation-8 {\n  100% {\n    transform: translate3d(18vw, 89vh, 41px);\n  }\n}\n.banner-section .particle:nth-child(8) {\n  -webkit-animation: particle-animation-8 60s infinite;\n          animation: particle-animation-8 60s infinite;\n  opacity: 0.81;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -0.8s;\n          animation-delay: -0.8s;\n  transform: translate3d(61vw, 35vh, 48px);\n  background: #26d9d0;\n}\n@-webkit-keyframes particle-animation-9 {\n  100% {\n    transform: translate3d(5vw, 5vh, 1px);\n  }\n}\n@keyframes particle-animation-9 {\n  100% {\n    transform: translate3d(5vw, 5vh, 1px);\n  }\n}\n.banner-section .particle:nth-child(9) {\n  -webkit-animation: particle-animation-9 60s infinite;\n          animation: particle-animation-9 60s infinite;\n  opacity: 0.67;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -0.9s;\n          animation-delay: -0.9s;\n  transform: translate3d(34vw, 88vh, 2px);\n  background: #3526d9;\n}\n@-webkit-keyframes particle-animation-10 {\n  100% {\n    transform: translate3d(87vw, 41vh, 50px);\n  }\n}\n@keyframes particle-animation-10 {\n  100% {\n    transform: translate3d(87vw, 41vh, 50px);\n  }\n}\n.banner-section .particle:nth-child(10) {\n  -webkit-animation: particle-animation-10 60s infinite;\n          animation: particle-animation-10 60s infinite;\n  opacity: 0.48;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -1s;\n          animation-delay: -1s;\n  transform: translate3d(28vw, 61vh, 46px);\n  background: #d926a6;\n}\n@-webkit-keyframes particle-animation-11 {\n  100% {\n    transform: translate3d(72vw, 79vh, 68px);\n  }\n}\n@keyframes particle-animation-11 {\n  100% {\n    transform: translate3d(72vw, 79vh, 68px);\n  }\n}\n.banner-section .particle:nth-child(11) {\n  -webkit-animation: particle-animation-11 60s infinite;\n          animation: particle-animation-11 60s infinite;\n  opacity: 0.57;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -1.1s;\n          animation-delay: -1.1s;\n  transform: translate3d(33vw, 82vh, 78px);\n  background: #26d9bb;\n}\n@-webkit-keyframes particle-animation-12 {\n  100% {\n    transform: translate3d(31vw, 51vh, 17px);\n  }\n}\n@keyframes particle-animation-12 {\n  100% {\n    transform: translate3d(31vw, 51vh, 17px);\n  }\n}\n.banner-section .particle:nth-child(12) {\n  -webkit-animation: particle-animation-12 60s infinite;\n          animation: particle-animation-12 60s infinite;\n  opacity: 0.6;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -1.2s;\n          animation-delay: -1.2s;\n  transform: translate3d(74vw, 69vh, 18px);\n  background: #266ed9;\n}\n@-webkit-keyframes particle-animation-13 {\n  100% {\n    transform: translate3d(20vw, 3vh, 60px);\n  }\n}\n@keyframes particle-animation-13 {\n  100% {\n    transform: translate3d(20vw, 3vh, 60px);\n  }\n}\n.banner-section .particle:nth-child(13) {\n  -webkit-animation: particle-animation-13 60s infinite;\n          animation: particle-animation-13 60s infinite;\n  opacity: 0.87;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -1.3s;\n          animation-delay: -1.3s;\n  transform: translate3d(66vw, 18vh, 70px);\n  background: #d9d326;\n}\n@-webkit-keyframes particle-animation-14 {\n  100% {\n    transform: translate3d(3vw, 49vh, 87px);\n  }\n}\n@keyframes particle-animation-14 {\n  100% {\n    transform: translate3d(3vw, 49vh, 87px);\n  }\n}\n.banner-section .particle:nth-child(14) {\n  -webkit-animation: particle-animation-14 60s infinite;\n          animation: particle-animation-14 60s infinite;\n  opacity: 0.15;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -1.4s;\n          animation-delay: -1.4s;\n  transform: translate3d(57vw, 6vh, 81px);\n  background: #7a26d9;\n}\n@-webkit-keyframes particle-animation-15 {\n  100% {\n    transform: translate3d(62vw, 88vh, 92px);\n  }\n}\n@keyframes particle-animation-15 {\n  100% {\n    transform: translate3d(62vw, 88vh, 92px);\n  }\n}\n.banner-section .particle:nth-child(15) {\n  -webkit-animation: particle-animation-15 60s infinite;\n          animation: particle-animation-15 60s infinite;\n  opacity: 0.93;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -1.5s;\n          animation-delay: -1.5s;\n  transform: translate3d(46vw, 62vh, 9px);\n  background: #26d9ca;\n}\n@-webkit-keyframes particle-animation-16 {\n  100% {\n    transform: translate3d(47vw, 2vh, 59px);\n  }\n}\n@keyframes particle-animation-16 {\n  100% {\n    transform: translate3d(47vw, 2vh, 59px);\n  }\n}\n.banner-section .particle:nth-child(16) {\n  -webkit-animation: particle-animation-16 60s infinite;\n          animation: particle-animation-16 60s infinite;\n  opacity: 0.09;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -1.6s;\n          animation-delay: -1.6s;\n  transform: translate3d(67vw, 4vh, 41px);\n  background: #bb26d9;\n}\n@-webkit-keyframes particle-animation-17 {\n  100% {\n    transform: translate3d(14vw, 8vh, 75px);\n  }\n}\n@keyframes particle-animation-17 {\n  100% {\n    transform: translate3d(14vw, 8vh, 75px);\n  }\n}\n.banner-section .particle:nth-child(17) {\n  -webkit-animation: particle-animation-17 60s infinite;\n          animation: particle-animation-17 60s infinite;\n  opacity: 0.89;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -1.7s;\n          animation-delay: -1.7s;\n  transform: translate3d(49vw, 18vh, 42px);\n  background: #26acd9;\n}\n@-webkit-keyframes particle-animation-18 {\n  100% {\n    transform: translate3d(54vw, 31vh, 42px);\n  }\n}\n@keyframes particle-animation-18 {\n  100% {\n    transform: translate3d(54vw, 31vh, 42px);\n  }\n}\n.banner-section .particle:nth-child(18) {\n  -webkit-animation: particle-animation-18 60s infinite;\n          animation: particle-animation-18 60s infinite;\n  opacity: 0.57;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -1.8s;\n          animation-delay: -1.8s;\n  transform: translate3d(53vw, 45vh, 18px);\n  background: #26d982;\n}\n@-webkit-keyframes particle-animation-19 {\n  100% {\n    transform: translate3d(75vw, 75vh, 1px);\n  }\n}\n@keyframes particle-animation-19 {\n  100% {\n    transform: translate3d(75vw, 75vh, 1px);\n  }\n}\n.banner-section .particle:nth-child(19) {\n  -webkit-animation: particle-animation-19 60s infinite;\n          animation: particle-animation-19 60s infinite;\n  opacity: 0.1;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -1.9s;\n          animation-delay: -1.9s;\n  transform: translate3d(36vw, 23vh, 67px);\n  background: #26d988;\n}\n@-webkit-keyframes particle-animation-20 {\n  100% {\n    transform: translate3d(26vw, 27vh, 100px);\n  }\n}\n@keyframes particle-animation-20 {\n  100% {\n    transform: translate3d(26vw, 27vh, 100px);\n  }\n}\n.banner-section .particle:nth-child(20) {\n  -webkit-animation: particle-animation-20 60s infinite;\n          animation: particle-animation-20 60s infinite;\n  opacity: 0.7;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2s;\n          animation-delay: -2s;\n  transform: translate3d(25vw, 24vh, 99px);\n  background: #26d9ac;\n}\n@-webkit-keyframes particle-animation-21 {\n  100% {\n    transform: translate3d(71vw, 64vh, 96px);\n  }\n}\n@keyframes particle-animation-21 {\n  100% {\n    transform: translate3d(71vw, 64vh, 96px);\n  }\n}\n.banner-section .particle:nth-child(21) {\n  -webkit-animation: particle-animation-21 60s infinite;\n          animation: particle-animation-21 60s infinite;\n  opacity: 0.78;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -2.1s;\n          animation-delay: -2.1s;\n  transform: translate3d(56vw, 22vh, 51px);\n  background: #266bd9;\n}\n@-webkit-keyframes particle-animation-22 {\n  100% {\n    transform: translate3d(77vw, 80vh, 100px);\n  }\n}\n@keyframes particle-animation-22 {\n  100% {\n    transform: translate3d(77vw, 80vh, 100px);\n  }\n}\n.banner-section .particle:nth-child(22) {\n  -webkit-animation: particle-animation-22 60s infinite;\n          animation: particle-animation-22 60s infinite;\n  opacity: 0.03;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -2.2s;\n          animation-delay: -2.2s;\n  transform: translate3d(33vw, 10vh, 56px);\n  background: #d92632;\n}\n@-webkit-keyframes particle-animation-23 {\n  100% {\n    transform: translate3d(11vw, 56vh, 45px);\n  }\n}\n@keyframes particle-animation-23 {\n  100% {\n    transform: translate3d(11vw, 56vh, 45px);\n  }\n}\n.banner-section .particle:nth-child(23) {\n  -webkit-animation: particle-animation-23 60s infinite;\n          animation: particle-animation-23 60s infinite;\n  opacity: 0.14;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -2.3s;\n          animation-delay: -2.3s;\n  transform: translate3d(80vw, 28vh, 53px);\n  background: #47d926;\n}\n@-webkit-keyframes particle-animation-24 {\n  100% {\n    transform: translate3d(3vw, 40vh, 62px);\n  }\n}\n@keyframes particle-animation-24 {\n  100% {\n    transform: translate3d(3vw, 40vh, 62px);\n  }\n}\n.banner-section .particle:nth-child(24) {\n  -webkit-animation: particle-animation-24 60s infinite;\n          animation: particle-animation-24 60s infinite;\n  opacity: 0.9;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -2.4s;\n          animation-delay: -2.4s;\n  transform: translate3d(36vw, 59vh, 15px);\n  background: #2632d9;\n}\n@-webkit-keyframes particle-animation-25 {\n  100% {\n    transform: translate3d(84vw, 47vh, 85px);\n  }\n}\n@keyframes particle-animation-25 {\n  100% {\n    transform: translate3d(84vw, 47vh, 85px);\n  }\n}\n.banner-section .particle:nth-child(25) {\n  -webkit-animation: particle-animation-25 60s infinite;\n          animation: particle-animation-25 60s infinite;\n  opacity: 0.78;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -2.5s;\n          animation-delay: -2.5s;\n  transform: translate3d(43vw, 56vh, 95px);\n  background: #26d991;\n}\n@-webkit-keyframes particle-animation-26 {\n  100% {\n    transform: translate3d(20vw, 38vh, 56px);\n  }\n}\n@keyframes particle-animation-26 {\n  100% {\n    transform: translate3d(20vw, 38vh, 56px);\n  }\n}\n.banner-section .particle:nth-child(26) {\n  -webkit-animation: particle-animation-26 60s infinite;\n          animation: particle-animation-26 60s infinite;\n  opacity: 0.98;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2.6s;\n          animation-delay: -2.6s;\n  transform: translate3d(66vw, 21vh, 11px);\n  background: #26cad9;\n}\n@-webkit-keyframes particle-animation-27 {\n  100% {\n    transform: translate3d(89vw, 50vh, 99px);\n  }\n}\n@keyframes particle-animation-27 {\n  100% {\n    transform: translate3d(89vw, 50vh, 99px);\n  }\n}\n.banner-section .particle:nth-child(27) {\n  -webkit-animation: particle-animation-27 60s infinite;\n          animation: particle-animation-27 60s infinite;\n  opacity: 0.27;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -2.7s;\n          animation-delay: -2.7s;\n  transform: translate3d(71vw, 70vh, 10px);\n  background: #38d926;\n}\n@-webkit-keyframes particle-animation-28 {\n  100% {\n    transform: translate3d(41vw, 60vh, 70px);\n  }\n}\n@keyframes particle-animation-28 {\n  100% {\n    transform: translate3d(41vw, 60vh, 70px);\n  }\n}\n.banner-section .particle:nth-child(28) {\n  -webkit-animation: particle-animation-28 60s infinite;\n          animation: particle-animation-28 60s infinite;\n  opacity: 0.79;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -2.8s;\n          animation-delay: -2.8s;\n  transform: translate3d(75vw, 88vh, 68px);\n  background: #26d965;\n}\n@-webkit-keyframes particle-animation-29 {\n  100% {\n    transform: translate3d(8vw, 89vh, 94px);\n  }\n}\n@keyframes particle-animation-29 {\n  100% {\n    transform: translate3d(8vw, 89vh, 94px);\n  }\n}\n.banner-section .particle:nth-child(29) {\n  -webkit-animation: particle-animation-29 60s infinite;\n          animation: particle-animation-29 60s infinite;\n  opacity: 0.86;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2.9s;\n          animation-delay: -2.9s;\n  transform: translate3d(24vw, 11vh, 95px);\n  background: #26d93b;\n}\n@-webkit-keyframes particle-animation-30 {\n  100% {\n    transform: translate3d(64vw, 74vh, 77px);\n  }\n}\n@keyframes particle-animation-30 {\n  100% {\n    transform: translate3d(64vw, 74vh, 77px);\n  }\n}\n.banner-section .particle:nth-child(30) {\n  -webkit-animation: particle-animation-30 60s infinite;\n          animation: particle-animation-30 60s infinite;\n  opacity: 0.5;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -3s;\n          animation-delay: -3s;\n  transform: translate3d(23vw, 26vh, 55px);\n  background: #7dd926;\n}\n\n.banner {\n  min-height: 100vh;\n}\n.banner .intro h1 {\n  font-size: 45px;\n}\n.banner .intro h5 {\n  font-size: 20px;\n}\n.banner .intro p {\n  max-width: 350px;\n  margin-top: 15px;\n}\n.banner .banner-img {\n  margin-right: -200px;\n  margin-left: -150px;\n  position: relative;\n  z-index: -1;\n}\n\n.about-section {\n  padding: 100px 0;\n  position: relative;\n}\n.about-section:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  width: 100%;\n  height: 160%;\n  top: 0;\n  transform: skewY(-12deg);\n  background: #f6f9fc;\n}\n.about-section .about-heading {\n  text-align: right;\n  padding-right: 15px;\n  margin-bottom: 25px;\n  color: #245cd1;\n  border-right: 5px solid #dddddd;\n}\n.about-section .about-heading h2 {\n  margin: 0;\n}\n.about-section .my-photo {\n  border-radius: 20px;\n  max-width: 400px;\n  overflow: hidden;\n  box-shadow: 10px 15px 30px 1px #ddd;\n}\n.about-section .about-me .tabs {\n  border-bottom: 1px solid #eee;\n}\n.about-section .about-me .tabs li a {\n  padding: 8px 25px;\n  border-bottom: 2px solid transparent;\n  color: #444;\n}\n.about-section .about-me .tabs li a:hover {\n  border-color: #245cd1;\n  color: #245cd1;\n}\n.about-section .about-me .tabs li a.active {\n  color: #245cd1;\n  border-color: #245cd1;\n}\n.about-section .about-me nav .nav-tabs .nav-link {\n  border: none;\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n  padding: 15px 20px;\n  color: #444;\n  border-color: transparent;\n  position: relative;\n}\n.about-section .about-me nav .nav-tabs .nav-link::after {\n  content: \"\";\n  position: absolute;\n  width: 0%;\n  height: 2px;\n  background-color: #245cd1;\n  bottom: 0;\n  left: 0;\n  z-index: 5;\n  transition: all 0.4s ease;\n}\n.about-section .about-me nav .nav-tabs .nav-link:hover {\n  color: #245cd1;\n}\n.about-section .about-me nav .nav-tabs .nav-link:hover::after {\n  width: 100%;\n}\n.about-section .about-me nav .nav-tabs .nav-link.active {\n  color: #245cd1;\n  background-color: transparent;\n}\n.about-section .about-me nav .nav-tabs .nav-link.active::after {\n  width: 100%;\n}\n.about-section .about-me div.tab-pane {\n  padding-top: 25px;\n}\n.about-section .about-me .skill-box {\n  margin-bottom: 25px;\n}\n.about-section .about-me .skill-box h6 {\n  color: #444;\n  font-weight: 700;\n}\n.about-section .about-me .skill-box div {\n  margin-left: -5px;\n}\n.about-section .about-me .skill-box div span {\n  display: inline-block;\n  background-color: #e1e9fa;\n  color: #7499e7;\n  padding: 3px 10px;\n  border-radius: 2px;\n  margin: 5px;\n  white-space: pre;\n  cursor: default;\n}\n.about-section .about-me .skill-box div span:hover {\n  color: #245cd1;\n}\n.about-section .tabs-content {\n  margin-top: 20px;\n}\n\n.about-section.active {\n  overflow: hidden;\n}\n\n.services-section {\n  min-height: 600px;\n  background-color: #fff;\n  padding: 100px 0px;\n}\n.services-section .section-heading {\n  margin-top: 100px;\n}\n.services-section .section-heading p {\n  max-width: 300px;\n}\n.services-section .icon {\n  height: 50px;\n  width: 50px;\n  line-height: 50px;\n  text-align: center;\n  background-color: #245cd1;\n  border-radius: 50%;\n  outline-offset: 10px;\n  margin: 25px 10px 55px 10px;\n  outline: 2px dashed #245cd1;\n  color: #fff;\n}\n.services-section .icon.bg-white {\n  background-color: #fff;\n}\n.services-section .counter {\n  margin-top: 45px;\n}\n.services-section .counter .item {\n  margin-bottom: 30px;\n}\n.services-section .counter .item h4 {\n  color: #222;\n  margin-bottom: 0;\n}\n.services-section .counter .item p {\n  color: #444;\n  margin-bottom: 0;\n  max-width: 100px;\n}\n.services-section .services .counter .item {\n  padding: 15px 0;\n}\n.services-section .services .my-services .item {\n  width: 50%;\n  padding: 15px;\n}\n.services-section .services .my-services .item .item-info {\n  border-radius: 5px;\n  min-height: 300px;\n  padding: 30px;\n  transition: all 0.4s ease;\n  text-align: center;\n}\n.services-section .services .my-services .item .item-info h3 {\n  font-size: 20px;\n  margin-bottom: 10px;\n  text-align: center;\n  text-transform: uppercase;\n}\n.services-section .services .my-services .item .item-info p {\n  color: #666;\n}\n.services-section .services .my-services .item .item-info:hover {\n  transform: scale(1.07);\n}\n.services-section .services .my-services .item .item-info .icon {\n  margin: 10px auto 45px;\n}\n.services-section .services .my-services .item:nth-child(1) .item-info {\n  background-color: #E8F0FF;\n  color: #448AFF;\n}\n.services-section .services .my-services .item:nth-child(2) {\n  margin-top: 80px;\n}\n.services-section .services .my-services .item:nth-child(2) .item-info {\n  background-color: #FFF5EE;\n  color: #FF9B53;\n}\n.services-section .services .my-services .item:nth-child(3) {\n  margin-top: -80px;\n}\n.services-section .services .my-services .item:nth-child(3) .item-info {\n  background-color: #E6FAF1;\n  color: #06D79C;\n}\n.services-section .services .my-services .item:nth-child(4) .item-info {\n  background-color: #EEEBFF;\n  color: #543BCC;\n}\n\n.portfolio-section {\n  padding: 100px 0;\n}\n.portfolio-section .portfolio-heading {\n  margin-bottom: 50px;\n}\n.portfolio-section .section-heading {\n  text-align: left;\n  padding-left: 15px;\n  color: #245cd1;\n  border-left: 5px solid #dddddd;\n}\n.portfolio-section .section-heading h2 {\n  margin: 0;\n}\n.portfolio-section .portfolio-menu li {\n  display: inline-block;\n}\n.portfolio-section .portfolio-menu li a {\n  padding: 10px 15px;\n  border-bottom: 1px solid transparent;\n  color: #222;\n}\n.portfolio-section .portfolio-menu li a.active {\n  border-bottom: 1px solid #245cd1;\n  color: #245cd1;\n}\n.portfolio-section .portfolio-list .item {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);\n  border-radius: 5px;\n  transition: all 0.4s ease;\n  margin-bottom: 30px;\n}\n.portfolio-section .portfolio-list .item .preview {\n  height: 220px;\n  overflow: hidden;\n}\n.portfolio-section .portfolio-list .item .preview img {\n  transform: scale(1.1);\n  transition: all 0.4s ease;\n}\n.portfolio-section .portfolio-list .item .details {\n  padding: 30px;\n  transition: all 0.4s ease;\n}\n.portfolio-section .portfolio-list .item .details small {\n  color: #959595;\n}\n.portfolio-section .portfolio-list .item .details h6 {\n  color: #484848;\n}\n.portfolio-section .portfolio-list .item .details a {\n  padding: 5px 20px;\n  border: 1px solid #245cd1;\n  border-radius: 20px;\n  margin: 0 auto;\n  margin-top: 20px;\n}\n.portfolio-section .portfolio-list .item .details a:hover {\n  background-color: #245cd1;\n  color: #fff;\n}\n.portfolio-section .portfolio-list .item:hover {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.3);\n}\n.portfolio-section .portfolio-list .item:hover .details h6 {\n  color: #222;\n}\n\n.promote-section {\n  padding: 100px 0px;\n  background-color: #245cd1;\n}\n.promote-section .promote-content h2 {\n  color: #fff;\n  margin-bottom: 15px;\n}\n.promote-section .promote-content p {\n  color: #e6e6e6;\n  max-width: 300px;\n}\n.promote-section .promote-content .buttons a:hover {\n  box-shadow: none;\n  background-color: #fff;\n}\n.promote-section .content-preview > div {\n  max-width: 400px;\n  border-radius: 10px;\n  overflow: hidden;\n  transform: rotate(7deg);\n}\n\n.testiomonial-section {\n  padding: 100px 0;\n  background-image: url(" + escape(__webpack_require__(/*! ../../images/testimonial.jpg */ "./resources/js/images/testimonial.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 1;\n}\n.testiomonial-section::after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(36, 92, 209, 0.92);\n  z-index: -1;\n}\n.testiomonial-section .section-heading {\n  margin-bottom: 45px;\n  color: #fff;\n  text-align: center;\n}\n.testiomonial-section .carousel-indicators li {\n  height: 20px;\n  border-radius: 50%;\n  width: 20px;\n  margin-bottom: -10px;\n}\n.testiomonial-section .item {\n  max-width: 800px;\n  background-color: #fff;\n  padding: 30px 30px 30px;\n  border-radius: 5px;\n  position: relative;\n  text-align: center;\n  margin: 50px auto 70px;\n}\n.testiomonial-section .item .client-avatar {\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  overflow: hidden;\n  position: absolute;\n  top: 0%;\n  left: 50%;\n  transform: translateX(-50%) translateY(-50%);\n  background-color: white;\n  box-shadow: 0px 2px 1px #ddd;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.testiomonial-section .item .testimonial-description {\n  padding-top: 45px;\n}\n.testiomonial-section .item .testimonial-description p {\n  margin-bottom: 25px;\n  font-size: 16px;\n  color: #444;\n}\n.testiomonial-section .item .testimonial-description .client-intro h6 {\n  margin-bottom: 0;\n  color: #245cd1;\n}\n.testiomonial-section .item .testimonial-description .client-intro i {\n  color: #444;\n  font-size: 14px;\n}\n\n.contact-section {\n  padding: 100px 0 150px;\n}\n.contact-section .contact-heading {\n  color: #245cd1;\n  margin-bottom: 95px;\n}\n.contact-section .contact-heading h2 {\n  color: #245cd1;\n  margin: 0;\n}\n.contact-section .contact-heading p {\n  max-width: 300px;\n  margin: auto;\n  color: #444;\n}\n.contact-section .contact-details {\n  margin-right: 200px;\n  position: relative;\n  z-index: 1;\n}\n.contact-section .contact-details::after {\n  position: absolute;\n  content: \"\";\n  width: calc(100% + 20px);\n  height: calc(100% + 100px);\n  background-image: linear-gradient(to right, #6493fa, #245cd1);\n  z-index: -1;\n  top: -50px;\n  left: 180px;\n}\n.contact-section .contact-details .details-left {\n  background-color: #245cd1;\n  width: 40%;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.contact-section .contact-details .details-right {\n  width: 60%;\n}\n.contact-section .contact-details .details-right .contact-form {\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n.contact-section form.contact-form {\n  padding: 30px;\n  background-color: #fff;\n}\n.contact-section form.contact-form input, .contact-section form.contact-form textarea {\n  width: 100%;\n  margin-bottom: 10px;\n  border: 1px solid #ddd;\n  border-radius: 2px;\n  padding: 7px 15px;\n}\n.contact-section form.contact-form input:focus, .contact-section form.contact-form textarea:focus {\n  border-color: #245cd1;\n}\n.contact-section form.contact-form button.send-message {\n  padding: 10px 25px;\n  border-radius: 5px;\n  color: #f2f2f2;\n  background-image: linear-gradient(to right, #6a64e7, #443dc9);\n  border: none;\n  cursor: pointer;\n}\n.contact-section form.contact-form button.send-message:hover {\n  background-color: #245cd1;\n  background-image: linear-gradient(to right, #4c80f1, #245cd1);\n}\n.contact-section .contact-info {\n  padding: 30px;\n  background-color: #fff;\n  border-radius: 5px;\n}\n\n.connect-info {\n  padding: 30px;\n  background-color: #245cd1;\n}\n.connect-info .info-item {\n  margin-bottom: 20px;\n}\n.connect-info .info-item strong {\n  color: #fff;\n}\n.connect-info .info-item p {\n  color: #e6e6e6;\n}\n.connect-info .info-item ul.find-me li {\n  display: inline-block;\n}\n.connect-info .info-item ul.find-me li a {\n  height: 40px;\n  width: 40px;\n  line-height: 40px;\n  text-align: center;\n  border-radius: 2px;\n  color: #fff;\n  background-color: #5e89e3;\n  margin-right: 5px;\n}\n\n.sub-footer {\n  padding: 100px 0;\n  background-color: #293044;\n  color: #fff;\n}\n.sub-footer ul > li {\n  list-style: square;\n  margin-left: 20px;\n  transition: all 0.4s ease;\n}\n.sub-footer ul > li:hover {\n  margin-left: 25px;\n}\n.sub-footer ul > li a {\n  color: #bfbfbf;\n}\n.sub-footer ul > li a:hover {\n  color: #fff;\n}\n\n.footer-section {\n  background-color: #0E1833;\n  padding: 20px 0;\n  color: #fff;\n}\n.footer-section .footer-text a {\n  color: #fdc800;\n}\n\n.products {\n  padding: 100px 0 120px;\n  background-color: #fff;\n}\n.products .heading {\n  color: #245cd1;\n  margin-bottom: 50px;\n}\n.products .heading h2 {\n  color: #245cd1;\n  margin: 0;\n}\n.products .heading p {\n  max-width: 300px;\n  margin: auto;\n  color: #444;\n}\n.products .product-box {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);\n  border-radius: 6px;\n  overflow: hidden;\n  margin-bottom: 30px;\n  transition: all 0.4s ease;\n}\n.products .product-box .image {\n  height: 300px;\n}\n.products .product-box .image img {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 100%;\n}\n.products .product-box .info {\n  padding: 20px 30px;\n}\n.products .product-box .info .title a {\n  font-size: 16px;\n  font-weight: 600;\n}\n.products .product-box .info .title p {\n  margin: 0;\n  font-size: 13px;\n  color: #666;\n}\n.products .product-box .info .price p {\n  margin: 0;\n  padding: 1px 15px;\n  background-color: #245cd1;\n  color: #fff;\n  border-radius: 3px;\n  font-size: 12px;\n}\n.products .product-box .info-footer {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 10px;\n}\n.products .product-box:hover {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.3);\n}\n\nsection.breadcrum {\n  text-align: center;\n  padding: 100px;\n  background-image: url(" + escape(__webpack_require__(/*! ../../images/banner3.jpg */ "./resources/js/images/banner3.jpg")) + ");\n  background-size: cover;\n  background-position: top center;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 1;\n}\nsection.breadcrum::after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\nsection.breadcrum .heading h2 {\n  font-weight: 700;\n}\nsection.breadcrum .heading a {\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 600;\n  color: #444;\n}\nsection.breadcrum .heading i {\n  margin-left: 8px;\n  margin-right: 8px;\n  font-size: 14px;\n  color: #444;\n}\n\nsection.single-product {\n  padding: 100px 0;\n}\nsection.single-product .product-image {\n  padding: 10px;\n  border: 1px solid #ddd;\n}\nsection.single-product .description {\n  margin-top: 30px;\n  padding: 10px;\n  border: 1px solid #ddd;\n}\nsection.single-product .template-box {\n  border: 1px solid #ddd;\n  border-radius: 3px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 200px;\n  margin-bottom: 20px;\n}\nsection.single-product .template-box a {\n  margin-bottom: 10px;\n  text-align: center;\n  color: white;\n  background-color: #245cd1;\n  text-transform: uppercase;\n  min-width: 180px;\n  padding: 10px 0;\n  border-radius: 3px;\n  font-weight: 600;\n}\nsection.single-product .template-box a i {\n  margin-right: 5px;\n}\nsection.single-product .template-box a.demo {\n  background-color: #fdc800;\n  color: #222;\n}\nsection.single-product .template-box a:hover {\n  box-shadow: 0px 2px 4px 0px rgba(14, 27, 56, 0.4);\n}\nsection.single-product .sidebar-box {\n  padding: 20px;\n  border: 1px solid #ddd;\n  border-radius: 3px;\n}\nsection.single-product .sidebar-box h3 {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 15px;\n}\nsection.single-product .sidebar-box .content table {\n  width: 100%;\n  border: 1px solid #ddd;\n}\nsection.single-product .sidebar-box .content table tr {\n  border-bottom: 1px solid #ddd;\n}\nsection.single-product .sidebar-box .content table tr td {\n  width: 60%;\n  padding: 7px 10px;\n  font-size: 14px;\n}\nsection.single-product .sidebar-box .content table tr td:first-child {\n  width: 40%;\n}\n\nsection.not-found {\n  padding: 160px 0;\n}\n\n@media (min-width: 768px) and (max-width: 991px) {\n  .banner-section header .menu-part .logo {\n    max-width: 40px;\n    margin-right: 10px;\n  }\n\n  .banner-section header .menu-part li a {\n    padding: 20px 5px;\n  }\n  .banner-section header .menu-part li a.hire-me {\n    padding: 5px 10px;\n  }\n\n  header .menu-part li a {\n    padding: 20px 8px;\n  }\n\n  header .menu-part li a.hire-me {\n    margin-left: 0;\n  }\n\n  .banner .banner-img {\n    margin-right: -113px;\n    margin-left: -191px;\n    margin-bottom: -61px;\n    transform: rotate(-4deg);\n  }\n\n  .services-section .services .item2 {\n    margin-top: 60px;\n  }\n\n  .services-section .services .item {\n    width: 50%;\n    padding: 5px;\n  }\n\n  .contact-section .contact-details {\n    margin-right: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  .services-section .counter .item {\n    margin-bottom: 25px;\n  }\n\n  .services-section .section-heading {\n    margin-top: 30px;\n  }\n}\n@media (max-width: 767px) {\n  .menu-part {\n    flex-wrap: wrap;\n  }\n  .menu-part .logo {\n    order: 1;\n  }\n  .menu-part .mobile-nav {\n    order: 3;\n    display: block;\n    background-color: #245cd1;\n    width: 100%;\n    padding: 20px 0;\n    position: relative;\n  }\n  .menu-part .mobile-nav::after {\n    position: absolute;\n    content: \"\";\n    top: -53px;\n    right: 0px;\n    font-family: \"Font Awesome 5 Free\";\n    font-weight: 900;\n    content: \"\\F0C9\";\n    height: 45px;\n    width: 50px;\n    border: 1px solid #fff;\n    color: #fff;\n    line-height: 45px;\n    text-align: center;\n    border-radius: 1px;\n    background-color: #245cd1;\n    border-radius: 3px;\n  }\n  .menu-part .mobile-nav li {\n    display: block;\n  }\n  .menu-part .mobile-nav li a {\n    color: #fff;\n    padding: 10px 30px;\n  }\n  .menu-part .right {\n    order: 2;\n    padding-right: 50px;\n  }\n\n  header .menu-part li a.hire-me {\n    display: none;\n  }\n\n  .contact-details.d-flex {\n    flex-wrap: wrap;\n    margin-right: 0;\n  }\n\n  .contact-section .contact-details .details-left {\n    width: 100%;\n  }\n\n  .contact-section .contact-details .details-right {\n    width: 100%;\n  }\n\n  .contact-section .contact-details::after {\n    width: calc(100% + 100px);\n    height: calc(100% - 100px);\n    top: 150px;\n    left: -50px;\n  }\n\n  .sub-footer .item:nth-child(1) {\n    margin-bottom: 30px;\n  }\n\n  .promote-section .promote-content {\n    margin-top: 30px;\n    order: 2;\n  }\n\n  .promote-section .content-preview {\n    justify-content: flex-start !important;\n  }\n  .promote-section .content-preview > div {\n    transform: rotate(0deg);\n  }\n\n  .sub-footer .item:nth-child(4) {\n    margin-bottom: 0;\n  }\n\n  .sub-footer .item:nth-child(3) {\n    margin-bottom: 0;\n  }\n\n  .sub-footer .item {\n    margin-bottom: 30px;\n  }\n\n  .services-section .services .item {\n    width: 100%;\n    padding: 0px;\n  }\n\n  .services-section .counter .item p {\n    max-width: 100%;\n  }\n\n  .services-section .services .item2 {\n    margin-top: 0px;\n  }\n\n  .services-section .services .item3 {\n    margin-top: 0px;\n  }\n\n  .my-services .item {\n    margin-bottom: 30px;\n  }\n\n  .my-services .item:last-child {\n    margin-bottom: 0;\n  }\n\n  .services-section .counter {\n    margin-top: 25px;\n  }\n\n  .services-section .section-heading {\n    margin-top: 0px;\n  }\n\n  .my-photo {\n    margin: 0 auto 50px;\n  }\n\n  .about-section .about-heading {\n    text-align: center;\n    padding-right: 0;\n    margin-bottom: 25px;\n    color: #245cd1;\n    border-right: none;\n  }\n\n  .banner .intro h1 {\n    font-size: 35px;\n  }\n\n  .banner-preview {\n    display: none;\n  }\n}\n@media (max-width: 575px) {\n  .services-section .services .my-services .item {\n    width: 100%;\n  }\n\n  .services-section .services .my-services .item2 {\n    margin-top: 0px;\n  }\n\n  .services-section .services .my-services .item3 {\n    margin-top: 0px;\n  }\n\n  .my-services .item {\n    margin-bottom: 0px;\n  }\n\n  .sub-footer .item:nth-child(3) {\n    margin-bottom: 30px;\n  }\n}", ""]);
 
 // exports
 
@@ -4629,7 +4598,13 @@ var render = function() {
   return _c(
     "div",
     { attrs: { id: "app" } },
-    [_c("router-view"), _vm._v(" "), _c("Footer")],
+    [
+      this.$route.name !== "home" ? _c("Header") : _vm._e(),
+      _vm._v(" "),
+      _c("router-view"),
+      _vm._v(" "),
+      this.$route.name !== "home" ? _c("Footer") : _vm._e()
+    ],
     1
   )
 }
@@ -4655,34 +4630,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("Header"),
-      _vm._v(" "),
-      _c("section", { staticClass: "not-found" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12 text-center" }, [
-              _c("h2", [_vm._v("The page you're looking for not found!")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "buttons" },
-                [
-                  _c("router-link", { attrs: { to: { name: "home" } } }, [
-                    _vm._v("Go Back to Home")
-                  ])
-                ],
-                1
-              )
-            ])
+  return _c("div", [
+    _c("section", { staticClass: "not-found" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12 text-center" }, [
+            _c("h2", [_vm._v("The page you're looking for not found!")]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "buttons" },
+              [
+                _c("router-link", { attrs: { to: { name: "home" } } }, [
+                  _vm._v("Go Back to Home")
+                ])
+              ],
+              1
+            )
           ])
         ])
       ])
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -4706,7 +4675,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Header"), _vm._v(" "), _c("About")], 1)
+  return _c("div", [_c("About")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -4730,45 +4699,38 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "section",
-    { staticClass: "banner-section" },
-    [
-      _c("Header"),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row banner align-items-center" }, [
-          _c("div", { staticClass: "col-md-6 intro col-sm-12" }, [
-            _c("h5", [_vm._v(_vm._s(_vm.data.greeting) + " ")]),
-            _vm._v(" "),
-            _c("h1", [_vm._v(_vm._s(_vm.data.banner_title))]),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.data.greeting_note))]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "buttons" },
-              [
-                _c("router-link", { attrs: { to: "about" } }, [
-                  _vm._v(" About ")
-                ]),
-                _vm._v(" "),
-                _c("router-link", { attrs: { to: "portfolio" } }, [
-                  _vm._v(" Recent Projects ")
-                ])
-              ],
-              1
-            )
-          ]),
+  return _c("section", { staticClass: "banner-section" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row banner align-items-center" }, [
+        _c("div", { staticClass: "col-md-6 intro col-sm-12" }, [
+          _c("h5", [_vm._v(_vm._s(_vm.data.greeting) + " ")]),
           _vm._v(" "),
-          _vm._m(1)
-        ])
+          _c("h1", [_vm._v(_vm._s(_vm.data.banner_title))]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.data.greeting_note))]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "buttons" },
+            [
+              _c("router-link", { attrs: { to: "about" } }, [
+                _vm._v(" About ")
+              ]),
+              _vm._v(" "),
+              _c("router-link", { attrs: { to: "portfolio" } }, [
+                _vm._v(" Recent Projects ")
+              ])
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
       ])
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -4872,7 +4834,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Header"), _vm._v(" "), _c("Contact")], 1)
+  return _c("div", [_c("Contact")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -4920,17 +4882,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("Header"),
-      _vm._v(" "),
-      _c("Portfolio"),
-      _vm._v(" "),
-      _c("Testimonial")
-    ],
-    1
-  )
+  return _c("div", [_c("Portfolio"), _vm._v(" "), _c("Testimonial")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -4954,7 +4906,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Header"), _vm._v(" "), _c("Products")], 1)
+  return _c("div", [_c("Products")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -4978,11 +4930,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [_c("Header"), _vm._v(" "), _c("Services"), _vm._v(" "), _c("Promote")],
-    1
-  )
+  return _c("div", [_c("Services"), _vm._v(" "), _c("Promote")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -5006,53 +4954,47 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("Header"),
-      _vm._v(" "),
-      _c("section", { staticClass: "breadcrum" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12" }, [
-              _c("div", { staticClass: "heading" }, [
-                _c("h2", [_vm._v("Product Title Goes Here")]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "index" },
-                  [
-                    _c("router-link", { attrs: { to: { name: "home" } } }, [
-                      _vm._v("Home")
-                    ]),
-                    _vm._v(" "),
-                    _c("i", { staticClass: "fas fa-chevron-right" }),
-                    _vm._v(" "),
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: {
-                            name: "product",
-                            params: { slug: _vm.product.slug }
-                          }
+  return _c("div", [
+    _c("section", { staticClass: "breadcrum" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12" }, [
+            _c("div", { staticClass: "heading" }, [
+              _c("h2", [_vm._v("Product Title Goes Here")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "index" },
+                [
+                  _c("router-link", { attrs: { to: { name: "home" } } }, [
+                    _vm._v("Home")
+                  ]),
+                  _vm._v(" "),
+                  _c("i", { staticClass: "fas fa-chevron-right" }),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "product",
+                          params: { slug: _vm.product.slug }
                         }
-                      },
-                      [_vm._v("Product")]
-                    )
-                  ],
-                  1
-                )
-              ])
+                      }
+                    },
+                    [_vm._v("Product")]
+                  )
+                ],
+                1
+              )
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _vm._m(0)
-    ],
-    1
-  )
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
