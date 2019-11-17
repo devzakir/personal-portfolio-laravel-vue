@@ -14,7 +14,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <h5 v-if="products.lenght == null" class="text-center">No Products Found</h5>
+          <h5 v-if="products.lenght || products.length == 0 ? true : false" class="text-center">No Products Found</h5>
           <div class="buttons text-center">
             <button v-if="products.lenght > 0" href="#" @click="getProductData(next_page_url)" :disabled="!loadMore">Load More</button>
           </div>

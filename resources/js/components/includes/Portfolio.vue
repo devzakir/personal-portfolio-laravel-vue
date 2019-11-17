@@ -34,7 +34,7 @@
           </div>
           <div class="row">
               <div class="col-12">
-                  <h5 class="text-center" v-if="!portfolios.lenght">No Portfolio Found</h5>
+                  <h5 class="text-center" v-if="portfolios.lenght || portfolios.length == 0 ? true : false">No Portfolio Found</h5>
                   <div class="buttons text-center">
                       <button v-if="portfolios.lenght > 0" @click="getPotfolioData(next_page_url)" :disabled="!loadMore">Load More</button>
                   </div>
@@ -65,7 +65,7 @@ export default {
             let  dataUrl = nextPageUrl || mainURl;
             axios.post(dataUrl)
             .then(response => {
-                // console.log(response.data);
+                console.log(response.data.data);
                 if(this.portfolioMainPage){
                     this.portfolios = response.data.data;
                 }else {

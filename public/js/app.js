@@ -2940,7 +2940,8 @@ __webpack_require__.r(__webpack_exports__);
       var mainURl = 'get-data/portfolios';
       var dataUrl = nextPageUrl || mainURl;
       axios.post(dataUrl).then(function (response) {
-        // console.log(response.data);
+        console.log(response.data.data);
+
         if (_this.portfolioMainPage) {
           _this.portfolios = response.data.data;
         } else {
@@ -6441,7 +6442,9 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-12" }, [
-              !_vm.portfolios.lenght
+              (_vm.portfolios.lenght || _vm.portfolios.length == 0
+              ? true
+              : false)
                 ? _c("h5", { staticClass: "text-center" }, [
                     _vm._v("No Portfolio Found")
                   ])
@@ -6833,7 +6836,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-12" }, [
-          _vm.products.lenght == null
+          (_vm.products.lenght || _vm.products.length == 0
+          ? true
+          : false)
             ? _c("h5", { staticClass: "text-center" }, [
                 _vm._v("No Products Found")
               ])
