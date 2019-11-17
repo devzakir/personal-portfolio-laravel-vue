@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="my-photo">
-                        <img :src="data.avatar" alt="" class="img-fluid">
+                        <img :src="avatar" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
@@ -111,6 +111,7 @@ export default {
             currentTab: 1,
             data: [],
             setting: [],
+            avatar: '',
         }
     },
     computed: {
@@ -148,6 +149,13 @@ export default {
         .then(response => {
             // console.log(response);
             this.data = response.data;
+            
+            if(response.data.avatar == 'null'){
+                this.avatar = 'images/zakir.png';
+            }else {
+                this.avatar = response.data.avatar;
+                console.log('avatar');
+            }
         })
         .catch(error => {
             // console.log(error);
