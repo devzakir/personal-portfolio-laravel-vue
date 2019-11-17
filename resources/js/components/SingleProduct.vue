@@ -19,7 +19,7 @@
           <div class="row">
             <div class="col-8">
               <div class="product-image">
-                <img src="../images/slide1.jpg" alt="" class="img-fluid">
+                <img src="../images/banner.png" alt="" class="img-fluid">
               </div>
               <div class="description">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam a nulla voluptatem, illum sint quis nihil temporibus aut necessitatibus perspiciatis aspernatur quos sed provident, harum laudantium cumque nisi maxime est!</p>
