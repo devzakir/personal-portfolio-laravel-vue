@@ -2554,6 +2554,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.common.js");
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vform__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -2617,10 +2621,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(vform__WEBPACK_IMPORTED_MODULE_1__["AlertError"].name, vform__WEBPACK_IMPORTED_MODULE_1__["AlertError"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(vform__WEBPACK_IMPORTED_MODULE_1__["AlertSuccess"].name, vform__WEBPACK_IMPORTED_MODULE_1__["AlertSuccess"]);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      setting: []
+      setting: [],
+      form: new vform__WEBPACK_IMPORTED_MODULE_1__["Form"]({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
     };
   },
   mounted: function mounted() {
@@ -2633,6 +2656,15 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('get-data/settings').then(function (response) {
         _this.setting = response.data;
       }).then(function (error) {// console.log(error);
+      });
+    },
+    login: function login() {
+      var _this2 = this;
+
+      this.form.post('send-message').then(function (_ref) {
+        var data = _ref.data;
+        // console.log(data);
+        _this2.form.name = '', _this2.form.email = '', _this2.form.subject = '', _this2.form.message = '';
       });
     }
   }
@@ -3343,7 +3375,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* Normalize start */\n* {\n  padding: 0;\n  margin: 0;\n  outline: 0;\n}\n\nhtml,\nbody {\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n  overflow-x: hidden;\n}\n\nimg {\n  border: 0px;\n}\n\nol,\nul,\nli {\n  list-style-type: none;\n  margin: 0;\n}\n\na {\n  color: #245cd1;\n  display: inline-block;\n  transition: all 0.4s ease;\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n}\n\na:hover,\na:focus {\n  color: #fdc800;\n  text-decoration: none;\n}\n\np {\n  font-size: 14px;\n  line-height: 24px;\n  margin: 0;\n  font-family: \"Open Sans\", sans-serif;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n}\n\n@media (min-width: 1200px) {\n  .container {\n    max-width: 1170px;\n  }\n}\n/* Normalize end */\n/* Reusable style start */\n.animate {\n  transition: all 0.4s ease;\n}\n\n.buttons {\n  margin-top: 45px;\n}\n.buttons button, .buttons a {\n  padding: 10px 25px;\n  border-radius: 5px;\n  color: #f2f2f2;\n  background-image: linear-gradient(to right, #6a64e7, #443dc9);\n}\n.buttons button:first-child, .buttons a:first-child {\n  margin-right: 10px;\n  background-color: #245cd1;\n  background-image: linear-gradient(to right, #4c80f1, #245cd1);\n}\n.buttons button:hover, .buttons a:hover {\n  box-shadow: 0px 5px 10px 1px #ccc;\n  color: #fff;\n}\n.buttons button {\n  border: 0;\n  cursor: pointer;\n}\n.buttons button[disabled=disabled] {\n  cursor: default;\n  background-color: #ccc;\n  background-image: linear-gradient(to right, #d3d3d3, #acacac);\n  color: gray;\n}\n.buttons button[disabled=disabled]:hover {\n  box-shadow: 0px 0px #ccc;\n}\n\n/* header section */\nheader.active {\n  background-color: #245cd1;\n}\nheader.active .menu-part li a {\n  color: #fff;\n}\nheader.active .menu-part .right li a {\n  font-weight: 400;\n}\nheader.active .menu-part .right li a.hire-me {\n  border: 1px solid #fff;\n}\nheader.active .menu-part .right li a.hire-me:hover {\n  background-color: #fff;\n  color: #245cd1;\n}\n\nheader + .about-section:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  width: 100%;\n  height: 130%;\n  top: 0;\n  transform: skewY(-12deg);\n  background: #f6f9fc;\n}\nheader .menu-part {\n  padding: 15px 0;\n}\nheader .menu-part .logo {\n  max-width: 40px;\n  margin-right: 10px;\n}\nheader .menu-part li {\n  display: inline-block;\n}\nheader .menu-part li a {\n  padding: 20px 10px;\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 700;\n  color: #245cd1;\n}\nheader .menu-part li a.hire-me {\n  border: 1px solid #245cd1;\n  padding: 5px 10px;\n  border-radius: 3px;\n  margin-left: 10px;\n}\nheader .menu-part li a.hire-me:hover {\n  background-color: #245cd1;\n  color: #fff;\n}\nheader .menu-part .right li a {\n  font-weight: 500;\n}\nheader .menu-part .right li a.hire-me {\n  font-weight: 700;\n}\n\n.breadcrumb {\n  padding: 30px 0;\n}\n\n.banner-section {\n  position: relative;\n}\n.banner-section header {\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: 99;\n}\n.banner-section .particle {\n  position: absolute;\n  border-radius: 50%;\n}\n@-webkit-keyframes particle-animation-1 {\n  100% {\n    transform: translate3d(38vw, 68vh, 55px);\n  }\n}\n@keyframes particle-animation-1 {\n  100% {\n    transform: translate3d(38vw, 68vh, 55px);\n  }\n}\n.banner-section .particle:nth-child(1) {\n  -webkit-animation: particle-animation-1 60s infinite;\n          animation: particle-animation-1 60s infinite;\n  opacity: 0.89;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -0.1s;\n          animation-delay: -0.1s;\n  transform: translate3d(4vw, 39vh, 68px);\n  background: #68d926;\n}\n@-webkit-keyframes particle-animation-2 {\n  100% {\n    transform: translate3d(89vw, 79vh, 42px);\n  }\n}\n@keyframes particle-animation-2 {\n  100% {\n    transform: translate3d(89vw, 79vh, 42px);\n  }\n}\n.banner-section .particle:nth-child(2) {\n  -webkit-animation: particle-animation-2 60s infinite;\n          animation: particle-animation-2 60s infinite;\n  opacity: 0.33;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -0.2s;\n          animation-delay: -0.2s;\n  transform: translate3d(3vw, 33vh, 34px);\n  background: #26d965;\n}\n@-webkit-keyframes particle-animation-3 {\n  100% {\n    transform: translate3d(48vw, 38vh, 71px);\n  }\n}\n@keyframes particle-animation-3 {\n  100% {\n    transform: translate3d(48vw, 38vh, 71px);\n  }\n}\n.banner-section .particle:nth-child(3) {\n  -webkit-animation: particle-animation-3 60s infinite;\n          animation: particle-animation-3 60s infinite;\n  opacity: 0.43;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n  transform: translate3d(39vw, 90vh, 73px);\n  background: #6526d9;\n}\n@-webkit-keyframes particle-animation-4 {\n  100% {\n    transform: translate3d(28vw, 52vh, 59px);\n  }\n}\n@keyframes particle-animation-4 {\n  100% {\n    transform: translate3d(28vw, 52vh, 59px);\n  }\n}\n.banner-section .particle:nth-child(4) {\n  -webkit-animation: particle-animation-4 60s infinite;\n          animation: particle-animation-4 60s infinite;\n  opacity: 0.6;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -0.4s;\n          animation-delay: -0.4s;\n  transform: translate3d(24vw, 75vh, 63px);\n  background: #d95026;\n}\n@-webkit-keyframes particle-animation-5 {\n  100% {\n    transform: translate3d(25vw, 46vh, 66px);\n  }\n}\n@keyframes particle-animation-5 {\n  100% {\n    transform: translate3d(25vw, 46vh, 66px);\n  }\n}\n.banner-section .particle:nth-child(5) {\n  -webkit-animation: particle-animation-5 60s infinite;\n          animation: particle-animation-5 60s infinite;\n  opacity: 0.71;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n  transform: translate3d(27vw, 76vh, 28px);\n  background: #26d959;\n}\n@-webkit-keyframes particle-animation-6 {\n  100% {\n    transform: translate3d(6vw, 11vh, 48px);\n  }\n}\n@keyframes particle-animation-6 {\n  100% {\n    transform: translate3d(6vw, 11vh, 48px);\n  }\n}\n.banner-section .particle:nth-child(6) {\n  -webkit-animation: particle-animation-6 60s infinite;\n          animation: particle-animation-6 60s infinite;\n  opacity: 0.97;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -0.6s;\n          animation-delay: -0.6s;\n  transform: translate3d(11vw, 21vh, 56px);\n  background: #26d997;\n}\n@-webkit-keyframes particle-animation-7 {\n  100% {\n    transform: translate3d(22vw, 65vh, 100px);\n  }\n}\n@keyframes particle-animation-7 {\n  100% {\n    transform: translate3d(22vw, 65vh, 100px);\n  }\n}\n.banner-section .particle:nth-child(7) {\n  -webkit-animation: particle-animation-7 60s infinite;\n          animation: particle-animation-7 60s infinite;\n  opacity: 0.82;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -0.7s;\n          animation-delay: -0.7s;\n  transform: translate3d(81vw, 20vh, 50px);\n  background: #6526d9;\n}\n@-webkit-keyframes particle-animation-8 {\n  100% {\n    transform: translate3d(18vw, 89vh, 41px);\n  }\n}\n@keyframes particle-animation-8 {\n  100% {\n    transform: translate3d(18vw, 89vh, 41px);\n  }\n}\n.banner-section .particle:nth-child(8) {\n  -webkit-animation: particle-animation-8 60s infinite;\n          animation: particle-animation-8 60s infinite;\n  opacity: 0.81;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -0.8s;\n          animation-delay: -0.8s;\n  transform: translate3d(61vw, 35vh, 48px);\n  background: #26d9d0;\n}\n@-webkit-keyframes particle-animation-9 {\n  100% {\n    transform: translate3d(5vw, 5vh, 1px);\n  }\n}\n@keyframes particle-animation-9 {\n  100% {\n    transform: translate3d(5vw, 5vh, 1px);\n  }\n}\n.banner-section .particle:nth-child(9) {\n  -webkit-animation: particle-animation-9 60s infinite;\n          animation: particle-animation-9 60s infinite;\n  opacity: 0.67;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -0.9s;\n          animation-delay: -0.9s;\n  transform: translate3d(34vw, 88vh, 2px);\n  background: #3526d9;\n}\n@-webkit-keyframes particle-animation-10 {\n  100% {\n    transform: translate3d(87vw, 41vh, 50px);\n  }\n}\n@keyframes particle-animation-10 {\n  100% {\n    transform: translate3d(87vw, 41vh, 50px);\n  }\n}\n.banner-section .particle:nth-child(10) {\n  -webkit-animation: particle-animation-10 60s infinite;\n          animation: particle-animation-10 60s infinite;\n  opacity: 0.48;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -1s;\n          animation-delay: -1s;\n  transform: translate3d(28vw, 61vh, 46px);\n  background: #d926a6;\n}\n@-webkit-keyframes particle-animation-11 {\n  100% {\n    transform: translate3d(72vw, 79vh, 68px);\n  }\n}\n@keyframes particle-animation-11 {\n  100% {\n    transform: translate3d(72vw, 79vh, 68px);\n  }\n}\n.banner-section .particle:nth-child(11) {\n  -webkit-animation: particle-animation-11 60s infinite;\n          animation: particle-animation-11 60s infinite;\n  opacity: 0.57;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -1.1s;\n          animation-delay: -1.1s;\n  transform: translate3d(33vw, 82vh, 78px);\n  background: #26d9bb;\n}\n@-webkit-keyframes particle-animation-12 {\n  100% {\n    transform: translate3d(31vw, 51vh, 17px);\n  }\n}\n@keyframes particle-animation-12 {\n  100% {\n    transform: translate3d(31vw, 51vh, 17px);\n  }\n}\n.banner-section .particle:nth-child(12) {\n  -webkit-animation: particle-animation-12 60s infinite;\n          animation: particle-animation-12 60s infinite;\n  opacity: 0.6;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -1.2s;\n          animation-delay: -1.2s;\n  transform: translate3d(74vw, 69vh, 18px);\n  background: #266ed9;\n}\n@-webkit-keyframes particle-animation-13 {\n  100% {\n    transform: translate3d(20vw, 3vh, 60px);\n  }\n}\n@keyframes particle-animation-13 {\n  100% {\n    transform: translate3d(20vw, 3vh, 60px);\n  }\n}\n.banner-section .particle:nth-child(13) {\n  -webkit-animation: particle-animation-13 60s infinite;\n          animation: particle-animation-13 60s infinite;\n  opacity: 0.87;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -1.3s;\n          animation-delay: -1.3s;\n  transform: translate3d(66vw, 18vh, 70px);\n  background: #d9d326;\n}\n@-webkit-keyframes particle-animation-14 {\n  100% {\n    transform: translate3d(3vw, 49vh, 87px);\n  }\n}\n@keyframes particle-animation-14 {\n  100% {\n    transform: translate3d(3vw, 49vh, 87px);\n  }\n}\n.banner-section .particle:nth-child(14) {\n  -webkit-animation: particle-animation-14 60s infinite;\n          animation: particle-animation-14 60s infinite;\n  opacity: 0.15;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -1.4s;\n          animation-delay: -1.4s;\n  transform: translate3d(57vw, 6vh, 81px);\n  background: #7a26d9;\n}\n@-webkit-keyframes particle-animation-15 {\n  100% {\n    transform: translate3d(62vw, 88vh, 92px);\n  }\n}\n@keyframes particle-animation-15 {\n  100% {\n    transform: translate3d(62vw, 88vh, 92px);\n  }\n}\n.banner-section .particle:nth-child(15) {\n  -webkit-animation: particle-animation-15 60s infinite;\n          animation: particle-animation-15 60s infinite;\n  opacity: 0.93;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -1.5s;\n          animation-delay: -1.5s;\n  transform: translate3d(46vw, 62vh, 9px);\n  background: #26d9ca;\n}\n@-webkit-keyframes particle-animation-16 {\n  100% {\n    transform: translate3d(47vw, 2vh, 59px);\n  }\n}\n@keyframes particle-animation-16 {\n  100% {\n    transform: translate3d(47vw, 2vh, 59px);\n  }\n}\n.banner-section .particle:nth-child(16) {\n  -webkit-animation: particle-animation-16 60s infinite;\n          animation: particle-animation-16 60s infinite;\n  opacity: 0.09;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -1.6s;\n          animation-delay: -1.6s;\n  transform: translate3d(67vw, 4vh, 41px);\n  background: #bb26d9;\n}\n@-webkit-keyframes particle-animation-17 {\n  100% {\n    transform: translate3d(14vw, 8vh, 75px);\n  }\n}\n@keyframes particle-animation-17 {\n  100% {\n    transform: translate3d(14vw, 8vh, 75px);\n  }\n}\n.banner-section .particle:nth-child(17) {\n  -webkit-animation: particle-animation-17 60s infinite;\n          animation: particle-animation-17 60s infinite;\n  opacity: 0.89;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -1.7s;\n          animation-delay: -1.7s;\n  transform: translate3d(49vw, 18vh, 42px);\n  background: #26acd9;\n}\n@-webkit-keyframes particle-animation-18 {\n  100% {\n    transform: translate3d(54vw, 31vh, 42px);\n  }\n}\n@keyframes particle-animation-18 {\n  100% {\n    transform: translate3d(54vw, 31vh, 42px);\n  }\n}\n.banner-section .particle:nth-child(18) {\n  -webkit-animation: particle-animation-18 60s infinite;\n          animation: particle-animation-18 60s infinite;\n  opacity: 0.57;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -1.8s;\n          animation-delay: -1.8s;\n  transform: translate3d(53vw, 45vh, 18px);\n  background: #26d982;\n}\n@-webkit-keyframes particle-animation-19 {\n  100% {\n    transform: translate3d(75vw, 75vh, 1px);\n  }\n}\n@keyframes particle-animation-19 {\n  100% {\n    transform: translate3d(75vw, 75vh, 1px);\n  }\n}\n.banner-section .particle:nth-child(19) {\n  -webkit-animation: particle-animation-19 60s infinite;\n          animation: particle-animation-19 60s infinite;\n  opacity: 0.1;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -1.9s;\n          animation-delay: -1.9s;\n  transform: translate3d(36vw, 23vh, 67px);\n  background: #26d988;\n}\n@-webkit-keyframes particle-animation-20 {\n  100% {\n    transform: translate3d(26vw, 27vh, 100px);\n  }\n}\n@keyframes particle-animation-20 {\n  100% {\n    transform: translate3d(26vw, 27vh, 100px);\n  }\n}\n.banner-section .particle:nth-child(20) {\n  -webkit-animation: particle-animation-20 60s infinite;\n          animation: particle-animation-20 60s infinite;\n  opacity: 0.7;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2s;\n          animation-delay: -2s;\n  transform: translate3d(25vw, 24vh, 99px);\n  background: #26d9ac;\n}\n@-webkit-keyframes particle-animation-21 {\n  100% {\n    transform: translate3d(71vw, 64vh, 96px);\n  }\n}\n@keyframes particle-animation-21 {\n  100% {\n    transform: translate3d(71vw, 64vh, 96px);\n  }\n}\n.banner-section .particle:nth-child(21) {\n  -webkit-animation: particle-animation-21 60s infinite;\n          animation: particle-animation-21 60s infinite;\n  opacity: 0.78;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -2.1s;\n          animation-delay: -2.1s;\n  transform: translate3d(56vw, 22vh, 51px);\n  background: #266bd9;\n}\n@-webkit-keyframes particle-animation-22 {\n  100% {\n    transform: translate3d(77vw, 80vh, 100px);\n  }\n}\n@keyframes particle-animation-22 {\n  100% {\n    transform: translate3d(77vw, 80vh, 100px);\n  }\n}\n.banner-section .particle:nth-child(22) {\n  -webkit-animation: particle-animation-22 60s infinite;\n          animation: particle-animation-22 60s infinite;\n  opacity: 0.03;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -2.2s;\n          animation-delay: -2.2s;\n  transform: translate3d(33vw, 10vh, 56px);\n  background: #d92632;\n}\n@-webkit-keyframes particle-animation-23 {\n  100% {\n    transform: translate3d(11vw, 56vh, 45px);\n  }\n}\n@keyframes particle-animation-23 {\n  100% {\n    transform: translate3d(11vw, 56vh, 45px);\n  }\n}\n.banner-section .particle:nth-child(23) {\n  -webkit-animation: particle-animation-23 60s infinite;\n          animation: particle-animation-23 60s infinite;\n  opacity: 0.14;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -2.3s;\n          animation-delay: -2.3s;\n  transform: translate3d(80vw, 28vh, 53px);\n  background: #47d926;\n}\n@-webkit-keyframes particle-animation-24 {\n  100% {\n    transform: translate3d(3vw, 40vh, 62px);\n  }\n}\n@keyframes particle-animation-24 {\n  100% {\n    transform: translate3d(3vw, 40vh, 62px);\n  }\n}\n.banner-section .particle:nth-child(24) {\n  -webkit-animation: particle-animation-24 60s infinite;\n          animation: particle-animation-24 60s infinite;\n  opacity: 0.9;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -2.4s;\n          animation-delay: -2.4s;\n  transform: translate3d(36vw, 59vh, 15px);\n  background: #2632d9;\n}\n@-webkit-keyframes particle-animation-25 {\n  100% {\n    transform: translate3d(84vw, 47vh, 85px);\n  }\n}\n@keyframes particle-animation-25 {\n  100% {\n    transform: translate3d(84vw, 47vh, 85px);\n  }\n}\n.banner-section .particle:nth-child(25) {\n  -webkit-animation: particle-animation-25 60s infinite;\n          animation: particle-animation-25 60s infinite;\n  opacity: 0.78;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -2.5s;\n          animation-delay: -2.5s;\n  transform: translate3d(43vw, 56vh, 95px);\n  background: #26d991;\n}\n@-webkit-keyframes particle-animation-26 {\n  100% {\n    transform: translate3d(20vw, 38vh, 56px);\n  }\n}\n@keyframes particle-animation-26 {\n  100% {\n    transform: translate3d(20vw, 38vh, 56px);\n  }\n}\n.banner-section .particle:nth-child(26) {\n  -webkit-animation: particle-animation-26 60s infinite;\n          animation: particle-animation-26 60s infinite;\n  opacity: 0.98;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2.6s;\n          animation-delay: -2.6s;\n  transform: translate3d(66vw, 21vh, 11px);\n  background: #26cad9;\n}\n@-webkit-keyframes particle-animation-27 {\n  100% {\n    transform: translate3d(89vw, 50vh, 99px);\n  }\n}\n@keyframes particle-animation-27 {\n  100% {\n    transform: translate3d(89vw, 50vh, 99px);\n  }\n}\n.banner-section .particle:nth-child(27) {\n  -webkit-animation: particle-animation-27 60s infinite;\n          animation: particle-animation-27 60s infinite;\n  opacity: 0.27;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -2.7s;\n          animation-delay: -2.7s;\n  transform: translate3d(71vw, 70vh, 10px);\n  background: #38d926;\n}\n@-webkit-keyframes particle-animation-28 {\n  100% {\n    transform: translate3d(41vw, 60vh, 70px);\n  }\n}\n@keyframes particle-animation-28 {\n  100% {\n    transform: translate3d(41vw, 60vh, 70px);\n  }\n}\n.banner-section .particle:nth-child(28) {\n  -webkit-animation: particle-animation-28 60s infinite;\n          animation: particle-animation-28 60s infinite;\n  opacity: 0.79;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -2.8s;\n          animation-delay: -2.8s;\n  transform: translate3d(75vw, 88vh, 68px);\n  background: #26d965;\n}\n@-webkit-keyframes particle-animation-29 {\n  100% {\n    transform: translate3d(8vw, 89vh, 94px);\n  }\n}\n@keyframes particle-animation-29 {\n  100% {\n    transform: translate3d(8vw, 89vh, 94px);\n  }\n}\n.banner-section .particle:nth-child(29) {\n  -webkit-animation: particle-animation-29 60s infinite;\n          animation: particle-animation-29 60s infinite;\n  opacity: 0.86;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2.9s;\n          animation-delay: -2.9s;\n  transform: translate3d(24vw, 11vh, 95px);\n  background: #26d93b;\n}\n@-webkit-keyframes particle-animation-30 {\n  100% {\n    transform: translate3d(64vw, 74vh, 77px);\n  }\n}\n@keyframes particle-animation-30 {\n  100% {\n    transform: translate3d(64vw, 74vh, 77px);\n  }\n}\n.banner-section .particle:nth-child(30) {\n  -webkit-animation: particle-animation-30 60s infinite;\n          animation: particle-animation-30 60s infinite;\n  opacity: 0.5;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -3s;\n          animation-delay: -3s;\n  transform: translate3d(23vw, 26vh, 55px);\n  background: #7dd926;\n}\n\n.banner {\n  min-height: 100vh;\n}\n.banner .intro h1 {\n  font-size: 45px;\n}\n.banner .intro h5 {\n  font-size: 20px;\n}\n.banner .intro p {\n  max-width: 350px;\n  margin-top: 15px;\n}\n.banner .banner-img {\n  margin-right: -200px;\n  margin-left: -150px;\n  position: relative;\n  z-index: -1;\n}\n\n.about-section {\n  padding: 100px 0;\n  position: relative;\n}\n.about-section:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  width: 100%;\n  height: 160%;\n  top: 0;\n  transform: skewY(-12deg);\n  background: #f6f9fc;\n}\n.about-section .about-heading {\n  text-align: right;\n  padding-right: 15px;\n  margin-bottom: 25px;\n  color: #245cd1;\n  border-right: 5px solid #dddddd;\n}\n.about-section .about-heading h2 {\n  margin: 0;\n}\n.about-section .my-photo {\n  border-radius: 20px;\n  max-width: 400px;\n  overflow: hidden;\n  box-shadow: 10px 15px 30px 1px #ddd;\n}\n.about-section .about-me .tabs {\n  border-bottom: 1px solid #eee;\n}\n.about-section .about-me .tabs li a {\n  padding: 8px 25px;\n  border-bottom: 2px solid transparent;\n  color: #444;\n}\n.about-section .about-me .tabs li a:hover {\n  border-color: #245cd1;\n  color: #245cd1;\n}\n.about-section .about-me .tabs li a.active {\n  color: #245cd1;\n  border-color: #245cd1;\n}\n.about-section .about-me nav .nav-tabs .nav-link {\n  border: none;\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n  padding: 15px 20px;\n  color: #444;\n  border-color: transparent;\n  position: relative;\n}\n.about-section .about-me nav .nav-tabs .nav-link::after {\n  content: \"\";\n  position: absolute;\n  width: 0%;\n  height: 2px;\n  background-color: #245cd1;\n  bottom: 0;\n  left: 0;\n  z-index: 5;\n  transition: all 0.4s ease;\n}\n.about-section .about-me nav .nav-tabs .nav-link:hover {\n  color: #245cd1;\n}\n.about-section .about-me nav .nav-tabs .nav-link:hover::after {\n  width: 100%;\n}\n.about-section .about-me nav .nav-tabs .nav-link.active {\n  color: #245cd1;\n  background-color: transparent;\n}\n.about-section .about-me nav .nav-tabs .nav-link.active::after {\n  width: 100%;\n}\n.about-section .about-me div.tab-pane {\n  padding-top: 25px;\n}\n.about-section .about-me .skill-box {\n  margin-bottom: 25px;\n}\n.about-section .about-me .skill-box h6 {\n  color: #444;\n  font-weight: 700;\n}\n.about-section .about-me .skill-box div {\n  margin-left: -5px;\n}\n.about-section .about-me .skill-box div span {\n  display: inline-block;\n  background-color: #e1e9fa;\n  color: #7499e7;\n  padding: 3px 10px;\n  border-radius: 2px;\n  margin: 5px;\n  white-space: pre;\n  cursor: default;\n}\n.about-section .about-me .skill-box div span:hover {\n  color: #245cd1;\n}\n.about-section .tabs-content {\n  margin-top: 20px;\n}\n\n.about-section.active {\n  overflow: hidden;\n}\n\n.services-section {\n  min-height: 600px;\n  background-color: #fff;\n  padding: 100px 0px;\n}\n.services-section .section-heading {\n  margin-top: 100px;\n}\n.services-section .section-heading p {\n  max-width: 300px;\n}\n.services-section .icon {\n  height: 50px;\n  width: 50px;\n  line-height: 50px;\n  text-align: center;\n  background-color: #245cd1;\n  border-radius: 50%;\n  outline-offset: 10px;\n  margin: 25px 10px 55px 10px;\n  outline: 2px dashed #245cd1;\n  color: #fff;\n}\n.services-section .icon.bg-white {\n  background-color: #fff;\n}\n.services-section .counter {\n  margin-top: 45px;\n}\n.services-section .counter .item {\n  margin-bottom: 30px;\n}\n.services-section .counter .item h4 {\n  color: #222;\n  margin-bottom: 0;\n}\n.services-section .counter .item p {\n  color: #444;\n  margin-bottom: 0;\n  max-width: 100px;\n}\n.services-section .services .counter .item {\n  padding: 15px 0;\n}\n.services-section .services .my-services .item {\n  width: 50%;\n  padding: 15px;\n}\n.services-section .services .my-services .item .item-info {\n  border-radius: 5px;\n  min-height: 300px;\n  padding: 30px;\n  transition: all 0.4s ease;\n  text-align: center;\n}\n.services-section .services .my-services .item .item-info h3 {\n  font-size: 20px;\n  margin-bottom: 10px;\n  text-align: center;\n  text-transform: uppercase;\n}\n.services-section .services .my-services .item .item-info p {\n  color: #666;\n}\n.services-section .services .my-services .item .item-info:hover {\n  transform: scale(1.07);\n}\n.services-section .services .my-services .item .item-info .icon {\n  margin: 10px auto 45px;\n}\n.services-section .services .my-services .item:nth-child(1) .item-info {\n  background-color: #E8F0FF;\n  color: #448AFF;\n}\n.services-section .services .my-services .item:nth-child(2) {\n  margin-top: 80px;\n}\n.services-section .services .my-services .item:nth-child(2) .item-info {\n  background-color: #FFF5EE;\n  color: #FF9B53;\n}\n.services-section .services .my-services .item:nth-child(3) {\n  margin-top: -80px;\n}\n.services-section .services .my-services .item:nth-child(3) .item-info {\n  background-color: #E6FAF1;\n  color: #06D79C;\n}\n.services-section .services .my-services .item:nth-child(4) .item-info {\n  background-color: #EEEBFF;\n  color: #543BCC;\n}\n\n.portfolio-section {\n  padding: 100px 0;\n}\n.portfolio-section .portfolio-heading {\n  margin-bottom: 50px;\n}\n.portfolio-section .section-heading {\n  text-align: left;\n  padding-left: 15px;\n  color: #245cd1;\n  border-left: 5px solid #dddddd;\n}\n.portfolio-section .section-heading h2 {\n  margin: 0;\n}\n.portfolio-section .portfolio-menu li {\n  display: inline-block;\n}\n.portfolio-section .portfolio-menu li a {\n  padding: 10px 15px;\n  border-bottom: 1px solid transparent;\n  color: #222;\n}\n.portfolio-section .portfolio-menu li a.active {\n  border-bottom: 1px solid #245cd1;\n  color: #245cd1;\n}\n.portfolio-section .portfolio-list .item {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);\n  border-radius: 5px;\n  transition: all 0.4s ease;\n  margin-bottom: 30px;\n}\n.portfolio-section .portfolio-list .item .preview {\n  height: 220px;\n  overflow: hidden;\n}\n.portfolio-section .portfolio-list .item .preview img {\n  transform: scale(1.1);\n  transition: all 0.4s ease;\n}\n.portfolio-section .portfolio-list .item .details {\n  padding: 30px;\n  transition: all 0.4s ease;\n}\n.portfolio-section .portfolio-list .item .details small {\n  color: #959595;\n}\n.portfolio-section .portfolio-list .item .details h6 {\n  color: #484848;\n}\n.portfolio-section .portfolio-list .item .details a {\n  padding: 5px 20px;\n  border: 1px solid #245cd1;\n  border-radius: 20px;\n  margin: 0 auto;\n  margin-top: 20px;\n}\n.portfolio-section .portfolio-list .item .details a:hover {\n  background-color: #245cd1;\n  color: #fff;\n}\n.portfolio-section .portfolio-list .item:hover {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.3);\n}\n.portfolio-section .portfolio-list .item:hover .details h6 {\n  color: #222;\n}\n\n.promote-section {\n  padding: 100px 0px;\n  background-color: #245cd1;\n}\n.promote-section .promote-content h2 {\n  color: #fff;\n  margin-bottom: 15px;\n}\n.promote-section .promote-content p {\n  color: #e6e6e6;\n  max-width: 300px;\n}\n.promote-section .promote-content .buttons a:hover {\n  box-shadow: none;\n  background-color: #fff;\n}\n.promote-section .content-preview > div {\n  max-width: 400px;\n  border-radius: 10px;\n  overflow: hidden;\n  transform: rotate(7deg);\n}\n\n.testiomonial-section {\n  padding: 100px 0;\n  background-image: url(" + escape(__webpack_require__(/*! ../../images/testimonial.jpg */ "./resources/js/images/testimonial.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 1;\n}\n.testiomonial-section::after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(36, 92, 209, 0.92);\n  z-index: -1;\n}\n.testiomonial-section .section-heading {\n  margin-bottom: 45px;\n  color: #fff;\n  text-align: center;\n}\n.testiomonial-section .carousel-indicators li {\n  height: 20px;\n  border-radius: 50%;\n  width: 20px;\n  margin-bottom: -10px;\n}\n.testiomonial-section .item {\n  max-width: 800px;\n  background-color: #fff;\n  padding: 30px 30px 30px;\n  border-radius: 5px;\n  position: relative;\n  text-align: center;\n  margin: 50px auto 70px;\n}\n.testiomonial-section .item .client-avatar {\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  overflow: hidden;\n  position: absolute;\n  top: 0%;\n  left: 50%;\n  transform: translateX(-50%) translateY(-50%);\n  background-color: white;\n  box-shadow: 0px 2px 1px #ddd;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.testiomonial-section .item .testimonial-description {\n  padding-top: 45px;\n}\n.testiomonial-section .item .testimonial-description p {\n  margin-bottom: 25px;\n  font-size: 16px;\n  color: #444;\n}\n.testiomonial-section .item .testimonial-description .client-intro h6 {\n  margin-bottom: 0;\n  color: #245cd1;\n}\n.testiomonial-section .item .testimonial-description .client-intro i {\n  color: #444;\n  font-size: 14px;\n}\n\n.contact-section {\n  padding: 100px 0 150px;\n}\n.contact-section .contact-heading {\n  color: #245cd1;\n  margin-bottom: 95px;\n}\n.contact-section .contact-heading h2 {\n  color: #245cd1;\n  margin: 0;\n}\n.contact-section .contact-heading p {\n  max-width: 300px;\n  margin: auto;\n  color: #444;\n}\n.contact-section .contact-details {\n  margin-right: 200px;\n  position: relative;\n  z-index: 1;\n}\n.contact-section .contact-details::after {\n  position: absolute;\n  content: \"\";\n  width: calc(100% + 20px);\n  height: calc(100% + 100px);\n  background-image: linear-gradient(to right, #6493fa, #245cd1);\n  z-index: -1;\n  top: -50px;\n  left: 180px;\n}\n.contact-section .contact-details .details-left {\n  background-color: #245cd1;\n  width: 40%;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.contact-section .contact-details .details-right {\n  width: 60%;\n}\n.contact-section .contact-details .details-right .contact-form {\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n.contact-section form.contact-form {\n  padding: 30px;\n  background-color: #fff;\n}\n.contact-section form.contact-form input, .contact-section form.contact-form textarea {\n  width: 100%;\n  margin-bottom: 10px;\n  border: 1px solid #ddd;\n  border-radius: 2px;\n  padding: 7px 15px;\n}\n.contact-section form.contact-form input:focus, .contact-section form.contact-form textarea:focus {\n  border-color: #245cd1;\n}\n.contact-section form.contact-form button.send-message {\n  padding: 10px 25px;\n  border-radius: 5px;\n  color: #f2f2f2;\n  background-image: linear-gradient(to right, #6a64e7, #443dc9);\n  border: none;\n  cursor: pointer;\n}\n.contact-section form.contact-form button.send-message:hover {\n  background-color: #245cd1;\n  background-image: linear-gradient(to right, #4c80f1, #245cd1);\n}\n.contact-section .contact-info {\n  padding: 30px;\n  background-color: #fff;\n  border-radius: 5px;\n}\n\n.connect-info {\n  padding: 30px;\n  background-color: #245cd1;\n}\n.connect-info .info-item {\n  margin-bottom: 20px;\n}\n.connect-info .info-item strong {\n  color: #fff;\n}\n.connect-info .info-item p {\n  color: #e6e6e6;\n}\n.connect-info .info-item ul.find-me li {\n  display: inline-block;\n}\n.connect-info .info-item ul.find-me li a {\n  height: 40px;\n  width: 40px;\n  line-height: 40px;\n  text-align: center;\n  border-radius: 2px;\n  color: #fff;\n  background-color: #5e89e3;\n  margin-right: 5px;\n}\n\n.sub-footer {\n  padding: 100px 0;\n  background-color: #293044;\n  color: #fff;\n}\n.sub-footer ul > li {\n  list-style: square;\n  margin-left: 20px;\n  transition: all 0.4s ease;\n}\n.sub-footer ul > li:hover {\n  margin-left: 25px;\n}\n.sub-footer ul > li a {\n  color: #bfbfbf;\n}\n.sub-footer ul > li a:hover {\n  color: #fff;\n}\n\n.footer-section {\n  background-color: #0E1833;\n  padding: 20px 0;\n  color: #fff;\n}\n.footer-section .footer-text a {\n  color: #fdc800;\n}\n\n.products {\n  padding: 100px 0 120px;\n  background-color: #fff;\n}\n.products .heading {\n  color: #245cd1;\n  margin-bottom: 50px;\n}\n.products .heading h2 {\n  color: #245cd1;\n  margin: 0;\n}\n.products .heading p {\n  max-width: 300px;\n  margin: auto;\n  color: #444;\n}\n.products .product-box {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);\n  border-radius: 6px;\n  overflow: hidden;\n  margin-bottom: 30px;\n  transition: all 0.4s ease;\n}\n.products .product-box .image {\n  height: 300px;\n}\n.products .product-box .image img {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 100%;\n}\n.products .product-box .info {\n  padding: 20px 30px;\n}\n.products .product-box .info .title a {\n  font-size: 16px;\n  font-weight: 600;\n}\n.products .product-box .info .title p {\n  margin: 0;\n  font-size: 13px;\n  color: #666;\n}\n.products .product-box .info .price p {\n  margin: 0;\n  padding: 1px 15px;\n  background-color: #245cd1;\n  color: #fff;\n  border-radius: 3px;\n  font-size: 12px;\n}\n.products .product-box .info-footer {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 10px;\n}\n.products .product-box:hover {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.3);\n}\n\nsection.breadcrum {\n  text-align: center;\n  padding: 100px;\n  background-image: url(" + escape(__webpack_require__(/*! ../../images/banner3.jpg */ "./resources/js/images/banner3.jpg")) + ");\n  background-size: cover;\n  background-position: top center;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 1;\n}\nsection.breadcrum::after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\nsection.breadcrum .heading h2 {\n  font-weight: 700;\n}\nsection.breadcrum .heading a {\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 600;\n  color: #444;\n}\nsection.breadcrum .heading i {\n  margin-left: 8px;\n  margin-right: 8px;\n  font-size: 14px;\n  color: #444;\n}\n\nsection.single-product {\n  padding: 100px 0;\n}\nsection.single-product .product-image {\n  padding: 10px;\n  border: 1px solid #ddd;\n}\nsection.single-product .description {\n  margin-top: 30px;\n  padding: 10px;\n  border: 1px solid #ddd;\n}\nsection.single-product .template-box {\n  border: 1px solid #ddd;\n  border-radius: 3px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 200px;\n  margin-bottom: 20px;\n}\nsection.single-product .template-box a {\n  margin-bottom: 10px;\n  text-align: center;\n  color: white;\n  background-color: #245cd1;\n  text-transform: uppercase;\n  min-width: 180px;\n  padding: 10px 0;\n  border-radius: 3px;\n  font-weight: 600;\n}\nsection.single-product .template-box a i {\n  margin-right: 5px;\n}\nsection.single-product .template-box a.demo {\n  background-color: #fdc800;\n  color: #222;\n}\nsection.single-product .template-box a:hover {\n  box-shadow: 0px 2px 4px 0px rgba(14, 27, 56, 0.4);\n}\nsection.single-product .sidebar-box {\n  padding: 20px;\n  border: 1px solid #ddd;\n  border-radius: 3px;\n}\nsection.single-product .sidebar-box h3 {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 15px;\n}\nsection.single-product .sidebar-box .content table {\n  width: 100%;\n  border: 1px solid #ddd;\n}\nsection.single-product .sidebar-box .content table tr {\n  border-bottom: 1px solid #ddd;\n}\nsection.single-product .sidebar-box .content table tr td {\n  width: 60%;\n  padding: 7px 10px;\n  font-size: 14px;\n}\nsection.single-product .sidebar-box .content table tr td:first-child {\n  width: 40%;\n}\n\nsection.not-found {\n  padding: 160px 0;\n}\n\n@media (min-width: 768px) and (max-width: 991px) {\n  .banner-section header .menu-part .logo {\n    max-width: 40px;\n    margin-right: 10px;\n  }\n\n  .banner-section header .menu-part li a {\n    padding: 20px 5px;\n  }\n  .banner-section header .menu-part li a.hire-me {\n    padding: 5px 10px;\n  }\n\n  header .menu-part li a {\n    padding: 20px 8px;\n  }\n\n  header .menu-part li a.hire-me {\n    margin-left: 0;\n  }\n\n  .banner .banner-img {\n    margin-right: -113px;\n    margin-left: -191px;\n    margin-bottom: -61px;\n    transform: rotate(-4deg);\n  }\n\n  .services-section .services .item2 {\n    margin-top: 60px;\n  }\n\n  .services-section .services .item {\n    width: 50%;\n    padding: 5px;\n  }\n\n  .contact-section .contact-details {\n    margin-right: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  .services-section .counter .item {\n    margin-bottom: 25px;\n  }\n\n  .services-section .section-heading {\n    margin-top: 30px;\n  }\n}\n@media (max-width: 767px) {\n  .menu-part {\n    flex-wrap: wrap;\n  }\n  .menu-part .logo {\n    order: 1;\n  }\n  .menu-part .mobile-nav {\n    order: 3;\n    display: block;\n    background-color: #245cd1;\n    width: 100%;\n    padding: 20px 0;\n    position: relative;\n  }\n  .menu-part .mobile-nav::after {\n    position: absolute;\n    content: \"\";\n    top: -53px;\n    right: 0px;\n    font-family: \"Font Awesome 5 Free\";\n    font-weight: 900;\n    content: \"\\F0C9\";\n    height: 45px;\n    width: 50px;\n    border: 1px solid #fff;\n    color: #fff;\n    line-height: 45px;\n    text-align: center;\n    border-radius: 1px;\n    background-color: #245cd1;\n    border-radius: 3px;\n  }\n  .menu-part .mobile-nav li {\n    display: block;\n  }\n  .menu-part .mobile-nav li a {\n    color: #fff;\n    padding: 10px 30px;\n  }\n  .menu-part .right {\n    order: 2;\n    padding-right: 50px;\n  }\n\n  header .menu-part li a.hire-me {\n    display: none;\n  }\n\n  .contact-details.d-flex {\n    flex-wrap: wrap;\n    margin-right: 0;\n  }\n\n  .contact-section .contact-details .details-left {\n    width: 100%;\n  }\n\n  .contact-section .contact-details .details-right {\n    width: 100%;\n  }\n\n  .contact-section .contact-details::after {\n    width: calc(100% + 100px);\n    height: calc(100% - 100px);\n    top: 150px;\n    left: -50px;\n  }\n\n  .sub-footer .item:nth-child(1) {\n    margin-bottom: 30px;\n  }\n\n  .promote-section .promote-content {\n    margin-top: 30px;\n    order: 2;\n  }\n\n  .promote-section .content-preview {\n    justify-content: flex-start !important;\n  }\n  .promote-section .content-preview > div {\n    transform: rotate(0deg);\n  }\n\n  .sub-footer .item:nth-child(4) {\n    margin-bottom: 0;\n  }\n\n  .sub-footer .item:nth-child(3) {\n    margin-bottom: 0;\n  }\n\n  .sub-footer .item {\n    margin-bottom: 30px;\n  }\n\n  .services-section .services .item {\n    width: 100%;\n    padding: 0px;\n  }\n\n  .services-section .counter .item p {\n    max-width: 100%;\n  }\n\n  .services-section .services .item2 {\n    margin-top: 0px;\n  }\n\n  .services-section .services .item3 {\n    margin-top: 0px;\n  }\n\n  .my-services .item {\n    margin-bottom: 30px;\n  }\n\n  .my-services .item:last-child {\n    margin-bottom: 0;\n  }\n\n  .services-section .counter {\n    margin-top: 25px;\n  }\n\n  .services-section .section-heading {\n    margin-top: 0px;\n  }\n\n  .my-photo {\n    margin: 0 auto 50px;\n  }\n\n  .about-section .about-heading {\n    text-align: center;\n    padding-right: 0;\n    margin-bottom: 25px;\n    color: #245cd1;\n    border-right: none;\n  }\n\n  .banner .intro h1 {\n    font-size: 35px;\n  }\n\n  .banner-preview {\n    display: none;\n  }\n}\n@media (max-width: 575px) {\n  .services-section .services .my-services .item {\n    width: 100%;\n  }\n\n  .services-section .services .my-services .item2 {\n    margin-top: 0px;\n  }\n\n  .services-section .services .my-services .item3 {\n    margin-top: 0px;\n  }\n\n  .my-services .item {\n    margin-bottom: 0px;\n  }\n\n  .sub-footer .item:nth-child(3) {\n    margin-bottom: 30px;\n  }\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* Normalize start */\n* {\n  padding: 0;\n  margin: 0;\n  outline: 0;\n}\n\nhtml,\nbody {\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n  overflow-x: hidden;\n}\n\nimg {\n  border: 0px;\n}\n\nol,\nul,\nli {\n  list-style-type: none;\n  margin: 0;\n}\n\na {\n  color: #245cd1;\n  display: inline-block;\n  transition: all 0.4s ease;\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n}\n\na:hover,\na:focus {\n  color: #fdc800;\n  text-decoration: none;\n}\n\np {\n  font-size: 14px;\n  line-height: 24px;\n  margin: 0;\n  font-family: \"Open Sans\", sans-serif;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"'Poppins', sans-serif\" sans-serif;\n}\n\n@media (min-width: 1200px) {\n  .container {\n    max-width: 1170px;\n  }\n}\n/* Normalize end */\n/* Reusable style start */\n.animate {\n  transition: all 0.4s ease;\n}\n\n.buttons {\n  margin-top: 45px;\n}\n.buttons button, .buttons a {\n  padding: 10px 25px;\n  border-radius: 5px;\n  color: #f2f2f2;\n  background-image: linear-gradient(to right, #6a64e7, #443dc9);\n}\n.buttons button:first-child, .buttons a:first-child {\n  margin-right: 10px;\n  background-color: #245cd1;\n  background-image: linear-gradient(to right, #4c80f1, #245cd1);\n}\n.buttons button:hover, .buttons a:hover {\n  box-shadow: 0px 5px 10px 1px #ccc;\n  color: #fff;\n}\n.buttons button {\n  border: 0;\n  cursor: pointer;\n}\n.buttons button[disabled=disabled] {\n  cursor: default;\n  background-color: #ccc;\n  background-image: linear-gradient(to right, #d3d3d3, #acacac);\n  color: gray;\n}\n.buttons button[disabled=disabled]:hover {\n  box-shadow: 0px 0px #ccc;\n}\n\n/* header section */\nheader.active {\n  background-color: #245cd1;\n}\nheader.active .menu-part li a {\n  color: #fff;\n}\nheader.active .menu-part .right li a {\n  font-weight: 400;\n}\nheader.active .menu-part .right li a.hire-me {\n  border: 1px solid #fff;\n}\nheader.active .menu-part .right li a.hire-me:hover {\n  background-color: #fff;\n  color: #245cd1;\n}\n\nheader + .about-section:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  width: 100%;\n  height: 130%;\n  top: 0;\n  transform: skewY(-12deg);\n  background: #f6f9fc;\n}\nheader .menu-part {\n  padding: 15px 0;\n}\nheader .menu-part .logo {\n  max-width: 40px;\n  margin-right: 10px;\n}\nheader .menu-part li {\n  display: inline-block;\n}\nheader .menu-part li a {\n  padding: 20px 10px;\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 700;\n  color: #245cd1;\n}\nheader .menu-part li a.hire-me {\n  border: 1px solid #245cd1;\n  padding: 5px 10px;\n  border-radius: 3px;\n  margin-left: 10px;\n}\nheader .menu-part li a.hire-me:hover {\n  background-color: #245cd1;\n  color: #fff;\n}\nheader .menu-part .right li a {\n  font-weight: 500;\n}\nheader .menu-part .right li a.hire-me {\n  font-weight: 700;\n}\n\n.breadcrumb {\n  padding: 30px 0;\n}\n\n.banner-section {\n  position: relative;\n}\n.banner-section header {\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: 99;\n}\n.banner-section .particle {\n  position: absolute;\n  border-radius: 50%;\n}\n@-webkit-keyframes particle-animation-1 {\n  100% {\n    transform: translate3d(58vw, 39vh, 17px);\n  }\n}\n@keyframes particle-animation-1 {\n  100% {\n    transform: translate3d(58vw, 39vh, 17px);\n  }\n}\n.banner-section .particle:nth-child(1) {\n  -webkit-animation: particle-animation-1 60s infinite;\n          animation: particle-animation-1 60s infinite;\n  opacity: 0.47;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -0.1s;\n          animation-delay: -0.1s;\n  transform: translate3d(1vw, 4vh, 77px);\n  background: #3826d9;\n}\n@-webkit-keyframes particle-animation-2 {\n  100% {\n    transform: translate3d(44vw, 3vh, 7px);\n  }\n}\n@keyframes particle-animation-2 {\n  100% {\n    transform: translate3d(44vw, 3vh, 7px);\n  }\n}\n.banner-section .particle:nth-child(2) {\n  -webkit-animation: particle-animation-2 60s infinite;\n          animation: particle-animation-2 60s infinite;\n  opacity: 0.26;\n  height: 10px;\n  width: 10px;\n  -webkit-animation-delay: -0.2s;\n          animation-delay: -0.2s;\n  transform: translate3d(49vw, 66vh, 22px);\n  background: #26d980;\n}\n@-webkit-keyframes particle-animation-3 {\n  100% {\n    transform: translate3d(72vw, 2vh, 24px);\n  }\n}\n@keyframes particle-animation-3 {\n  100% {\n    transform: translate3d(72vw, 2vh, 24px);\n  }\n}\n.banner-section .particle:nth-child(3) {\n  -webkit-animation: particle-animation-3 60s infinite;\n          animation: particle-animation-3 60s infinite;\n  opacity: 0.3;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n  transform: translate3d(37vw, 75vh, 59px);\n  background: #d926b8;\n}\n@-webkit-keyframes particle-animation-4 {\n  100% {\n    transform: translate3d(7vw, 15vh, 60px);\n  }\n}\n@keyframes particle-animation-4 {\n  100% {\n    transform: translate3d(7vw, 15vh, 60px);\n  }\n}\n.banner-section .particle:nth-child(4) {\n  -webkit-animation: particle-animation-4 60s infinite;\n          animation: particle-animation-4 60s infinite;\n  opacity: 0.45;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -0.4s;\n          animation-delay: -0.4s;\n  transform: translate3d(73vw, 30vh, 92px);\n  background: #50d926;\n}\n@-webkit-keyframes particle-animation-5 {\n  100% {\n    transform: translate3d(30vw, 4vh, 17px);\n  }\n}\n@keyframes particle-animation-5 {\n  100% {\n    transform: translate3d(30vw, 4vh, 17px);\n  }\n}\n.banner-section .particle:nth-child(5) {\n  -webkit-animation: particle-animation-5 60s infinite;\n          animation: particle-animation-5 60s infinite;\n  opacity: 0.49;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n  transform: translate3d(75vw, 7vh, 76px);\n  background: #d9be26;\n}\n@-webkit-keyframes particle-animation-6 {\n  100% {\n    transform: translate3d(21vw, 2vh, 7px);\n  }\n}\n@keyframes particle-animation-6 {\n  100% {\n    transform: translate3d(21vw, 2vh, 7px);\n  }\n}\n.banner-section .particle:nth-child(6) {\n  -webkit-animation: particle-animation-6 60s infinite;\n          animation: particle-animation-6 60s infinite;\n  opacity: 0.2;\n  height: 10px;\n  width: 10px;\n  -webkit-animation-delay: -0.6s;\n          animation-delay: -0.6s;\n  transform: translate3d(51vw, 57vh, 42px);\n  background: #26d9a6;\n}\n@-webkit-keyframes particle-animation-7 {\n  100% {\n    transform: translate3d(35vw, 11vh, 6px);\n  }\n}\n@keyframes particle-animation-7 {\n  100% {\n    transform: translate3d(35vw, 11vh, 6px);\n  }\n}\n.banner-section .particle:nth-child(7) {\n  -webkit-animation: particle-animation-7 60s infinite;\n          animation: particle-animation-7 60s infinite;\n  opacity: 0.34;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -0.7s;\n          animation-delay: -0.7s;\n  transform: translate3d(7vw, 19vh, 17px);\n  background: #26d92f;\n}\n@-webkit-keyframes particle-animation-8 {\n  100% {\n    transform: translate3d(65vw, 85vh, 14px);\n  }\n}\n@keyframes particle-animation-8 {\n  100% {\n    transform: translate3d(65vw, 85vh, 14px);\n  }\n}\n.banner-section .particle:nth-child(8) {\n  -webkit-animation: particle-animation-8 60s infinite;\n          animation: particle-animation-8 60s infinite;\n  opacity: 0.75;\n  height: 9px;\n  width: 9px;\n  -webkit-animation-delay: -0.8s;\n          animation-delay: -0.8s;\n  transform: translate3d(65vw, 68vh, 44px);\n  background: #d92644;\n}\n@-webkit-keyframes particle-animation-9 {\n  100% {\n    transform: translate3d(41vw, 32vh, 86px);\n  }\n}\n@keyframes particle-animation-9 {\n  100% {\n    transform: translate3d(41vw, 32vh, 86px);\n  }\n}\n.banner-section .particle:nth-child(9) {\n  -webkit-animation: particle-animation-9 60s infinite;\n          animation: particle-animation-9 60s infinite;\n  opacity: 0.14;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -0.9s;\n          animation-delay: -0.9s;\n  transform: translate3d(34vw, 21vh, 95px);\n  background: #4dd926;\n}\n@-webkit-keyframes particle-animation-10 {\n  100% {\n    transform: translate3d(53vw, 26vh, 91px);\n  }\n}\n@keyframes particle-animation-10 {\n  100% {\n    transform: translate3d(53vw, 26vh, 91px);\n  }\n}\n.banner-section .particle:nth-child(10) {\n  -webkit-animation: particle-animation-10 60s infinite;\n          animation: particle-animation-10 60s infinite;\n  opacity: 0.67;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -1s;\n          animation-delay: -1s;\n  transform: translate3d(26vw, 16vh, 43px);\n  background: #26d96b;\n}\n@-webkit-keyframes particle-animation-11 {\n  100% {\n    transform: translate3d(33vw, 8vh, 22px);\n  }\n}\n@keyframes particle-animation-11 {\n  100% {\n    transform: translate3d(33vw, 8vh, 22px);\n  }\n}\n.banner-section .particle:nth-child(11) {\n  -webkit-animation: particle-animation-11 60s infinite;\n          animation: particle-animation-11 60s infinite;\n  opacity: 0.1;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -1.1s;\n          animation-delay: -1.1s;\n  transform: translate3d(19vw, 21vh, 58px);\n  background: #26bed9;\n}\n@-webkit-keyframes particle-animation-12 {\n  100% {\n    transform: translate3d(6vw, 1vh, 96px);\n  }\n}\n@keyframes particle-animation-12 {\n  100% {\n    transform: translate3d(6vw, 1vh, 96px);\n  }\n}\n.banner-section .particle:nth-child(12) {\n  -webkit-animation: particle-animation-12 60s infinite;\n          animation: particle-animation-12 60s infinite;\n  opacity: 0.64;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -1.2s;\n          animation-delay: -1.2s;\n  transform: translate3d(86vw, 65vh, 72px);\n  background: #a626d9;\n}\n@-webkit-keyframes particle-animation-13 {\n  100% {\n    transform: translate3d(61vw, 21vh, 54px);\n  }\n}\n@keyframes particle-animation-13 {\n  100% {\n    transform: translate3d(61vw, 21vh, 54px);\n  }\n}\n.banner-section .particle:nth-child(13) {\n  -webkit-animation: particle-animation-13 60s infinite;\n          animation: particle-animation-13 60s infinite;\n  opacity: 0.69;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -1.3s;\n          animation-delay: -1.3s;\n  transform: translate3d(55vw, 64vh, 91px);\n  background: #7126d9;\n}\n@-webkit-keyframes particle-animation-14 {\n  100% {\n    transform: translate3d(20vw, 50vh, 73px);\n  }\n}\n@keyframes particle-animation-14 {\n  100% {\n    transform: translate3d(20vw, 50vh, 73px);\n  }\n}\n.banner-section .particle:nth-child(14) {\n  -webkit-animation: particle-animation-14 60s infinite;\n          animation: particle-animation-14 60s infinite;\n  opacity: 0.44;\n  height: 10px;\n  width: 10px;\n  -webkit-animation-delay: -1.4s;\n          animation-delay: -1.4s;\n  transform: translate3d(46vw, 8vh, 68px);\n  background: #26d926;\n}\n@-webkit-keyframes particle-animation-15 {\n  100% {\n    transform: translate3d(90vw, 80vh, 81px);\n  }\n}\n@keyframes particle-animation-15 {\n  100% {\n    transform: translate3d(90vw, 80vh, 81px);\n  }\n}\n.banner-section .particle:nth-child(15) {\n  -webkit-animation: particle-animation-15 60s infinite;\n          animation: particle-animation-15 60s infinite;\n  opacity: 0.65;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -1.5s;\n          animation-delay: -1.5s;\n  transform: translate3d(76vw, 47vh, 86px);\n  background: #d9a626;\n}\n@-webkit-keyframes particle-animation-16 {\n  100% {\n    transform: translate3d(63vw, 76vh, 90px);\n  }\n}\n@keyframes particle-animation-16 {\n  100% {\n    transform: translate3d(63vw, 76vh, 90px);\n  }\n}\n.banner-section .particle:nth-child(16) {\n  -webkit-animation: particle-animation-16 60s infinite;\n          animation: particle-animation-16 60s infinite;\n  opacity: 0.91;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -1.6s;\n          animation-delay: -1.6s;\n  transform: translate3d(69vw, 64vh, 82px);\n  background: #d97726;\n}\n@-webkit-keyframes particle-animation-17 {\n  100% {\n    transform: translate3d(63vw, 37vh, 9px);\n  }\n}\n@keyframes particle-animation-17 {\n  100% {\n    transform: translate3d(63vw, 37vh, 9px);\n  }\n}\n.banner-section .particle:nth-child(17) {\n  -webkit-animation: particle-animation-17 60s infinite;\n          animation: particle-animation-17 60s infinite;\n  opacity: 0.51;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -1.7s;\n          animation-delay: -1.7s;\n  transform: translate3d(20vw, 78vh, 38px);\n  background: #26d959;\n}\n@-webkit-keyframes particle-animation-18 {\n  100% {\n    transform: translate3d(22vw, 33vh, 75px);\n  }\n}\n@keyframes particle-animation-18 {\n  100% {\n    transform: translate3d(22vw, 33vh, 75px);\n  }\n}\n.banner-section .particle:nth-child(18) {\n  -webkit-animation: particle-animation-18 60s infinite;\n          animation: particle-animation-18 60s infinite;\n  opacity: 0.97;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -1.8s;\n          animation-delay: -1.8s;\n  transform: translate3d(36vw, 88vh, 18px);\n  background: #c426d9;\n}\n@-webkit-keyframes particle-animation-19 {\n  100% {\n    transform: translate3d(29vw, 18vh, 56px);\n  }\n}\n@keyframes particle-animation-19 {\n  100% {\n    transform: translate3d(29vw, 18vh, 56px);\n  }\n}\n.banner-section .particle:nth-child(19) {\n  -webkit-animation: particle-animation-19 60s infinite;\n          animation: particle-animation-19 60s infinite;\n  opacity: 0.49;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -1.9s;\n          animation-delay: -1.9s;\n  transform: translate3d(30vw, 9vh, 94px);\n  background: #d9a326;\n}\n@-webkit-keyframes particle-animation-20 {\n  100% {\n    transform: translate3d(87vw, 38vh, 45px);\n  }\n}\n@keyframes particle-animation-20 {\n  100% {\n    transform: translate3d(87vw, 38vh, 45px);\n  }\n}\n.banner-section .particle:nth-child(20) {\n  -webkit-animation: particle-animation-20 60s infinite;\n          animation: particle-animation-20 60s infinite;\n  opacity: 0.63;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -2s;\n          animation-delay: -2s;\n  transform: translate3d(72vw, 18vh, 40px);\n  background: #d9267d;\n}\n@-webkit-keyframes particle-animation-21 {\n  100% {\n    transform: translate3d(65vw, 21vh, 77px);\n  }\n}\n@keyframes particle-animation-21 {\n  100% {\n    transform: translate3d(65vw, 21vh, 77px);\n  }\n}\n.banner-section .particle:nth-child(21) {\n  -webkit-animation: particle-animation-21 60s infinite;\n          animation: particle-animation-21 60s infinite;\n  opacity: 0.52;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2.1s;\n          animation-delay: -2.1s;\n  transform: translate3d(70vw, 12vh, 72px);\n  background: #2665d9;\n}\n@-webkit-keyframes particle-animation-22 {\n  100% {\n    transform: translate3d(47vw, 14vh, 62px);\n  }\n}\n@keyframes particle-animation-22 {\n  100% {\n    transform: translate3d(47vw, 14vh, 62px);\n  }\n}\n.banner-section .particle:nth-child(22) {\n  -webkit-animation: particle-animation-22 60s infinite;\n          animation: particle-animation-22 60s infinite;\n  opacity: 0.65;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -2.2s;\n          animation-delay: -2.2s;\n  transform: translate3d(36vw, 87vh, 5px);\n  background: #c1d926;\n}\n@-webkit-keyframes particle-animation-23 {\n  100% {\n    transform: translate3d(86vw, 42vh, 32px);\n  }\n}\n@keyframes particle-animation-23 {\n  100% {\n    transform: translate3d(86vw, 42vh, 32px);\n  }\n}\n.banner-section .particle:nth-child(23) {\n  -webkit-animation: particle-animation-23 60s infinite;\n          animation: particle-animation-23 60s infinite;\n  opacity: 0.97;\n  height: 12px;\n  width: 12px;\n  -webkit-animation-delay: -2.3s;\n          animation-delay: -2.3s;\n  transform: translate3d(85vw, 69vh, 70px);\n  background: #d96226;\n}\n@-webkit-keyframes particle-animation-24 {\n  100% {\n    transform: translate3d(61vw, 28vh, 78px);\n  }\n}\n@keyframes particle-animation-24 {\n  100% {\n    transform: translate3d(61vw, 28vh, 78px);\n  }\n}\n.banner-section .particle:nth-child(24) {\n  -webkit-animation: particle-animation-24 60s infinite;\n          animation: particle-animation-24 60s infinite;\n  opacity: 0.9;\n  height: 11px;\n  width: 11px;\n  -webkit-animation-delay: -2.4s;\n          animation-delay: -2.4s;\n  transform: translate3d(31vw, 86vh, 33px);\n  background: #d94426;\n}\n@-webkit-keyframes particle-animation-25 {\n  100% {\n    transform: translate3d(13vw, 5vh, 83px);\n  }\n}\n@keyframes particle-animation-25 {\n  100% {\n    transform: translate3d(13vw, 5vh, 83px);\n  }\n}\n.banner-section .particle:nth-child(25) {\n  -webkit-animation: particle-animation-25 60s infinite;\n          animation: particle-animation-25 60s infinite;\n  opacity: 0.94;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -2.5s;\n          animation-delay: -2.5s;\n  transform: translate3d(64vw, 35vh, 26px);\n  background: #5cd926;\n}\n@-webkit-keyframes particle-animation-26 {\n  100% {\n    transform: translate3d(58vw, 67vh, 44px);\n  }\n}\n@keyframes particle-animation-26 {\n  100% {\n    transform: translate3d(58vw, 67vh, 44px);\n  }\n}\n.banner-section .particle:nth-child(26) {\n  -webkit-animation: particle-animation-26 60s infinite;\n          animation: particle-animation-26 60s infinite;\n  opacity: 0.04;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -2.6s;\n          animation-delay: -2.6s;\n  transform: translate3d(44vw, 26vh, 74px);\n  background: #d6d926;\n}\n@-webkit-keyframes particle-animation-27 {\n  100% {\n    transform: translate3d(34vw, 5vh, 25px);\n  }\n}\n@keyframes particle-animation-27 {\n  100% {\n    transform: translate3d(34vw, 5vh, 25px);\n  }\n}\n.banner-section .particle:nth-child(27) {\n  -webkit-animation: particle-animation-27 60s infinite;\n          animation: particle-animation-27 60s infinite;\n  opacity: 0.22;\n  height: 16px;\n  width: 16px;\n  -webkit-animation-delay: -2.7s;\n          animation-delay: -2.7s;\n  transform: translate3d(44vw, 9vh, 80px);\n  background: #d9d326;\n}\n@-webkit-keyframes particle-animation-28 {\n  100% {\n    transform: translate3d(32vw, 21vh, 3px);\n  }\n}\n@keyframes particle-animation-28 {\n  100% {\n    transform: translate3d(32vw, 21vh, 3px);\n  }\n}\n.banner-section .particle:nth-child(28) {\n  -webkit-animation: particle-animation-28 60s infinite;\n          animation: particle-animation-28 60s infinite;\n  opacity: 0.34;\n  height: 13px;\n  width: 13px;\n  -webkit-animation-delay: -2.8s;\n          animation-delay: -2.8s;\n  transform: translate3d(89vw, 6vh, 54px);\n  background: #26d9a0;\n}\n@-webkit-keyframes particle-animation-29 {\n  100% {\n    transform: translate3d(76vw, 18vh, 89px);\n  }\n}\n@keyframes particle-animation-29 {\n  100% {\n    transform: translate3d(76vw, 18vh, 89px);\n  }\n}\n.banner-section .particle:nth-child(29) {\n  -webkit-animation: particle-animation-29 60s infinite;\n          animation: particle-animation-29 60s infinite;\n  opacity: 0.08;\n  height: 15px;\n  width: 15px;\n  -webkit-animation-delay: -2.9s;\n          animation-delay: -2.9s;\n  transform: translate3d(42vw, 61vh, 19px);\n  background: #d6d926;\n}\n@-webkit-keyframes particle-animation-30 {\n  100% {\n    transform: translate3d(22vw, 16vh, 22px);\n  }\n}\n@keyframes particle-animation-30 {\n  100% {\n    transform: translate3d(22vw, 16vh, 22px);\n  }\n}\n.banner-section .particle:nth-child(30) {\n  -webkit-animation: particle-animation-30 60s infinite;\n          animation: particle-animation-30 60s infinite;\n  opacity: 0.29;\n  height: 14px;\n  width: 14px;\n  -webkit-animation-delay: -3s;\n          animation-delay: -3s;\n  transform: translate3d(68vw, 85vh, 45px);\n  background: #d92665;\n}\n\n.banner {\n  min-height: 100vh;\n}\n.banner .intro h1 {\n  font-size: 45px;\n}\n.banner .intro h5 {\n  font-size: 20px;\n}\n.banner .intro p {\n  max-width: 350px;\n  margin-top: 15px;\n}\n.banner .banner-img {\n  margin-right: -200px;\n  margin-left: -150px;\n  position: relative;\n  z-index: -1;\n}\n\n.about-section {\n  padding: 100px 0;\n  position: relative;\n}\n.about-section:before {\n  content: \"\";\n  position: absolute;\n  z-index: -1;\n  width: 100%;\n  height: 160%;\n  top: 0;\n  transform: skewY(-12deg);\n  background: #f6f9fc;\n}\n.about-section .about-heading {\n  text-align: right;\n  padding-right: 15px;\n  margin-bottom: 25px;\n  color: #245cd1;\n  border-right: 5px solid #dddddd;\n}\n.about-section .about-heading h2 {\n  margin: 0;\n}\n.about-section .my-photo {\n  border-radius: 20px;\n  max-width: 400px;\n  overflow: hidden;\n  box-shadow: 10px 15px 30px 1px #ddd;\n}\n.about-section .about-me .tabs {\n  border-bottom: 1px solid #eee;\n}\n.about-section .about-me .tabs li a {\n  padding: 8px 25px;\n  border-bottom: 2px solid transparent;\n  color: #444;\n}\n.about-section .about-me .tabs li a:hover {\n  border-color: #245cd1;\n  color: #245cd1;\n}\n.about-section .about-me .tabs li a.active {\n  color: #245cd1;\n  border-color: #245cd1;\n}\n.about-section .about-me nav .nav-tabs .nav-link {\n  border: none;\n  border-top-left-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n  padding: 15px 20px;\n  color: #444;\n  border-color: transparent;\n  position: relative;\n}\n.about-section .about-me nav .nav-tabs .nav-link::after {\n  content: \"\";\n  position: absolute;\n  width: 0%;\n  height: 2px;\n  background-color: #245cd1;\n  bottom: 0;\n  left: 0;\n  z-index: 5;\n  transition: all 0.4s ease;\n}\n.about-section .about-me nav .nav-tabs .nav-link:hover {\n  color: #245cd1;\n}\n.about-section .about-me nav .nav-tabs .nav-link:hover::after {\n  width: 100%;\n}\n.about-section .about-me nav .nav-tabs .nav-link.active {\n  color: #245cd1;\n  background-color: transparent;\n}\n.about-section .about-me nav .nav-tabs .nav-link.active::after {\n  width: 100%;\n}\n.about-section .about-me div.tab-pane {\n  padding-top: 25px;\n}\n.about-section .about-me .skill-box {\n  margin-bottom: 25px;\n}\n.about-section .about-me .skill-box h6 {\n  color: #444;\n  font-weight: 700;\n}\n.about-section .about-me .skill-box div {\n  margin-left: -5px;\n}\n.about-section .about-me .skill-box div span {\n  display: inline-block;\n  background-color: #e1e9fa;\n  color: #7499e7;\n  padding: 3px 10px;\n  border-radius: 2px;\n  margin: 5px;\n  white-space: pre;\n  cursor: default;\n}\n.about-section .about-me .skill-box div span:hover {\n  color: #245cd1;\n}\n.about-section .tabs-content {\n  margin-top: 20px;\n}\n\n.about-section.active {\n  overflow: hidden;\n}\n\n.services-section {\n  min-height: 600px;\n  background-color: #fff;\n  padding: 100px 0px;\n}\n.services-section .section-heading {\n  margin-top: 100px;\n}\n.services-section .section-heading p {\n  max-width: 300px;\n}\n.services-section .icon {\n  height: 50px;\n  width: 50px;\n  line-height: 50px;\n  text-align: center;\n  background-color: #245cd1;\n  border-radius: 50%;\n  outline-offset: 10px;\n  margin: 25px 10px 55px 10px;\n  outline: 2px dashed #245cd1;\n  color: #fff;\n}\n.services-section .icon.bg-white {\n  background-color: #fff;\n}\n.services-section .counter {\n  margin-top: 45px;\n}\n.services-section .counter .item {\n  margin-bottom: 30px;\n}\n.services-section .counter .item h4 {\n  color: #222;\n  margin-bottom: 0;\n}\n.services-section .counter .item p {\n  color: #444;\n  margin-bottom: 0;\n  max-width: 100px;\n}\n.services-section .services .counter .item {\n  padding: 15px 0;\n}\n.services-section .services .my-services .item {\n  width: 50%;\n  padding: 15px;\n}\n.services-section .services .my-services .item .item-info {\n  border-radius: 5px;\n  min-height: 300px;\n  padding: 30px;\n  transition: all 0.4s ease;\n  text-align: center;\n}\n.services-section .services .my-services .item .item-info h3 {\n  font-size: 20px;\n  margin-bottom: 10px;\n  text-align: center;\n  text-transform: uppercase;\n}\n.services-section .services .my-services .item .item-info p {\n  color: #666;\n}\n.services-section .services .my-services .item .item-info:hover {\n  transform: scale(1.07);\n}\n.services-section .services .my-services .item .item-info .icon {\n  margin: 10px auto 45px;\n}\n.services-section .services .my-services .item:nth-child(1) .item-info {\n  background-color: #E8F0FF;\n  color: #448AFF;\n}\n.services-section .services .my-services .item:nth-child(2) {\n  margin-top: 80px;\n}\n.services-section .services .my-services .item:nth-child(2) .item-info {\n  background-color: #FFF5EE;\n  color: #FF9B53;\n}\n.services-section .services .my-services .item:nth-child(3) {\n  margin-top: -80px;\n}\n.services-section .services .my-services .item:nth-child(3) .item-info {\n  background-color: #E6FAF1;\n  color: #06D79C;\n}\n.services-section .services .my-services .item:nth-child(4) .item-info {\n  background-color: #EEEBFF;\n  color: #543BCC;\n}\n\n.portfolio-section {\n  padding: 100px 0;\n}\n.portfolio-section .portfolio-heading {\n  margin-bottom: 50px;\n}\n.portfolio-section .section-heading {\n  text-align: left;\n  padding-left: 15px;\n  color: #245cd1;\n  border-left: 5px solid #dddddd;\n}\n.portfolio-section .section-heading h2 {\n  margin: 0;\n}\n.portfolio-section .portfolio-menu li {\n  display: inline-block;\n}\n.portfolio-section .portfolio-menu li a {\n  padding: 10px 15px;\n  border-bottom: 1px solid transparent;\n  color: #222;\n}\n.portfolio-section .portfolio-menu li a.active {\n  border-bottom: 1px solid #245cd1;\n  color: #245cd1;\n}\n.portfolio-section .portfolio-list .item {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);\n  border-radius: 5px;\n  transition: all 0.4s ease;\n  margin-bottom: 30px;\n}\n.portfolio-section .portfolio-list .item .preview {\n  height: 220px;\n  overflow: hidden;\n}\n.portfolio-section .portfolio-list .item .preview img {\n  transform: scale(1.1);\n  transition: all 0.4s ease;\n}\n.portfolio-section .portfolio-list .item .details {\n  padding: 30px;\n  transition: all 0.4s ease;\n}\n.portfolio-section .portfolio-list .item .details small {\n  color: #959595;\n}\n.portfolio-section .portfolio-list .item .details h6 {\n  color: #484848;\n}\n.portfolio-section .portfolio-list .item .details a {\n  padding: 5px 20px;\n  border: 1px solid #245cd1;\n  border-radius: 20px;\n  margin: 0 auto;\n  margin-top: 20px;\n}\n.portfolio-section .portfolio-list .item .details a:hover {\n  background-color: #245cd1;\n  color: #fff;\n}\n.portfolio-section .portfolio-list .item:hover {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.3);\n}\n.portfolio-section .portfolio-list .item:hover .details h6 {\n  color: #222;\n}\n\n.promote-section {\n  padding: 100px 0px;\n  background-color: #245cd1;\n}\n.promote-section .promote-content h2 {\n  color: #fff;\n  margin-bottom: 15px;\n}\n.promote-section .promote-content p {\n  color: #e6e6e6;\n  max-width: 300px;\n}\n.promote-section .promote-content .buttons a:hover {\n  box-shadow: none;\n  background-color: #fff;\n}\n.promote-section .content-preview > div {\n  max-width: 400px;\n  border-radius: 10px;\n  overflow: hidden;\n  transform: rotate(7deg);\n}\n\n.testiomonial-section {\n  padding: 100px 0;\n  background-image: url(" + escape(__webpack_require__(/*! ../../images/testimonial.jpg */ "./resources/js/images/testimonial.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 1;\n}\n.testiomonial-section::after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(36, 92, 209, 0.92);\n  z-index: -1;\n}\n.testiomonial-section .section-heading {\n  margin-bottom: 45px;\n  color: #fff;\n  text-align: center;\n}\n.testiomonial-section .carousel-indicators li {\n  height: 20px;\n  border-radius: 50%;\n  width: 20px;\n  margin-bottom: -10px;\n}\n.testiomonial-section .item {\n  max-width: 800px;\n  background-color: #fff;\n  padding: 30px 30px 30px;\n  border-radius: 5px;\n  position: relative;\n  text-align: center;\n  margin: 50px auto 70px;\n}\n.testiomonial-section .item .client-avatar {\n  width: 100px;\n  height: 100px;\n  border-radius: 50%;\n  overflow: hidden;\n  position: absolute;\n  top: 0%;\n  left: 50%;\n  transform: translateX(-50%) translateY(-50%);\n  background-color: white;\n  box-shadow: 0px 2px 1px #ddd;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.testiomonial-section .item .testimonial-description {\n  padding-top: 45px;\n}\n.testiomonial-section .item .testimonial-description p {\n  margin-bottom: 25px;\n  font-size: 16px;\n  color: #444;\n}\n.testiomonial-section .item .testimonial-description .client-intro h6 {\n  margin-bottom: 0;\n  color: #245cd1;\n}\n.testiomonial-section .item .testimonial-description .client-intro i {\n  color: #444;\n  font-size: 14px;\n}\n\n.contact-section {\n  padding: 100px 0 150px;\n}\n.contact-section .contact-heading {\n  color: #245cd1;\n  margin-bottom: 95px;\n}\n.contact-section .contact-heading h2 {\n  color: #245cd1;\n  margin: 0;\n}\n.contact-section .contact-heading p {\n  max-width: 300px;\n  margin: auto;\n  color: #444;\n}\n.contact-section .contact-details {\n  margin-right: 200px;\n  position: relative;\n  z-index: 1;\n}\n.contact-section .contact-details::after {\n  position: absolute;\n  content: \"\";\n  width: calc(100% + 20px);\n  height: calc(100% + 100px);\n  background-image: linear-gradient(to right, #6493fa, #245cd1);\n  z-index: -1;\n  top: -50px;\n  left: 180px;\n}\n.contact-section .contact-details .details-left {\n  background-color: #245cd1;\n  width: 40%;\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.contact-section .contact-details .details-right {\n  width: 60%;\n}\n.contact-section .contact-details .details-right .contact-form {\n  border-top-right-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n.contact-section form.contact-form {\n  padding: 30px;\n  background-color: #fff;\n}\n.contact-section form.contact-form input, .contact-section form.contact-form textarea {\n  width: 100%;\n  margin-bottom: 10px;\n  border: 1px solid #ddd;\n  border-radius: 2px;\n  padding: 7px 15px;\n}\n.contact-section form.contact-form input:focus, .contact-section form.contact-form textarea:focus {\n  border-color: #245cd1;\n}\n.contact-section form.contact-form input.is-invalid, .contact-section form.contact-form textarea.is-invalid {\n  border-color: #ff3a4b;\n}\n.contact-section form.contact-form button.send-message {\n  padding: 10px 25px;\n  border-radius: 5px;\n  color: #f2f2f2;\n  background-image: linear-gradient(to right, #6a64e7, #443dc9);\n  border: none;\n  cursor: pointer;\n}\n.contact-section form.contact-form button.send-message:hover {\n  background-color: #245cd1;\n  background-image: linear-gradient(to right, #4c80f1, #245cd1);\n}\n.contact-section .contact-info {\n  padding: 30px;\n  background-color: #fff;\n  border-radius: 5px;\n}\n\n.connect-info {\n  padding: 30px;\n  background-color: #245cd1;\n}\n.connect-info .info-item {\n  margin-bottom: 20px;\n}\n.connect-info .info-item strong {\n  color: #fff;\n}\n.connect-info .info-item p {\n  color: #e6e6e6;\n}\n.connect-info .info-item ul.find-me li {\n  display: inline-block;\n}\n.connect-info .info-item ul.find-me li a {\n  height: 40px;\n  width: 40px;\n  line-height: 40px;\n  text-align: center;\n  border-radius: 2px;\n  color: #fff;\n  background-color: #5e89e3;\n  margin-right: 5px;\n}\n\n.sub-footer {\n  padding: 100px 0;\n  background-color: #293044;\n  color: #fff;\n}\n.sub-footer ul > li {\n  list-style: square;\n  margin-left: 20px;\n  transition: all 0.4s ease;\n}\n.sub-footer ul > li:hover {\n  margin-left: 25px;\n}\n.sub-footer ul > li a {\n  color: #bfbfbf;\n}\n.sub-footer ul > li a:hover {\n  color: #fff;\n}\n\n.footer-section {\n  background-color: #0E1833;\n  padding: 20px 0;\n  color: #fff;\n}\n.footer-section .footer-text a {\n  color: #fdc800;\n}\n\n.products {\n  padding: 100px 0 120px;\n  background-color: #fff;\n}\n.products .heading {\n  color: #245cd1;\n  margin-bottom: 50px;\n}\n.products .heading h2 {\n  color: #245cd1;\n  margin: 0;\n}\n.products .heading p {\n  max-width: 300px;\n  margin: auto;\n  color: #444;\n}\n.products .product-box {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);\n  border-radius: 6px;\n  overflow: hidden;\n  margin-bottom: 30px;\n  transition: all 0.4s ease;\n}\n.products .product-box .image {\n  height: 300px;\n}\n.products .product-box .image img {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 100%;\n}\n.products .product-box .info {\n  padding: 20px 30px;\n}\n.products .product-box .info .title a {\n  font-size: 16px;\n  font-weight: 600;\n}\n.products .product-box .info .title p {\n  margin: 0;\n  font-size: 13px;\n  color: #666;\n}\n.products .product-box .info .price p {\n  margin: 0;\n  padding: 1px 15px;\n  background-color: #245cd1;\n  color: #fff;\n  border-radius: 3px;\n  font-size: 12px;\n}\n.products .product-box .info-footer {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-top: 10px;\n}\n.products .product-box:hover {\n  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.3);\n}\n\nsection.breadcrum {\n  text-align: center;\n  padding: 100px;\n  background-image: url(" + escape(__webpack_require__(/*! ../../images/banner3.jpg */ "./resources/js/images/banner3.jpg")) + ");\n  background-size: cover;\n  background-position: top center;\n  background-repeat: no-repeat;\n  position: relative;\n  z-index: 1;\n}\nsection.breadcrum::after {\n  position: absolute;\n  content: \"\";\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\nsection.breadcrum .heading h2 {\n  font-weight: 700;\n}\nsection.breadcrum .heading a {\n  font-size: 14px;\n  text-transform: uppercase;\n  font-weight: 600;\n  color: #444;\n}\nsection.breadcrum .heading i {\n  margin-left: 8px;\n  margin-right: 8px;\n  font-size: 14px;\n  color: #444;\n}\n\nsection.single-product {\n  padding: 100px 0;\n}\nsection.single-product .product-image {\n  padding: 10px;\n  border: 1px solid #ddd;\n}\nsection.single-product .description {\n  margin-top: 30px;\n  padding: 10px;\n  border: 1px solid #ddd;\n}\nsection.single-product .template-box {\n  border: 1px solid #ddd;\n  border-radius: 3px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 200px;\n  margin-bottom: 20px;\n}\nsection.single-product .template-box a {\n  margin-bottom: 10px;\n  text-align: center;\n  color: white;\n  background-color: #245cd1;\n  text-transform: uppercase;\n  min-width: 180px;\n  padding: 10px 0;\n  border-radius: 3px;\n  font-weight: 600;\n}\nsection.single-product .template-box a i {\n  margin-right: 5px;\n}\nsection.single-product .template-box a.demo {\n  background-color: #fdc800;\n  color: #222;\n}\nsection.single-product .template-box a:hover {\n  box-shadow: 0px 2px 4px 0px rgba(14, 27, 56, 0.4);\n}\nsection.single-product .sidebar-box {\n  padding: 20px;\n  border: 1px solid #ddd;\n  border-radius: 3px;\n}\nsection.single-product .sidebar-box h3 {\n  font-size: 20px;\n  font-weight: 600;\n  margin-bottom: 15px;\n}\nsection.single-product .sidebar-box .content table {\n  width: 100%;\n  border: 1px solid #ddd;\n}\nsection.single-product .sidebar-box .content table tr {\n  border-bottom: 1px solid #ddd;\n}\nsection.single-product .sidebar-box .content table tr td {\n  width: 60%;\n  padding: 7px 10px;\n  font-size: 14px;\n}\nsection.single-product .sidebar-box .content table tr td:first-child {\n  width: 40%;\n}\n\nsection.not-found {\n  padding: 160px 0;\n}\n\n@media (min-width: 768px) and (max-width: 991px) {\n  .banner-section header .menu-part .logo {\n    max-width: 40px;\n    margin-right: 10px;\n  }\n\n  .banner-section header .menu-part li a {\n    padding: 20px 5px;\n  }\n  .banner-section header .menu-part li a.hire-me {\n    padding: 5px 10px;\n  }\n\n  header .menu-part li a {\n    padding: 20px 8px;\n  }\n\n  header .menu-part li a.hire-me {\n    margin-left: 0;\n  }\n\n  .banner .banner-img {\n    margin-right: -113px;\n    margin-left: -191px;\n    margin-bottom: -61px;\n    transform: rotate(-4deg);\n  }\n\n  .services-section .services .item2 {\n    margin-top: 60px;\n  }\n\n  .services-section .services .item {\n    width: 50%;\n    padding: 5px;\n  }\n\n  .contact-section .contact-details {\n    margin-right: 0;\n    position: relative;\n    z-index: 1;\n  }\n\n  .services-section .counter .item {\n    margin-bottom: 25px;\n  }\n\n  .services-section .section-heading {\n    margin-top: 30px;\n  }\n}\n@media (max-width: 767px) {\n  .menu-part {\n    flex-wrap: wrap;\n  }\n  .menu-part .logo {\n    order: 1;\n  }\n  .menu-part .mobile-nav {\n    order: 3;\n    display: block;\n    background-color: #245cd1;\n    width: 100%;\n    padding: 20px 0;\n    position: relative;\n  }\n  .menu-part .mobile-nav::after {\n    position: absolute;\n    content: \"\";\n    top: -53px;\n    right: 0px;\n    font-family: \"Font Awesome 5 Free\";\n    font-weight: 900;\n    content: \"\\F0C9\";\n    height: 45px;\n    width: 50px;\n    border: 1px solid #fff;\n    color: #fff;\n    line-height: 45px;\n    text-align: center;\n    border-radius: 1px;\n    background-color: #245cd1;\n    border-radius: 3px;\n  }\n  .menu-part .mobile-nav li {\n    display: block;\n  }\n  .menu-part .mobile-nav li a {\n    color: #fff;\n    padding: 10px 30px;\n  }\n  .menu-part .right {\n    order: 2;\n    padding-right: 50px;\n  }\n\n  header .menu-part li a.hire-me {\n    display: none;\n  }\n\n  .contact-details.d-flex {\n    flex-wrap: wrap;\n    margin-right: 0;\n  }\n\n  .contact-section .contact-details .details-left {\n    width: 100%;\n  }\n\n  .contact-section .contact-details .details-right {\n    width: 100%;\n  }\n\n  .contact-section .contact-details::after {\n    width: calc(100% + 100px);\n    height: calc(100% - 100px);\n    top: 150px;\n    left: -50px;\n  }\n\n  .sub-footer .item:nth-child(1) {\n    margin-bottom: 30px;\n  }\n\n  .promote-section .promote-content {\n    margin-top: 30px;\n    order: 2;\n  }\n\n  .promote-section .content-preview {\n    justify-content: flex-start !important;\n  }\n  .promote-section .content-preview > div {\n    transform: rotate(0deg);\n  }\n\n  .sub-footer .item:nth-child(4) {\n    margin-bottom: 0;\n  }\n\n  .sub-footer .item:nth-child(3) {\n    margin-bottom: 0;\n  }\n\n  .sub-footer .item {\n    margin-bottom: 30px;\n  }\n\n  .services-section .services .item {\n    width: 100%;\n    padding: 0px;\n  }\n\n  .services-section .counter .item p {\n    max-width: 100%;\n  }\n\n  .services-section .services .item2 {\n    margin-top: 0px;\n  }\n\n  .services-section .services .item3 {\n    margin-top: 0px;\n  }\n\n  .my-services .item {\n    margin-bottom: 30px;\n  }\n\n  .my-services .item:last-child {\n    margin-bottom: 0;\n  }\n\n  .services-section .counter {\n    margin-top: 25px;\n  }\n\n  .services-section .section-heading {\n    margin-top: 0px;\n  }\n\n  .my-photo {\n    margin: 0 auto 50px;\n  }\n\n  .about-section .about-heading {\n    text-align: center;\n    padding-right: 0;\n    margin-bottom: 25px;\n    color: #245cd1;\n    border-right: none;\n  }\n\n  .banner .intro h1 {\n    font-size: 35px;\n  }\n\n  .banner-preview {\n    display: none;\n  }\n}\n@media (max-width: 575px) {\n  .services-section .services .my-services .item {\n    width: 100%;\n  }\n\n  .services-section .services .my-services .item2 {\n    margin-top: 0px;\n  }\n\n  .services-section .services .my-services .item3 {\n    margin-top: 0px;\n  }\n\n  .my-services .item {\n    margin-bottom: 0px;\n  }\n\n  .sub-footer .item:nth-child(3) {\n    margin-bottom: 30px;\n  }\n}", ""]);
 
 // exports
 
@@ -4580,6 +4612,1028 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vform/dist/vform.common.js":
+/*!*************************************************!*\
+  !*** ./node_modules/vform/dist/vform.common.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "1eb2":
+/***/ (function(module, exports, __webpack_require__) {
+
+// This file is imported into lib/wc client bundles.
+
+if (typeof window !== 'undefined') {
+  var i
+  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js$/))) {
+    __webpack_require__.p = i[1] // eslint-disable-line
+  }
+}
+
+
+/***/ }),
+
+/***/ "cebe":
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+/***/ }),
+
+/***/ "fb15":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
+var setPublicPath = __webpack_require__("1eb2");
+
+// EXTERNAL MODULE: external "axios"
+var external_axios_ = __webpack_require__("cebe");
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
+
+// CONCATENATED MODULE: ./src/util.js
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/**
+ * Deep copy the given object.
+ *
+ * @param  {Object} obj
+ * @return {Object}
+ */
+function deepCopy(obj) {
+  if (obj === null || _typeof(obj) !== 'object') {
+    return obj;
+  }
+
+  var copy = Array.isArray(obj) ? [] : {};
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = deepCopy(obj[key]);
+  });
+  return copy;
+}
+/**
+ * If the given value is not an array, wrap it in one.
+ *
+ * @param  {Any} value
+ * @return {Array}
+ */
+
+function arrayWrap(value) {
+  return Array.isArray(value) ? value : [value];
+}
+// CONCATENATED MODULE: ./src/Errors.js
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function Errors_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Errors_typeof = function _typeof(obj) { return typeof obj; }; } else { Errors_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Errors_typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Errors_Errors =
+/*#__PURE__*/
+function () {
+  /**
+   * Create a new error bag instance.
+   */
+  function Errors() {
+    _classCallCheck(this, Errors);
+
+    this.errors = {};
+  }
+  /**
+   * Set the errors object or field error messages.
+   *
+   * @param {Object|String} field
+   * @param {Array|String|undefined} messages
+   */
+
+
+  _createClass(Errors, [{
+    key: "set",
+    value: function set(field, messages) {
+      if (Errors_typeof(field) === 'object') {
+        this.errors = field;
+      } else {
+        this.set(_objectSpread({}, this.errors, _defineProperty({}, field, arrayWrap(messages))));
+      }
+    }
+    /**
+     * Get all the errors.
+     *
+     * @return {Object}
+     */
+
+  }, {
+    key: "all",
+    value: function all() {
+      return this.errors;
+    }
+    /**
+     * Determine if there is an error for the given field.
+     *
+     * @param  {String} field
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "has",
+    value: function has(field) {
+      return this.errors.hasOwnProperty(field);
+    }
+    /**
+     * Determine if there are any errors for the given fields.
+     *
+     * @param  {...String} fields
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "hasAny",
+    value: function hasAny() {
+      var _this = this;
+
+      for (var _len = arguments.length, fields = new Array(_len), _key = 0; _key < _len; _key++) {
+        fields[_key] = arguments[_key];
+      }
+
+      return fields.some(function (field) {
+        return _this.has(field);
+      });
+    }
+    /**
+     * Determine if there are any errors.
+     *
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "any",
+    value: function any() {
+      return Object.keys(this.errors).length > 0;
+    }
+    /**
+     * Get the first error message for the given field.
+     *
+     * @param  String} field
+     * @return {String|undefined}
+     */
+
+  }, {
+    key: "get",
+    value: function get(field) {
+      if (this.has(field)) {
+        return this.getAll(field)[0];
+      }
+    }
+    /**
+     * Get all the error messages for the given field.
+     *
+     * @param  {String} field
+     * @return {Array}
+     */
+
+  }, {
+    key: "getAll",
+    value: function getAll(field) {
+      return arrayWrap(this.errors[field] || []);
+    }
+    /**
+     * Get the error message for the given fields.
+     *
+     * @param  {...String} fields
+     * @return {Array}
+     */
+
+  }, {
+    key: "only",
+    value: function only() {
+      var _this2 = this;
+
+      var messages = [];
+
+      for (var _len2 = arguments.length, fields = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        fields[_key2] = arguments[_key2];
+      }
+
+      fields.forEach(function (field) {
+        var message = _this2.get(field);
+
+        if (message) {
+          messages.push(message);
+        }
+      });
+      return messages;
+    }
+    /**
+     * Get all the errors in a flat array.
+     *
+     * @return {Array}
+     */
+
+  }, {
+    key: "flatten",
+    value: function flatten() {
+      return Object.values(this.errors).reduce(function (a, b) {
+        return a.concat(b);
+      }, []);
+    }
+    /**
+     * Clear one or all error fields.
+     *
+     * @param {String|undefined} field
+     */
+
+  }, {
+    key: "clear",
+    value: function clear(field) {
+      var _this3 = this;
+
+      var errors = {};
+
+      if (field) {
+        Object.keys(this.errors).forEach(function (key) {
+          if (key !== field) {
+            errors[key] = _this3.errors[key];
+          }
+        });
+      }
+
+      this.set(errors);
+    }
+  }]);
+
+  return Errors;
+}();
+
+
+// CONCATENATED MODULE: ./src/Form.js
+function Form_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Form_typeof = function _typeof(obj) { return typeof obj; }; } else { Form_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Form_typeof(obj); }
+
+function Form_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { Form_defineProperty(target, key, source[key]); }); } return target; }
+
+function Form_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function Form_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Form_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Form_createClass(Constructor, protoProps, staticProps) { if (protoProps) Form_defineProperties(Constructor.prototype, protoProps); if (staticProps) Form_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+var Form_Form =
+/*#__PURE__*/
+function () {
+  /**
+   * Create a new form instance.
+   *
+   * @param {Object} data
+   */
+  function Form() {
+    var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    Form_classCallCheck(this, Form);
+
+    this.busy = false;
+    this.successful = false;
+    this.errors = new Errors_Errors();
+    this.originalData = deepCopy(data);
+    Object.assign(this, data);
+  }
+  /**
+   * Fill form data.
+   *
+   * @param {Object} data
+   */
+
+
+  Form_createClass(Form, [{
+    key: "fill",
+    value: function fill(data) {
+      var _this = this;
+
+      this.keys().forEach(function (key) {
+        _this[key] = data[key];
+      });
+    }
+    /**
+     * Get the form data.
+     *
+     * @return {Object}
+     */
+
+  }, {
+    key: "data",
+    value: function data() {
+      var _this2 = this;
+
+      return this.keys().reduce(function (data, key) {
+        return Form_objectSpread({}, data, Form_defineProperty({}, key, _this2[key]));
+      }, {});
+    }
+    /**
+     * Get the form data keys.
+     *
+     * @return {Array}
+     */
+
+  }, {
+    key: "keys",
+    value: function keys() {
+      return Object.keys(this).filter(function (key) {
+        return !Form.ignore.includes(key);
+      });
+    }
+    /**
+     * Start processing the form.
+     */
+
+  }, {
+    key: "startProcessing",
+    value: function startProcessing() {
+      this.errors.clear();
+      this.busy = true;
+      this.successful = false;
+    }
+    /**
+     * Finish processing the form.
+     */
+
+  }, {
+    key: "finishProcessing",
+    value: function finishProcessing() {
+      this.busy = false;
+      this.successful = true;
+    }
+    /**
+     * Clear the form errors.
+     */
+
+  }, {
+    key: "clear",
+    value: function clear() {
+      this.errors.clear();
+      this.successful = false;
+    }
+    /**
+     * Reset the form fields.
+     */
+
+  }, {
+    key: "reset",
+    value: function reset() {
+      var _this3 = this;
+
+      Object.keys(this).filter(function (key) {
+        return !Form.ignore.includes(key);
+      }).forEach(function (key) {
+        _this3[key] = deepCopy(_this3.originalData[key]);
+      });
+    }
+    /**
+     * Submit the form via a GET request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "get",
+    value: function get(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('get', url, config);
+    }
+    /**
+     * Submit the form via a POST request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "post",
+    value: function post(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('post', url, config);
+    }
+    /**
+     * Submit the form via a PATCH request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "patch",
+    value: function patch(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('patch', url, config);
+    }
+    /**
+     * Submit the form via a PUT request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "put",
+    value: function put(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('put', url, config);
+    }
+    /**
+     * Submit the form via a DELETE request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "delete",
+    value: function _delete(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('delete', url, config);
+    }
+    /**
+     * Submit the form data via an HTTP request.
+     *
+     * @param  {String} method (get, post, patch, put)
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "submit",
+    value: function submit(method, url) {
+      var _this4 = this;
+
+      var config = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      this.startProcessing();
+      var data = method === 'get' ? {
+        params: this.data()
+      } : this.data();
+      return new Promise(function (resolve, reject) {
+        (Form.axios || external_axios_default.a).request(Form_objectSpread({
+          url: _this4.route(url),
+          method: method,
+          data: data
+        }, config)).then(function (response) {
+          _this4.finishProcessing();
+
+          resolve(response);
+        }).catch(function (error) {
+          _this4.busy = false;
+
+          if (error.response) {
+            _this4.errors.set(_this4.extractErrors(error.response));
+          }
+
+          reject(error);
+        });
+      });
+    }
+    /**
+     * Extract the errors from the response object.
+     *
+     * @param  {Object} response
+     * @return {Object}
+     */
+
+  }, {
+    key: "extractErrors",
+    value: function extractErrors(response) {
+      if (!response.data || Form_typeof(response.data) !== 'object') {
+        return {
+          error: Form.errorMessage
+        };
+      }
+
+      if (response.data.errors) {
+        return Form_objectSpread({}, response.data.errors);
+      }
+
+      if (response.data.message) {
+        return {
+          error: response.data.message
+        };
+      }
+
+      return Form_objectSpread({}, response.data);
+    }
+    /**
+     * Get a named route.
+     *
+     * @param  {String} name
+     * @return {Object} parameters
+     * @return {String}
+     */
+
+  }, {
+    key: "route",
+    value: function route(name) {
+      var parameters = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var url = name;
+
+      if (Form.routes.hasOwnProperty(name)) {
+        url = decodeURI(Form.routes[name]);
+      }
+
+      if (Form_typeof(parameters) !== 'object') {
+        parameters = {
+          id: parameters
+        };
+      }
+
+      Object.keys(parameters).forEach(function (key) {
+        url = url.replace("{".concat(key, "}"), parameters[key]);
+      });
+      return url;
+    }
+    /**
+     * Clear errors on keydown.
+     *
+     * @param {KeyboardEvent} event
+     */
+
+  }, {
+    key: "onKeydown",
+    value: function onKeydown(event) {
+      if (event.target.name) {
+        this.errors.clear(event.target.name);
+      }
+    }
+  }]);
+
+  return Form;
+}();
+
+Form_Form.routes = {};
+Form_Form.errorMessage = 'Something went wrong. Please try again.';
+Form_Form.ignore = ['busy', 'successful', 'errors', 'originalData'];
+/* harmony default export */ var src_Form = (Form_Form);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HasError.vue?vue&type=template&id=fcc9e406&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.has(_vm.field))?_c('div',{staticClass:"help-block invalid-feedback",domProps:{"innerHTML":_vm._s(_vm.form.errors.get(_vm.field))}}):_vm._e()}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/HasError.vue?vue&type=template&id=fcc9e406&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HasError.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+/* harmony default export */ var HasErrorvue_type_script_lang_js_ = ({
+  name: 'has-error',
+  props: {
+    form: {
+      type: Object,
+      required: true
+    },
+    field: {
+      type: String,
+      required: true
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/HasError.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_HasErrorvue_type_script_lang_js_ = (HasErrorvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+// CONCATENATED MODULE: ./src/components/HasError.vue
+
+
+
+
+
+/* normalize component */
+
+var component = normalizeComponent(
+  components_HasErrorvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "HasError.vue"
+/* harmony default export */ var HasError = (component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertError.vue?vue&type=template&id=5610eddd&
+var AlertErrorvue_type_template_id_5610eddd_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.any())?_c('div',{staticClass:"alert alert-danger alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),_vm._t("default",[(_vm.form.errors.has('error'))?_c('div',{domProps:{"innerHTML":_vm._s(_vm.form.errors.get('error'))}}):_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}})])],2):_vm._e()}
+var AlertErrorvue_type_template_id_5610eddd_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertError.vue?vue&type=template&id=5610eddd&
+
+// CONCATENATED MODULE: ./src/components/Alert.js
+/* harmony default export */ var Alert = ({
+  props: {
+    form: {
+      type: Object,
+      required: true
+    },
+    dismissible: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    dismiss: function dismiss() {
+      if (this.dismissible) {
+        this.form.clear();
+      }
+    }
+  }
+});
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertError.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertErrorvue_type_script_lang_js_ = ({
+  name: 'alert-error',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: 'There were some problems with your input.'
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertError.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertErrorvue_type_script_lang_js_ = (AlertErrorvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertError.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertError_component = normalizeComponent(
+  components_AlertErrorvue_type_script_lang_js_,
+  AlertErrorvue_type_template_id_5610eddd_render,
+  AlertErrorvue_type_template_id_5610eddd_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertError_component.options.__file = "AlertError.vue"
+/* harmony default export */ var AlertError = (AlertError_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertErrors.vue?vue&type=template&id=40d77fd7&
+var AlertErrorsvue_type_template_id_40d77fd7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.any())?_c('div',{staticClass:"alert alert-danger alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),(_vm.message)?_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}}):_vm._e(),_c('ul',_vm._l((_vm.form.errors.flatten()),function(error){return _c('li',{domProps:{"innerHTML":_vm._s(error)}})}))]):_vm._e()}
+var AlertErrorsvue_type_template_id_40d77fd7_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue?vue&type=template&id=40d77fd7&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertErrors.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertErrorsvue_type_script_lang_js_ = ({
+  name: 'alert-errors',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: 'There were some problems with your input.'
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertErrorsvue_type_script_lang_js_ = (AlertErrorsvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertErrors_component = normalizeComponent(
+  components_AlertErrorsvue_type_script_lang_js_,
+  AlertErrorsvue_type_template_id_40d77fd7_render,
+  AlertErrorsvue_type_template_id_40d77fd7_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertErrors_component.options.__file = "AlertErrors.vue"
+/* harmony default export */ var AlertErrors = (AlertErrors_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertSuccess.vue?vue&type=template&id=fd18e236&
+var AlertSuccessvue_type_template_id_fd18e236_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.successful)?_c('div',{staticClass:"alert alert-success alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),_vm._t("default",[_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}})])],2):_vm._e()}
+var AlertSuccessvue_type_template_id_fd18e236_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue?vue&type=template&id=fd18e236&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertSuccess.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertSuccessvue_type_script_lang_js_ = ({
+  name: 'alert-success',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: ''
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertSuccessvue_type_script_lang_js_ = (AlertSuccessvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertSuccess_component = normalizeComponent(
+  components_AlertSuccessvue_type_script_lang_js_,
+  AlertSuccessvue_type_template_id_fd18e236_render,
+  AlertSuccessvue_type_template_id_fd18e236_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertSuccess_component.options.__file = "AlertSuccess.vue"
+/* harmony default export */ var AlertSuccess = (AlertSuccess_component.exports);
+// CONCATENATED MODULE: ./src/index.js
+
+
+
+
+
+
+
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport Form */__webpack_require__.d(__webpack_exports__, "Form", function() { return src_Form; });
+/* concated harmony reexport Errors */__webpack_require__.d(__webpack_exports__, "Errors", function() { return Errors_Errors; });
+/* concated harmony reexport HasError */__webpack_require__.d(__webpack_exports__, "HasError", function() { return HasError; });
+/* concated harmony reexport AlertError */__webpack_require__.d(__webpack_exports__, "AlertError", function() { return AlertError; });
+/* concated harmony reexport AlertErrors */__webpack_require__.d(__webpack_exports__, "AlertErrors", function() { return AlertErrors; });
+/* concated harmony reexport AlertSuccess */__webpack_require__.d(__webpack_exports__, "AlertSuccess", function() { return AlertSuccess; });
+
+
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src_Form);
+
+
+
+/***/ })
+
+/******/ });
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/App.vue?vue&type=template&id=f348271a&":
 /*!*******************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/App.vue?vue&type=template&id=f348271a& ***!
@@ -5727,20 +6781,182 @@ var render = function() {
                     on: {
                       submit: function($event) {
                         $event.preventDefault()
+                        return _vm.login($event)
+                      },
+                      keydown: function($event) {
+                        return _vm.form.onKeydown($event)
                       }
                     }
                   },
                   [
-                    _vm._m(1),
+                    _c("alert-success", { attrs: { form: _vm.form } }, [
+                      _vm._v("Your message send successfully.")
+                    ]),
                     _vm._v(" "),
-                    _vm._m(2),
+                    _c("alert-error", { attrs: { form: _vm.form } }, [
+                      _c("ul", [
+                        _vm.form.errors.has("name")
+                          ? _c("li", [
+                              _vm._v(
+                                " " + _vm._s(_vm.form.errors.get("name")) + " "
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.form.errors.has("email")
+                          ? _c("li", [
+                              _vm._v(
+                                " " + _vm._s(_vm.form.errors.get("email")) + " "
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.form.errors.has("subject")
+                          ? _c("li", [
+                              _vm._v(
+                                " " +
+                                  _vm._s(_vm.form.errors.get("subject")) +
+                                  " "
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.form.errors.has("message")
+                          ? _c("li", [
+                              _vm._v(
+                                " " +
+                                  _vm._s(_vm.form.errors.get("message")) +
+                                  " "
+                              )
+                            ])
+                          : _vm._e()
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _vm._m(3),
+                    _c("div", { staticClass: "form-input" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.name,
+                            expression: "form.name"
+                          }
+                        ],
+                        class: { "is-invalid": _vm.form.errors.has("name") },
+                        attrs: {
+                          type: "text",
+                          name: "name",
+                          placeholder: "Your name"
+                        },
+                        domProps: { value: _vm.form.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "name", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
                     _vm._v(" "),
-                    _vm._m(4),
+                    _c("div", { staticClass: "form-input" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.email,
+                            expression: "form.email"
+                          }
+                        ],
+                        class: { "is-invalid": _vm.form.errors.has("email") },
+                        attrs: {
+                          type: "text",
+                          name: "email",
+                          placeholder: "Your email"
+                        },
+                        domProps: { value: _vm.form.email },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "email", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
                     _vm._v(" "),
-                    _vm._m(5)
-                  ]
+                    _c("div", { staticClass: "form-input" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.subject,
+                            expression: "form.subject"
+                          }
+                        ],
+                        class: { "is-invalid": _vm.form.errors.has("subject") },
+                        attrs: {
+                          type: "text",
+                          name: "subject",
+                          placeholder: "Contact subject"
+                        },
+                        domProps: { value: _vm.form.subject },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "subject", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-input" }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.message,
+                            expression: "form.message"
+                          }
+                        ],
+                        class: { "is-invalid": _vm.form.errors.has("message") },
+                        attrs: {
+                          name: "message",
+                          rows: "4",
+                          placeholder: "Your message"
+                        },
+                        domProps: { value: _vm.form.message },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "message", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-input text-center" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "send-message",
+                          attrs: { disabled: _vm.form.busy, type: "submit" }
+                        },
+                        [_vm._v("Send Message")]
+                      )
+                    ])
+                  ],
+                  1
                 )
               ])
             ])
@@ -5766,56 +6982,6 @@ var staticRenderFns = [
             )
           ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-input" }, [
-      _c("input", {
-        attrs: { type: "text", name: "name", placeholder: "Your name" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-input" }, [
-      _c("input", {
-        attrs: { type: "text", name: "email", placeholder: "Your email" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-input" }, [
-      _c("input", {
-        attrs: { type: "text", name: "subject", placeholder: "Contact purpose" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-input" }, [
-      _c("textarea", {
-        attrs: { name: "message", rows: "4", placeholder: "Your message" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-input text-center" }, [
-      _c("button", { staticClass: "send-message", attrs: { type: "submit" } }, [
-        _vm._v("Send Message")
       ])
     ])
   }

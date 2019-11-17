@@ -112,4 +112,22 @@ class ContactController extends Controller
         $contact->read = $request->mark_as_read();
         $contact->save();
     }
+
+    public function send(Request $request){
+        $this->validate($request, [
+            'name' => 'required|string',
+            'email' => 'required|email', 
+            'subject' => 'required|string', 
+            'message' => 'required',
+        ]);
+
+        Contact::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ]);
+
+        return response()->json('Contact Form Send Successfully', 200);
+    }
 }

@@ -762,6 +762,9 @@ header{
             &:focus{
                 border-color: $colorMain;
             }
+            &.is-invalid {
+                border-color: #ff3a4b;
+            }
         }
         button.send-message{
             padding: 10px 25px;
