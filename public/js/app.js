@@ -7593,6 +7593,7 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
+                          class: { "is-invalid": _vm.form.errors.has("name") },
                           attrs: {
                             type: "text",
                             name: "name",
@@ -7625,6 +7626,7 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
+                          class: { "is-invalid": _vm.form.errors.has("email") },
                           attrs: {
                             type: "text",
                             name: "email",
@@ -7659,6 +7661,9 @@ var render = function() {
                               }
                             ],
                             staticClass: "form-control",
+                            class: {
+                              "is-invalid": _vm.form.errors.has("budget")
+                            },
                             attrs: { name: "budget" },
                             on: {
                               change: function($event) {
@@ -7719,6 +7724,9 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("social")
+                          },
                           attrs: {
                             type: "text",
                             name: "social",
@@ -7751,6 +7759,9 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("message")
+                          },
                           attrs: {
                             name: "message",
                             rows: "4",

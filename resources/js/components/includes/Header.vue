@@ -54,15 +54,15 @@
                         </alert-error>
                         <div class="form-group">
                             <label for="name">Your name</label>
-                            <input type="text" class="form-control" name="name" placeholder="Enter your name" v-model="form.name">
+                            <input type="text" class="form-control" name="name" placeholder="Enter your name" v-model="form.name" :class="{ 'is-invalid': form.errors.has('name') }">
                         </div>
                         <div class="form-group">
                             <label for="email">Your email</label>
-                            <input type="text" class="form-control" name="email" placeholder="Enter your email" v-model="form.email">
+                            <input type="text" class="form-control" name="email" placeholder="Enter your email" v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }">
                         </div>
                         <div class="form-group">
                             <label for="budget">What is your budget?</label>
-                            <select name="budget" class="form-control" v-model="form.budget">
+                            <select name="budget" class="form-control" v-model="form.budget" :class="{ 'is-invalid': form.errors.has('budget') }">
                                 <option value="">Select your budget</option>
                                 <option value="500">$100 to $500 </option>
                                 <option value="1000">$500 to $1000 </option>
@@ -72,11 +72,11 @@
                         </div>                    
                         <div class="form-group">
                             <label for="email">Your social</label>
-                            <input type="text" class="form-control" name="social" placeholder="Skype/Telegram/Whatsapp/Viber" v-model="form.social">
+                            <input type="text" class="form-control" name="social" placeholder="Skype/Telegram/Whatsapp/Viber" v-model="form.social" :class="{ 'is-invalid': form.errors.has('social') }">
                         </div>
                         <div class="form-group">
                             <label for="message">Your message</label>
-                            <textarea name="message" rows="4" class="form-control" placeholder="Enter your message" v-model="form.message"></textarea>
+                            <textarea name="message" rows="4" class="form-control" placeholder="Enter your message" v-model="form.message" :class="{ 'is-invalid': form.errors.has('message') }"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
