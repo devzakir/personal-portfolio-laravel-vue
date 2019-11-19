@@ -5,7 +5,7 @@ window.Vue = require('vue');
 window.axios = require('axios');
 
 // Vue.use(axios)
-Vue.config.productionTip = false;
+Vue.config.productionTip = true;
 
 new Vue({
   render: h => h(App),
