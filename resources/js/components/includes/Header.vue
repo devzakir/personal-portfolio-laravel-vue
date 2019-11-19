@@ -9,13 +9,13 @@
                         <img src="../../images/logo.svg" alt="" class="img-fluid">
                     </router-link>
                     <ul class="mobile-nav" :class="mobileNav ? 'active' : ''">
-                        <li><router-link :to="{ name: 'home' }"> Home </router-link></li>
-                        <li><router-link :to="{ name: 'about' }"> About </router-link></li>
-                        <li><router-link :to="{ name: 'services' }"> Services </router-link></li>
-                        <li><router-link :to="{ name: 'portfolio' }"> Portfolio </router-link></li>
-                        <li><router-link :to="{ name: 'products' }"> Products </router-link></li>
-                        <li><router-link :to="{ name: 'contact' }"> Contact </router-link></li>
-                        <li v-if="mobileNav"><a href="#" @click.prevent @click="showModal = true"> Hire Me </a></li>
+                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'home' }"> Home </router-link></li>
+                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'about' }"> About </router-link></li>
+                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'services' }"> Services </router-link></li>
+                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'portfolio' }"> Portfolio </router-link></li>
+                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'products' }"> Products </router-link></li>
+                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'contact' }"> Contact </router-link></li>
+                        <li v-if="mobileNav" @click="mobileNav = !mobileNav"><a href="#" @click.prevent @click="showModal = true"> Hire Me </a></li>
                     </ul>
                     <ul class="right ml-auto">
                         <li v-if="setting.facebook" ><a :href="setting.facebook" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>

@@ -7249,6 +7249,13 @@ var render = function() {
                   [
                     _c(
                       "li",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.mobileNav = !_vm.mobileNav
+                          }
+                        }
+                      },
                       [
                         _c("router-link", { attrs: { to: { name: "home" } } }, [
                           _vm._v(" Home ")
@@ -7259,6 +7266,13 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.mobileNav = !_vm.mobileNav
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -7271,6 +7285,13 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.mobileNav = !_vm.mobileNav
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -7283,6 +7304,13 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.mobileNav = !_vm.mobileNav
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -7295,6 +7323,13 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.mobileNav = !_vm.mobileNav
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -7307,6 +7342,13 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "li",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.mobileNav = !_vm.mobileNav
+                          }
+                        }
+                      },
                       [
                         _c(
                           "router-link",
@@ -7318,25 +7360,35 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _vm.mobileNav
-                      ? _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: { href: "#" },
-                              on: {
-                                click: [
-                                  function($event) {
-                                    $event.preventDefault()
-                                  },
-                                  function($event) {
-                                    _vm.showModal = true
-                                  }
-                                ]
+                      ? _c(
+                          "li",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.mobileNav = !_vm.mobileNav
                               }
-                            },
-                            [_vm._v(" Hire Me ")]
-                          )
-                        ])
+                            }
+                          },
+                          [
+                            _c(
+                              "a",
+                              {
+                                attrs: { href: "#" },
+                                on: {
+                                  click: [
+                                    function($event) {
+                                      $event.preventDefault()
+                                    },
+                                    function($event) {
+                                      _vm.showModal = true
+                                    }
+                                  ]
+                                }
+                              },
+                              [_vm._v(" Hire Me ")]
+                            )
+                          ]
+                        )
                       : _vm._e()
                   ]
                 ),
