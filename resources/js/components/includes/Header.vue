@@ -8,14 +8,14 @@
                     <router-link to="/" class="logo d-flex align-items-center">
                         <img src="../../images/logo.svg" alt="" class="img-fluid">
                     </router-link>
-                    <ul class="mobile-nav" :class="mobileNav ? 'active' : ''">
-                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'home' }"> Home </router-link></li>
-                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'about' }"> About </router-link></li>
-                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'services' }"> Services </router-link></li>
-                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'portfolio' }"> Portfolio </router-link></li>
-                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'products' }"> Products </router-link></li>
-                        <li @click="mobileNav = !mobileNav"><router-link :to="{ name: 'contact' }"> Contact </router-link></li>
-                        <li v-if="mobileNav" @click="mobileNav = !mobileNav"><a href="#" @click.prevent @click="showModal = true"> Hire Me </a></li>
+                    <ul class="mobile-nav" :class="showMobileMenu ? 'active' : ''">
+                        <li @click="hideMobileNav"><router-link :to="{ name: 'home' }"> Home </router-link></li>
+                        <li @click="hideMobileNav"><router-link :to="{ name: 'about' }"> About </router-link></li>
+                        <li @click="hideMobileNav"><router-link :to="{ name: 'services' }"> Services </router-link></li>
+                        <li @click="hideMobileNav"><router-link :to="{ name: 'portfolio' }"> Portfolio </router-link></li>
+                        <li @click="hideMobileNav"><router-link :to="{ name: 'products' }"> Products </router-link></li>
+                        <li @click="hideMobileNav"><router-link :to="{ name: 'contact' }"> Contact </router-link></li>
+                        <li v-if="showMobileMenu" @click="hideMobileNav"><a href="#" @click.prevent @click="showModal = true"> Hire Me </a></li>
                     </ul>
                     <ul class="right ml-auto">
                         <li v-if="setting.facebook" ><a :href="setting.facebook" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
@@ -24,7 +24,7 @@
                         <li v-if="setting.stack" ><a :href="setting.stack" target="_blank"> <i class="fab fa-stack-overflow"></i> </a></li>
                         <li v-if="setting.quora" ><a :href="setting.quora" target="_blank"> <i class="fab fa-quora"></i> </a></li>
                         <li ><a href="" @click.prevent class="hire-me" @click="showModal = true"> Hire Me </a></li>
-                        <li class="nav-toggle" @click="mobileNav = !mobileNav" :class="mobileNav ? 'active' : ''"> <i class="fas" :class="mobileNav ? 'fa-times' : 'fa-bars'"></i> </li>
+                        <li class="nav-toggle" @click="showMobileMenu = !showMobileMenu" :class="showMobileMenu ? 'active' : ''"> <i class="fas" :class="showMobileMenu ? 'fa-times' : 'fa-bars'"></i> </li>
                     </ul>
                   </nav>
               </div>
@@ -100,7 +100,7 @@ export default {
          return  {
             showModal: false,
             setting: [],
-            mobileNav: false,
+            showMobileMenu: false,
             form: new Form({
                 name: '',
                 email: '',
@@ -119,6 +119,7 @@ export default {
         });
 
         this.getSettingData();
+        // this.checkWindowSize();
     },
 
     methods: {
@@ -131,7 +132,6 @@ export default {
                 // console.log(error);
             })
         },
-
         hire(){
             this.form.post('hireme')
             .then( ({data})  => { 
@@ -142,8 +142,25 @@ export default {
                 this.form.social = '',
                 this.form.message = ''
             });
+        },
+        // checkWindowSize(){
+        //     window.onresize = function(event) {
+        //         let width = document.body.clientWidth;
+        //         if(width < 768){
+        //             this.showMobileMenu = true;
+        //         }
+        //     }
+        //     let width = document.body.clientWidth;
+        //     window.onload = function(event){
+        //         if(width < 768){
+        //             this.showMobileMenu = true;
+        //         }
+        //     }
+        // },
+        hideMobileNav(){
+            this.showMobileMenu = false;
         }
-    }
+    },
 }
 </script>
 
