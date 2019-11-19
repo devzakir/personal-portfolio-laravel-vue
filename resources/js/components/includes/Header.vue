@@ -8,13 +8,14 @@
                     <router-link to="/" class="logo d-flex align-items-center">
                         <img src="../../images/logo.svg" alt="" class="img-fluid">
                     </router-link>
-                    <ul class="mobile-nav">
+                    <ul class="mobile-nav" :class="mobileNav ? 'active' : ''">
                         <li><router-link :to="{ name: 'home' }"> Home </router-link></li>
                         <li><router-link :to="{ name: 'about' }"> About </router-link></li>
                         <li><router-link :to="{ name: 'services' }"> Services </router-link></li>
                         <li><router-link :to="{ name: 'portfolio' }"> Portfolio </router-link></li>
-                        <li><router-link :to="{ name: 'contact' }"> Contact </router-link></li>
                         <li><router-link :to="{ name: 'products' }"> Products </router-link></li>
+                        <li><router-link :to="{ name: 'contact' }"> Contact </router-link></li>
+                        <li v-if="mobileNav"><a href="#" @click.prevent @click="showModal = true"> Hire Me </a></li>
                     </ul>
                     <ul class="right ml-auto">
                         <li v-if="setting.facebook" ><a :href="setting.facebook" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
@@ -23,6 +24,7 @@
                         <li v-if="setting.stack" ><a :href="setting.stack" target="_blank"> <i class="fab fa-stack-overflow"></i> </a></li>
                         <li v-if="setting.quora" ><a :href="setting.quora" target="_blank"> <i class="fab fa-quora"></i> </a></li>
                         <li ><a href="" @click.prevent class="hire-me" @click="showModal = true"> Hire Me </a></li>
+                        <li class="nav-toggle" @click="mobileNav = !mobileNav" :class="mobileNav ? 'active' : ''"> <i class="fas" :class="mobileNav ? 'fa-times' : 'fa-bars'"></i> </li>
                     </ul>
                   </nav>
               </div>
@@ -96,15 +98,16 @@ Vue.component(AlertSuccess.name, AlertSuccess)
 export default {
     data: function() {
          return  {
-           showModal: false,
-           setting: [],
+            showModal: false,
+            setting: [],
+            mobileNav: false,
             form: new Form({
                 name: '',
                 email: '',
                 budget: '',
                 social: '',
                 message: '',
-            })
+            }),
          }
     },
     mounted(){
@@ -145,33 +148,5 @@ export default {
 </script>
 
 <style lang="scss">    
-    #hireMe {
-        display: block;
-        z-index: 100;
-        &:after {
-            position: absolute;
-            content: '';
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .modal-header{
-            button {
-                border: 0;
-                background: transparent;
-                font-size: 24px;
-                /* height: auto; */
-                line-height: 24px;
-                outline: 0;
-                cursor: pointer;
-            }
-        }
-        .modal-content {
-            overflow: auto;
-            max-height: calc(100vh - 60px);
-        }
-    }
+    
 </style>

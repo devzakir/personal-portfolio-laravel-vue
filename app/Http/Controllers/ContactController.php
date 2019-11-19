@@ -117,25 +117,20 @@ class ContactController extends Controller
 
     public function send(Request $request){
         $this->validate($request, [
-            'name' => 'required|string',
+            'name' => 'required',
             'email' => 'required|email', 
-            'subject' => 'required|string', 
+            'subject' => 'required', 
             'message' => 'required',
         ]);
-
-        $name = $request->name;
-        $email = $request->email;
-        $subject = $request->subject;
-        $message = $request->message;
-
+        
         $contact = Contact::create([
-            'name' => $name,
-            'email' => $email,
-            'subject' => $subject,
-            'message' => $message,
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
         ]);
 
-        Mail::to('web.zakirbd@gmail.com')->send(new ContactEmail($name, $email, $subject, $message));
+        Mail::to('web.zakirbd@gmail.com')->send(new ContactEmail($contact->name, $contact->email, $contact->subject, $contact->message));
 
         return response()->json('Contact Form Send Successfully', 200);
     }

@@ -1,6 +1,6 @@
 <div>
-    <p> {{ $name }} </p>
+    <p> Name - {{ $name }} </p>
     <p> {{ $email }} </p>
     <p> {{ $subject }} </p>
-    <div> {{ $message }} </div>
+    {{-- <div> {{ $message }} </div> --}}
 </div>

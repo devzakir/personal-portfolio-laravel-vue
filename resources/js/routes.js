@@ -58,7 +58,7 @@ const router = new VueRouter({
     { 
       path: '/*',
       component: NotFound
-    }
+    },
   ]
 });   
 

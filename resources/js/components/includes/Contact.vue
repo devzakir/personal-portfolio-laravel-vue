@@ -107,10 +107,10 @@
                 this.form.post('send-message')
                 .then( ({data})  => { 
                     // console.log(data);
-                    this.form.name = '',
-                    this.form.email = '',
-                    this.form.subject = '',
-                    this.form.message = ''
+                    // this.form.name = '',
+                    // this.form.email = '',
+                    // this.form.subject = '',
+                    // this.form.message = ''
                 });
             }
         }

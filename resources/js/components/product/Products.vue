@@ -2,7 +2,7 @@
   <section class="products">
     <div class="container">
       <div class="row">
-        <div class="col-12 heading text-center">
+        <div class="col-12 heading">
           <h2> Free Products </h2>
           <p>Grab websites for free</p>
         </div>

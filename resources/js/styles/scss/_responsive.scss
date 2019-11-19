@@ -63,25 +63,6 @@
             background-color: $colorMain;
             width: 100%;
             padding: 20px 0;
-            position: relative;
-            &::after {
-                position: absolute;
-                content: '';
-                top: -53px;
-                right: 0px;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                content: "\f0c9";
-                height: 45px;
-                width: 50px;
-                border: 1px solid #fff;
-                color: #fff;
-                line-height: 45px;
-                text-align: center;
-                border-radius: 1px;
-                background-color: $colorMain;
-                border-radius: 3px;
-            }
             li {
                 display: block;
                 a {
@@ -92,13 +73,41 @@
         }
         .right  {
             order: 2;
-            padding-right: 50px;
         }
     }
     
     header .menu-part li a.hire-me{
         display: none;
     }
+
+    header .menu-part ul.mobile-nav {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+
+    header.active .menu-part li.nav-toggle {
+        display: inline-block !important;
+        height: 45px;
+        width: 50px;
+        border: 1px solid #fff;
+        color: #fff;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 1px;
+        background-color: transparent;
+        border-radius: 3px;
+        cursor: pointer;
+        i {
+            font-size: 16px;
+        }
+        &.active {
+            background-color: white;
+            color: #245cd1;
+        }
+    }
+
     .contact-details.d-flex {
         flex-wrap: wrap;
         margin-right: 0;
