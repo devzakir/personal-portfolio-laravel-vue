@@ -143,6 +143,6 @@ class TestimonialController extends Controller
     }
 
     public function get_data(){
-        return response()->json(Testimonial::latest()->take(5)->get(), 200);
+        return response()->json(Testimonial::orderBy('created_at', 'desc')->take(3)->get(), 200);
     }
 }
