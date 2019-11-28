@@ -109,7 +109,9 @@ Route::middleware(['auth'])->prefix('admin/access')->group(function () {
     Route::get('/contact/edit/{id}', 'ContactController@edit')->name('contact.edit');
     Route::post('/contact/update/{id}', 'ContactController@update')->name('contact.update');
     Route::get('/contact/destroy/{id}', 'ContactController@destroy')->name('contact.destroy');
-    
+
+    // SEO Route
+    Route::resource('seo', 'SEOController');
 });
 
 // Authentication Routes

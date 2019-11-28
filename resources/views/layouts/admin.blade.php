@@ -98,7 +98,7 @@
                                 data-target="#about" aria-expanded="false" aria-controls="dashboard">
                                 <i class="mdi mdi-view-dashboard-outline"></i>
                                 <span class="nav-text">About </span> <b class="caret"></b>
-                            </a>
+                            </a>s
                             <ul class="collapse" id="about" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
                                     <li>
@@ -136,6 +136,12 @@
                             <a class="sidenav-item-link" href="{{ route('contact.index') }}">
                                 <i class="mdi mdi-view-dashboard-outline"></i>
                                 <span class="nav-text">Contact</span>
+                            </a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="sidenav-item-link" href="{{ route('seo.index') }}">
+                                <i class="mdi mdi-email"></i>
+                                <span class="nav-text">SEO</span>
                             </a>
                         </li>
                     </ul>
