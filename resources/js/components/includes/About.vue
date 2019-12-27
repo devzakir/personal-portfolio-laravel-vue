@@ -39,13 +39,13 @@
                                     <h6>Front End</h6>
                                     <div>
                                         <span>Vue JS</span>
+                                        <span>Vue Router</span>
                                         <span>JavaScript</span>
                                         <span>jQuery</span>
-                                        <span>BootStrap</span>
+                                        <span>Bootstrap</span>
                                         <span>HTML5</span>
                                         <span>CSS3</span>
                                         <span>SCSS</span>
-                                        <span>Flexbox</span>
                                     </div>
                                 </div>
                                 <div class="skill-box">
@@ -55,19 +55,34 @@
                                         <span>PHP</span>
                                         <span>MySQL</span>
                                         <span>REST API</span>
-                                        <span>API Integration</span>
-                                        <span>Database Design</span>
+                                        <span> Email </span>
+                                        <span> Notification </span>
+                                        <span> Task Schedule </span>
+                                        <span>  Queues </span>
+                                    </div>
+                                </div>
+                                <div class="skill-box">
+                                    <h6>Server</h6>
+                                    <div>
+                                        <span>Linux Administration</span>
+                                        <span>Cpanel</span>
+                                        <span>Forge</span>
+                                        <span>Digital Ocean</span>
+                                        <span>Cloudflare</span>
+                                        <span>SSL</span>
+                                        <span>Domain & Hosting Configuration</span>
                                     </div>
                                 </div>
                                 <div class="skill-box">
                                     <h6>Others</h6>
                                     <div>
+                                        <span>Git</span>
+                                        <span>Github</span>
+                                        <span>WordPress</span>
+                                        <span>WEBP Image Compression</span>
+                                        <span>Adobe Photoshop</span>
                                         <span>Project Planning</span>
                                         <span>Client Handling</span>
-                                        <span>WordPress</span>
-                                        <span>Adobe Photoshop</span>
-                                        <span>Writing</span>
-                                        <span>Affiliate Marketing</span>
                                     </div>
                                 </div>
                             </div>

@@ -340,6 +340,13 @@ header{
         overflow: hidden;
         box-shadow: 10px 15px 30px 1px #ddd;
         min-height: 500px;
+        img {
+            height: auto;
+            width: auto;
+            min-height: 500px;
+            min-width: 100%;
+            object-fit: cover;
+        }
     }
     .heading {
         text-align: right;

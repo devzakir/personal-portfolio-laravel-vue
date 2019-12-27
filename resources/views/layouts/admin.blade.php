@@ -98,7 +98,7 @@
                                 data-target="#about" aria-expanded="false" aria-controls="dashboard">
                                 <i class="mdi mdi-view-dashboard-outline"></i>
                                 <span class="nav-text">About </span> <b class="caret"></b>
-                            </a>s
+                            </a>
                             <ul class="collapse" id="about" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
                                     <li>
