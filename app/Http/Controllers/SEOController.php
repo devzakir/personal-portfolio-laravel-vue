@@ -130,11 +130,11 @@ class SEOController extends Controller
      */
     public function destroy($id)
     {
-        $seo = SEO::find($id);
-        if($seo){
-            $seo->delete();
-            Session::flash('success', 'SEO data deleted successfully');
-        }
+        // $seo = SEO::find($id);
+        // if($seo){
+        //     $seo->delete();
+        //     Session::flash('success', 'SEO data deleted successfully');
+        // }
         return redirect()->back();
     }
 }

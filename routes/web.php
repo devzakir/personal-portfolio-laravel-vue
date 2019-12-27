@@ -1,7 +1,8 @@
 <?php
 
 Route::get('/{any?}', function () {
-    return view('welcome');
+    $seo = App\SEO::find(1);
+    return view('welcome', compact('seo'));
 });
 
 Auth::routes();
