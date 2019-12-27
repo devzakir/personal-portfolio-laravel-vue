@@ -3,7 +3,7 @@
     <section :class="checkClass" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-12 heading text-center"><h2> Free Products </h2> <p>Grab websites for free</p></div>
+                <div class="col-12 heading text-center"><h2> About Me </h2> <p>Let me introduce myself</p></div>
                 <div class="col-12 col-md-6">
                     <div class="my-photo">
                         <img :src="avatar" alt="" class="img-fluid">

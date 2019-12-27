@@ -111,7 +111,13 @@ Route::middleware(['auth'])->prefix('admin/access')->group(function () {
     Route::get('/contact/destroy/{id}', 'ContactController@destroy')->name('contact.destroy');
 
     // SEO Route
-    Route::resource('seo', 'SEOController');
+    Route::get('/seo', 'SEOController@index')->name('seo.index');
+    Route::post('/seo/store', 'SEOController@store')->name('seo.store');
+    Route::get('/seo/create', 'SEOController@create')->name('seo.create');
+    Route::get('/seo/show/{id}', 'SEOController@show')->name('seo.show');
+    Route::get('/seo/edit/{id}', 'SEOController@edit')->name('seo.edit');
+    Route::post('/seo/update/{id}', 'SEOController@update')->name('seo.update');
+    Route::get('/seo/destroy/{id}', 'SEOController@destroy')->name('seo.destroy'); 
 });
 
 // Authentication Routes

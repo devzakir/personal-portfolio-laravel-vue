@@ -33,9 +33,9 @@
                   </div>
                 </td>
                 <td style="max-width:500px;">
-                    <a href="{{ route('seo.edit', $c->id) }}" class="btn btn-success btn-sm"> <span class="mdi mdi-square-edit-outline"></span> </a>
+                    <a href="{{ route('seo.edit', ['id' => $c->id]) }}" class="btn btn-success btn-sm"> <span class="mdi mdi-square-edit-outline"></span> </a>
                     <a href="#" class="btn btn-primary btn-sm"> <span class="mdi mdi-eye"></span> </a>
-                    <a href="{{ route('seo.destroy', $c->id) }}" class="btn btn-danger btn-sm"> <span class="mdi mdi-delete"></span> </a>
+                    <a href="{{ route('seo.destroy', ['id' => $c->id]) }}" class="btn btn-danger btn-sm"> <span class="mdi mdi-delete"></span> </a>
                 </td>
               </tr>
               @endforeach

@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\SEO;
+use Session;
 use Illuminate\Http\Request;
 
 class SEOController extends Controller
@@ -81,9 +81,10 @@ class SEOController extends Controller
      * @param  \App\SEO  $sEO
      * @return \Illuminate\Http\Response
      */
-    public function edit(SEO $sEO)
+    public function edit($id)
     {
-        return view('admin.seo.edit')->with('seo', $sEO);
+        $seo = SEO::find($id);
+        return view('admin.seo.edit', compact('seo'));
     }
 
     /**
@@ -127,10 +128,11 @@ class SEOController extends Controller
      * @param  \App\SEO  $sEO
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SEO $sEO)
+    public function destroy($id)
     {
-        if($sEO){
-            $sEO->delete();
+        $seo = SEO::find($id);
+        if($seo){
+            $seo->delete();
             Session::flash('success', 'SEO data deleted successfully');
         }
         return redirect()->back();
