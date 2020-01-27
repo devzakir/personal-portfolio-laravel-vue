@@ -24,7 +24,7 @@
                       </div>
                       <div class="details">
                           <small>{{ portfolio.category_name }}</small>
-                          <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, quidem!</h6>
+                          <h6>{{ portfolio.title }}</h6>
                           <div class="text-center">
                               <a :href="portfolio.link" target="_blank">Preview</a>
                           </div>
